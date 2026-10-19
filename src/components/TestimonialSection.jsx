@@ -1,6 +1,6 @@
 import React from 'react';
 import { motion } from 'framer-motion';
-import { Star, Sparkles } from 'lucide-react';
+import { Star, Quote } from 'lucide-react';
 import { TESTIMONIALS } from '../data/restaurantData';
 
 export default function TestimonialSection() {
@@ -15,7 +15,7 @@ export default function TestimonialSection() {
         {/* Section Header (Strict Single-Line on Desktop) */}
         <div className="text-center space-y-1.5 mb-10">
           <div className="inline-flex items-center gap-1.5 px-3.5 py-1 rounded-full bg-white/5 border border-white/10 text-gold-400 text-xs font-bold uppercase tracking-wider whitespace-nowrap">
-            <Sparkles className="w-3.5 h-3.5" />
+            <Quote className="w-3.5 h-3.5" />
             <span>Cerita Pelanggan Margonda</span>
           </div>
           <h2 className="font-display font-black text-2xl sm:text-3xl md:text-4xl text-white whitespace-normal md:whitespace-nowrap">

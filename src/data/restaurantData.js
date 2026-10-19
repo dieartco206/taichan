@@ -130,7 +130,7 @@ export const MENU_ITEMS = [
     image: "https://images.unsplash.com/photo-1512058564366-18510be2db19?auto=format&fit=crop&w=800&q=80",
     isBestSeller: true,
     spicyLevel: 0,
-    badge: "Wajib Coba ✨"
+    badge: "Wajib Coba"
   },
   {
     id: "lontong",
@@ -341,7 +341,7 @@ export const WHY_US_FEATURES = [
   {
     title: "Nasi Gurih Daun Jeruk",
     desc: "Nasi pulen dengan wangi daun jeruk yang harum semerbak, menyempurnakan santapan taichan malammu.",
-    icon: "sparkles"
+    icon: "leaf"
   },
   {
     title: "Lokasi Strategis Margonda",

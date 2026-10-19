@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
-import { X, Trash2, Plus, Minus, Send, ShoppingBag, Sparkles, AlertCircle } from 'lucide-react';
+import { X, Trash2, Plus, Minus, Send, ShoppingBag, AlertCircle } from 'lucide-react';
 import confetti from 'canvas-confetti';
 import { RESTAURANT_INFO } from '../data/restaurantData';
 

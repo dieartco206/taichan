@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
-import { Flame, Sparkles, Share2, Check } from 'lucide-react';
+import { Flame, UtensilsCrossed, Share2, Check } from 'lucide-react';
 import confetti from 'canvas-confetti';
 import { SPICE_LEVELS } from '../data/restaurantData';
 
@@ -158,8 +158,8 @@ export default function SpicyMeterGimmick() {
 
                 {/* Recommendation Pill (Single Line) */}
                 <div className="p-3 rounded-2xl bg-white/[0.04] border border-white/10 flex items-center gap-3 text-xs">
-                  <div className="w-7 h-7 rounded-lg bg-neonPink/20 text-neonPink flex items-center justify-center flex-shrink-0">
-                    <Sparkles className="w-3.5 h-3.5" />
+                  <div className="w-7 h-7 rounded-lg bg-neonCyan/15 text-neonCyan flex items-center justify-center flex-shrink-0">
+                    <UtensilsCrossed className="w-3.5 h-3.5" />
                   </div>
                   <div className="flex items-center gap-1.5 whitespace-nowrap truncate">
                     <span className="font-bold text-slate-200">Saran Pendamping:</span>

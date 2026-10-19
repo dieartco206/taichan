@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
-import { Flame, Plus, Check, Sparkles } from 'lucide-react';
+import { Flame, Plus, Check, UtensilsCrossed } from 'lucide-react';
 import { MENU_CATEGORIES, MENU_ITEMS } from '../data/restaurantData';
 
 export default function MenuSection({ onAddToCart, cartItems }) {
@@ -33,7 +33,7 @@ export default function MenuSection({ onAddToCart, cartItems }) {
         {/* Section Header (Strict Single-Line on Desktop) */}
         <div className="text-center space-y-2 mb-10">
           <div className="inline-flex items-center gap-1.5 px-3.5 py-1 rounded-full bg-white/5 border border-white/10 text-neonPink text-xs font-bold uppercase tracking-wider whitespace-nowrap">
-            <Sparkles className="w-3.5 h-3.5" />
+            <UtensilsCrossed className="w-3.5 h-3.5" />
             <span>Katalog Resmi & Harga Tertera</span>
           </div>
           <h2 className="font-display font-extrabold text-2xl sm:text-3xl md:text-4xl text-white tracking-tight whitespace-normal md:whitespace-nowrap">

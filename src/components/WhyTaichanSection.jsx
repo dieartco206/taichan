@@ -1,6 +1,6 @@
 import React from 'react';
 import { motion } from 'framer-motion';
-import { Drumstick, Flame, Sparkles, MapPin, CheckCircle2, HeartHandshake } from 'lucide-react';
+import { Drumstick, Flame, Leaf, MapPin, CheckCircle2, HeartHandshake, Utensils } from 'lucide-react';
 import { WHY_US_FEATURES, RESTAURANT_INFO } from '../data/restaurantData';
 
 export default function WhyTaichanSection() {
@@ -8,9 +8,9 @@ export default function WhyTaichanSection() {
     switch(iconName) {
       case 'drumstick': return <Drumstick className="w-5 h-5" />;
       case 'flame': return <Flame className="w-5 h-5" />;
-      case 'sparkles': return <Sparkles className="w-5 h-5" />;
+      case 'leaf': return <Leaf className="w-5 h-5" />;
       case 'map-pin': return <MapPin className="w-5 h-5" />;
-      default: return <Sparkles className="w-5 h-5" />;
+      default: return <Utensils className="w-5 h-5" />;
     }
   };
 
