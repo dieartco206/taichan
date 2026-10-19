@@ -1,33 +1,25 @@
 import React from 'react';
 
 export default function TaichanLogo({ size = "md", className = "" }) {
-  // Size classes
   const sizeMap = {
-    sm: "w-9 h-9 text-[10px]",
-    md: "w-12 h-12 text-xs",
-    lg: "w-20 h-20 text-base",
-    xl: "w-28 h-28 text-xl"
+    sm: "w-10 h-10",
+    md: "w-12 h-12",
+    lg: "w-20 h-20",
+    xl: "w-28 h-28"
   };
 
   return (
-    <div className={`relative flex-shrink-0 flex items-center justify-center rounded-full bg-[#050608] border border-[#ff1a75]/40 shadow-[0_0_20px_rgba(255,26,117,0.35)] overflow-hidden group ${sizeMap[size] || sizeMap.md} ${className}`}>
+    <div className={`relative flex-shrink-0 rounded-full overflow-hidden bg-[#07080e] border border-[#ff1a75]/40 shadow-[0_0_20px_rgba(255,26,117,0.4)] group ${sizeMap[size] || sizeMap.md} ${className}`}>
       
-      {/* Outer subtle glow ring */}
-      <div className="absolute inset-0 rounded-full border border-[#00e5ff]/30 group-hover:border-[#00e5ff]/60 transition-colors" />
+      {/* Outer Cyan Glow Ring */}
+      <div className="absolute inset-0 rounded-full border border-[#00e5ff]/40 group-hover:border-[#00e5ff]/80 transition-colors z-10 pointer-events-none" />
 
-      {/* Actual official logo image with crisp display */}
+      {/* High-res Centered Logo Image */}
       <img 
         src="/brand/logo.png" 
         alt="Logo Sate Taichan 56 Djoeanda" 
-        className="w-full h-full object-cover rounded-full group-hover:scale-105 transition-transform duration-300"
-        onError={(e) => {
-          // If image fails, fallback to pure CSS neon logo
-          e.target.style.display = 'none';
-        }}
+        className="w-full h-full object-cover object-center rounded-full group-hover:scale-105 transition-transform duration-300"
       />
-
-      {/* Ambient neon backglow */}
-      <div className="absolute inset-0 bg-gradient-to-b from-[#00e5ff]/10 via-[#ff1a75]/15 to-[#00e5ff]/10 pointer-events-none mix-blend-screen" />
     </div>
   );
 }
