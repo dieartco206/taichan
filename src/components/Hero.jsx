@@ -6,28 +6,18 @@ import { RESTAURANT_INFO } from '../data/restaurantData';
 const SHOWCASE_ITEMS = [
   {
     id: "taichan-mix",
-    name: "Sate Taichan Mix",
+    name: "Sate Taichan Mix (Dada + Kulit)",
     image: "/menu/sate_taichan_jakarta.jpg",
   },
   {
-    id: "taichan-kulit",
-    name: "Sate Taichan Kulit Crispy",
-    image: "/menu/sate_kulit.jpg",
+    id: "taichan-paha",
+    name: "Sate Taichan Daging Paha",
+    image: "/menu/sate_taichan_semarang.jpg",
   },
   {
     id: "paket-sultan",
     name: "Paket Sultan 30 Tusuk",
     image: "/menu/paket_sultan.jpg",
-  },
-  {
-    id: "pisang-bakar",
-    name: "Pisang Bakar Cokelat Keju",
-    image: "/menu/pisang_bakar.jpg",
-  },
-  {
-    id: "es-jeruk",
-    name: "Es Jeruk Peras Murni",
-    image: "/menu/es_jeruk.jpg",
   }
 ];
 
