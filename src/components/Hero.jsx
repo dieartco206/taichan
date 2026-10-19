@@ -149,8 +149,8 @@ export default function Hero({ onExploreMenu, onOrderDirect }) {
             {/* Ambient Radiant Glow Behind Image */}
             <div className="absolute inset-0 bg-gradient-to-tr from-neonPink/35 via-rose-600/25 to-neonCyan/30 rounded-full blur-3xl -z-10 pointer-events-none" />
 
-            {/* Circular Gourmet Plate Presentation */}
-            <div className="relative w-[280px] h-[280px] sm:w-[350px] sm:h-[350px] lg:w-[390px] lg:h-[390px] rounded-full p-2.5 sm:p-3 bg-gradient-to-b from-white/20 via-white/5 to-black/80 border border-white/20 shadow-[0_25px_60px_-15px_rgba(0,0,0,0.95)] group">
+            {/* Circular Gourmet Plate Presentation (Enlarged & Pure Dish) */}
+            <div className="relative w-[320px] h-[320px] sm:w-[410px] sm:h-[410px] lg:w-[460px] lg:h-[460px] rounded-full p-3 sm:p-3.5 bg-gradient-to-b from-white/20 via-white/5 to-black/80 border border-white/20 shadow-[0_25px_60px_-15px_rgba(0,0,0,0.95)] group">
               
               {/* Inner Plate Bevel & Image Container */}
               <div className="w-full h-full rounded-full overflow-hidden relative shadow-inner ring-1 ring-white/10">
@@ -173,15 +173,6 @@ export default function Hero({ onExploreMenu, onOrderDirect }) {
 
                 {/* Subtle Soft Vignette Overlay */}
                 <div className="absolute inset-0 rounded-full bg-gradient-to-t from-black/45 via-transparent to-black/15 pointer-events-none" />
-              </div>
-
-              {/* Minimalist Floating Badge on Plate Rim */}
-              <div className="absolute -bottom-1 -left-1 sm:bottom-2 sm:left-2 px-3 py-1.5 rounded-full bg-black/85 backdrop-blur-md border border-neonPink/40 text-white text-[11px] sm:text-xs font-bold shadow-xl flex items-center gap-2 pointer-events-none">
-                <span className="flex h-2 w-2 relative flex-shrink-0">
-                  <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-neonPink opacity-75"></span>
-                  <span className="relative inline-flex rounded-full h-2 w-2 bg-neonPink"></span>
-                </span>
-                <span>{currentItem.name}</span>
               </div>
 
             </div>
