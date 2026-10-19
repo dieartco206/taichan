@@ -78,7 +78,16 @@ export default function App() {
   const totalCartCount = cartItems.reduce((acc, item) => acc + item.qty, 0);
 
   return (
-    <div className="min-h-screen bg-charcoal-950 text-slate-100 flex flex-col selection:bg-flame-500 selection:text-white">
+    <div className="min-h-screen bg-[#07080d] text-slate-100 flex flex-col selection:bg-neonPink selection:text-white relative">
+      {/* Global Ambient Charcoal Dot Texture */}
+      <div 
+        className="fixed inset-0 pointer-events-none opacity-[0.03] z-0" 
+        style={{
+          backgroundImage: `radial-gradient(rgba(255, 255, 255, 0.5) 1px, transparent 1px)`,
+          backgroundSize: '24px 24px'
+        }}
+      />
+
       {/* Top Navbar */}
       <Navbar 
         cartCount={totalCartCount} 
@@ -86,7 +95,7 @@ export default function App() {
       />
 
       {/* Main Content Sections */}
-      <main className="flex-1">
+      <main className="flex-1 pb-24 sm:pb-0 relative z-10">
         {/* Hero Section */}
         <Hero 
           onExploreMenu={handleExploreMenu} 

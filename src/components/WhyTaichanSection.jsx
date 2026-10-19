@@ -56,7 +56,7 @@ export default function WhyTaichanSection() {
                   {getIcon(feat.icon)}
                 </div>
                 
-                <h3 className="font-display font-bold text-base text-white mb-1.5 whitespace-nowrap truncate" title={feat.title}>
+                <h3 className="font-display font-bold text-base text-white mb-1.5" title={feat.title}>
                   {feat.title}
                 </h3>
                 
@@ -73,17 +73,17 @@ export default function WhyTaichanSection() {
           ))}
         </div>
 
-        {/* 4 Single-Line Key Guarantees */}
-        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-3 mb-10">
+        {/* 4 Key Guarantees */}
+        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-2.5 sm:gap-3 mb-10">
           {[
             "Daging dipotong dadu tebal & bersih dari lemak urat",
             "Dibakar di atas arang panas dengan kematangan juicy",
             "Sambal rawit uleg asli tanpa cabai bubuk sintetis",
             "Tempat bersih, parkir nyaman samping KFC Margonda",
           ].map((item, idx) => (
-            <div key={idx} className="p-3 rounded-xl bg-white/[0.03] border border-white/5 flex items-center gap-2.5 text-xs text-slate-300 whitespace-nowrap truncate" title={item}>
-              <CheckCircle2 className="w-4 h-4 text-emerald-400 flex-shrink-0" />
-              <span className="truncate">{item}</span>
+            <div key={idx} className="p-3 rounded-xl bg-white/[0.03] border border-white/5 flex items-start gap-2.5 text-xs text-slate-300">
+              <CheckCircle2 className="w-4 h-4 text-emerald-400 flex-shrink-0 mt-0.5" />
+              <span className="leading-normal">{item}</span>
             </div>
           ))}
         </div>

@@ -138,56 +138,56 @@ export default function SpicyMeterGimmick() {
               </div>
             </div>
 
-            <div className="grid grid-cols-1 lg:grid-cols-12 gap-6 items-center">
+            <div className="grid grid-cols-1 lg:grid-cols-12 gap-5 sm:gap-6 items-center">
               
               {/* Left description */}
               <div className="lg:col-span-8 space-y-3">
-                <div className="flex items-center gap-3">
-                  <span className="text-xs font-bold text-neonPink uppercase tracking-wider whitespace-nowrap">
+                <div className="flex flex-wrap items-center gap-2 sm:gap-3">
+                  <span className="text-xs font-bold text-neonPink uppercase tracking-wider">
                     {currentLevel.tagline}
                   </span>
-                  <span className="text-slate-600">•</span>
-                  <h3 className="font-display font-black text-xl sm:text-2xl text-white whitespace-nowrap">
+                  <span className="text-slate-600 hidden sm:inline">•</span>
+                  <h3 className="font-display font-black text-lg sm:text-2xl text-white">
                     {currentLevel.name}
                   </h3>
                 </div>
 
-                <p className="text-slate-300 text-xs sm:text-sm leading-relaxed whitespace-normal xl:whitespace-nowrap">
+                <p className="text-slate-300 text-xs sm:text-sm leading-relaxed">
                   {currentLevel.description}
                 </p>
 
-                {/* Recommendation Pill (Single Line) */}
-                <div className="p-3 rounded-2xl bg-white/[0.04] border border-white/10 flex items-center gap-3 text-xs">
-                  <div className="w-7 h-7 rounded-lg bg-neonCyan/15 text-neonCyan flex items-center justify-center flex-shrink-0">
+                {/* Recommendation Pill */}
+                <div className="p-3 rounded-2xl bg-white/[0.04] border border-white/10 flex items-start sm:items-center gap-2.5 sm:gap-3 text-xs">
+                  <div className="w-7 h-7 rounded-lg bg-neonCyan/15 text-neonCyan flex items-center justify-center flex-shrink-0 mt-0.5 sm:mt-0">
                     <UtensilsCrossed className="w-3.5 h-3.5" />
                   </div>
-                  <div className="flex items-center gap-1.5 whitespace-nowrap truncate">
-                    <span className="font-bold text-slate-200">Saran Pendamping:</span>
+                  <div className="leading-relaxed">
+                    <span className="font-bold text-slate-200 mr-1.5">Saran Pendamping:</span>
                     <span className="text-slate-400">{currentLevel.recommendation}</span>
                   </div>
                 </div>
               </div>
 
-              {/* Right Challenge Button (Single Line) */}
+              {/* Right Challenge Button */}
               <div className="lg:col-span-4 flex flex-col gap-2 justify-center">
                 <button
                   onClick={handleChallengeFriend}
-                  className="w-full py-3 px-4 rounded-xl bg-charcoal-800 hover:bg-charcoal-700 border border-neonPink/40 text-white font-bold text-xs flex items-center justify-center gap-2 transition-all hover:scale-[1.01] shadow-lg whitespace-nowrap"
+                  className="w-full py-3 px-4 rounded-xl bg-charcoal-800 hover:bg-charcoal-700 border border-neonPink/40 text-white font-bold text-xs flex items-center justify-center gap-2 transition-all hover:scale-[1.01] shadow-lg"
                 >
                   {copied ? (
                     <>
-                      <Check className="w-4 h-4 text-emerald-400" />
-                      <span className="text-emerald-300">Teks Tantangan Disalin ke Clipboard!</span>
+                      <Check className="w-4 h-4 text-emerald-400 flex-shrink-0" />
+                      <span className="text-emerald-300">Teks Tantangan Disalin!</span>
                     </>
                   ) : (
                     <>
-                      <Share2 className="w-4 h-4 text-neonPink" />
-                      <span>Tantang Teman Makan {currentLevel.name.split(':')[0]}!</span>
+                      <Share2 className="w-4 h-4 text-neonPink flex-shrink-0" />
+                      <span>Tantang Teman ({currentLevel.name.split(':')[0]})</span>
                     </>
                   )}
                 </button>
 
-                <p className="text-[11px] text-center text-slate-500 whitespace-nowrap">
+                <p className="text-[11px] text-center text-slate-500">
                   Pesan langsung via GoFood, GrabFood, ShopeeFood & Dine-in.
                 </p>
               </div>

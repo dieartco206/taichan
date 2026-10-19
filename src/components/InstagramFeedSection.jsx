@@ -43,7 +43,7 @@ export default function InstagramFeedSection() {
                   <span><strong>1</strong> following</span>
                 </div>
 
-                <div className="text-xs text-slate-300 flex flex-wrap items-center justify-center sm:justify-start gap-2 pt-1.5 whitespace-nowrap">
+                <div className="text-xs text-slate-300 flex flex-wrap items-center justify-center sm:justify-start gap-2 pt-1.5 leading-relaxed">
                   <span className="font-bold text-neonCyan">{RESTAURANT_INFO.tagline}</span>
                   <span className="text-slate-500">•</span>
                   <span className="text-slate-400">Available on : GoFood • GrabFood • ShopeeFood</span>
@@ -123,13 +123,13 @@ export default function InstagramFeedSection() {
                 </div>
               </div>
 
-              {/* Caption & Post link in Single Line */}
+              {/* Caption & Post link */}
               <div className="p-4 space-y-2">
-                <h4 className="font-display font-bold text-sm text-white whitespace-nowrap truncate" title={post.title}>
+                <h4 className="font-display font-bold text-sm text-white line-clamp-1" title={post.title}>
                   {post.title}
                 </h4>
 
-                <p className="text-xs text-slate-400 whitespace-nowrap truncate" title={post.caption}>
+                <p className="text-xs text-slate-400 line-clamp-2 leading-relaxed" title={post.caption}>
                   {post.caption}
                 </p>
 

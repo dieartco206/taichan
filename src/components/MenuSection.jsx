@@ -22,37 +22,47 @@ export default function MenuSection({ onAddToCart, cartItems }) {
   };
 
   return (
-    <section id="menu" className="py-20 relative overflow-hidden bg-charcoal-950">
+    <section id="menu" className="py-16 sm:py-20 relative overflow-hidden bg-charcoal-950">
       
-      {/* Background ambient lighting */}
-      <div className="absolute top-1/4 right-0 w-[500px] h-[500px] bg-neonPink/10 rounded-full blur-[160px] pointer-events-none" />
-      <div className="absolute bottom-10 left-0 w-[500px] h-[500px] bg-neonCyan/10 rounded-full blur-[160px] pointer-events-none" />
+      {/* Background dark culinary texture */}
+      <div className="absolute inset-0 pointer-events-none overflow-hidden">
+        <img 
+          src="/brand/bg_dark_texture.jpg" 
+          alt="Charcoal Texture Backdrop" 
+          className="w-full h-full object-cover object-center opacity-15 filter brightness-50"
+        />
+        <div className="absolute inset-0 bg-gradient-to-b from-[#07080d] via-transparent to-[#07080d]" />
+        
+        {/* Neon ambient glows */}
+        <div className="absolute top-1/4 right-0 w-[500px] h-[500px] bg-neonPink/10 rounded-full blur-[160px]" />
+        <div className="absolute bottom-10 left-0 w-[500px] h-[500px] bg-neonCyan/10 rounded-full blur-[160px]" />
+      </div>
 
       <div className="max-w-[1440px] mx-auto px-4 sm:px-6 lg:px-10 relative z-10">
         
-        {/* Section Header (Strict Single-Line on Desktop) */}
-        <div className="text-center space-y-2 mb-10">
-          <div className="inline-flex items-center gap-1.5 px-3.5 py-1 rounded-full bg-white/5 border border-white/10 text-neonPink text-xs font-bold uppercase tracking-wider whitespace-nowrap">
+        {/* Section Header */}
+        <div className="text-center space-y-2 mb-8 sm:mb-10">
+          <div className="inline-flex items-center gap-1.5 px-3.5 py-1 rounded-full bg-white/5 border border-white/10 text-neonPink text-xs font-bold uppercase tracking-wider">
             <UtensilsCrossed className="w-3.5 h-3.5" />
             <span>Katalog Resmi & Harga Tertera</span>
           </div>
           <h2 className="font-display font-extrabold text-2xl sm:text-3xl md:text-4xl text-white tracking-tight whitespace-normal md:whitespace-nowrap">
             Menu Juara <span className="text-gradient-flame">Taichan 56 Djoeanda Margonda</span>
           </h2>
-          <p className="text-slate-400 text-xs sm:text-sm md:text-base whitespace-normal lg:whitespace-nowrap">
+          <p className="text-slate-400 text-xs sm:text-sm md:text-base max-w-2xl mx-auto">
             Semua sate disajikan segar dengan marinasi bumbu gurih, sambal rawit uleg asli, dan potongan jeruk nipis wangi.
           </p>
         </div>
 
-        {/* Category Filter Tabs (Single-line row) */}
-        <div className="flex items-center justify-start lg:justify-center gap-2 overflow-x-auto pb-4 mb-8 no-scrollbar">
+        {/* Category Filter Tabs */}
+        <div className="flex items-center justify-start lg:justify-center gap-2 overflow-x-auto pb-4 mb-6 sm:mb-8 no-scrollbar">
           {MENU_CATEGORIES.map((cat) => {
             const isActive = activeCategory === cat.id;
             return (
               <button
                 key={cat.id}
                 onClick={() => setActiveCategory(cat.id)}
-                className={`flex-shrink-0 px-4 py-2 rounded-full text-xs font-bold transition-all duration-300 flex items-center gap-1.5 whitespace-nowrap ${
+                className={`flex-shrink-0 px-3.5 sm:px-4 py-2 rounded-full text-xs font-bold transition-all duration-300 flex items-center gap-1.5 whitespace-nowrap ${
                   isActive 
                     ? 'bg-gradient-to-r from-neonPink to-rose-600 text-white shadow-[0_0_15px_rgba(255,26,117,0.4)] scale-105' 
                     : 'bg-charcoal-900 text-slate-300 hover:text-white hover:bg-charcoal-800 border border-white/10'
@@ -71,10 +81,10 @@ export default function MenuSection({ onAddToCart, cartItems }) {
           })}
         </div>
 
-        {/* Menu Cards Grid (Responsive 4-columns on XL screen, perfectly balanced) */}
+        {/* Menu Cards Grid */}
         <motion.div 
           layout
-          className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-4 sm:gap-5"
+          className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-3.5 sm:gap-5"
         >
           <AnimatePresence>
             {filteredItems.map((item) => {
@@ -93,7 +103,7 @@ export default function MenuSection({ onAddToCart, cartItems }) {
                 >
                   <div>
                     {/* Image thumbnail */}
-                    <div className="relative h-48 w-full overflow-hidden bg-charcoal-900">
+                    <div className="relative h-44 sm:h-48 w-full overflow-hidden bg-charcoal-900">
                       <img 
                         src={item.image} 
                         alt={item.name} 
@@ -103,7 +113,7 @@ export default function MenuSection({ onAddToCart, cartItems }) {
                       
                       <div className="absolute inset-0 bg-gradient-to-t from-charcoal-950 via-charcoal-950/20 to-transparent" />
 
-                      {/* Top Badges in Single Line */}
+                      {/* Top Badges */}
                       <div className="absolute top-2.5 left-2.5 flex items-center gap-1.5 whitespace-nowrap">
                         {item.badge && (
                           <span className="px-2 py-0.5 rounded-full bg-neonPink/90 text-white font-bold text-[10px] backdrop-blur-md shadow-md">
@@ -133,30 +143,30 @@ export default function MenuSection({ onAddToCart, cartItems }) {
                       )}
                     </div>
 
-                    {/* Card Content (Clean single-line title and concise description) */}
-                    <div className="p-4 space-y-1">
-                      <h3 className="font-display font-bold text-base text-white group-hover:text-neonPink transition-colors whitespace-nowrap truncate" title={item.name}>
+                    {/* Card Content (Readable Title & Description) */}
+                    <div className="p-3.5 sm:p-4 space-y-1">
+                      <h3 className="font-display font-bold text-sm sm:text-base text-white group-hover:text-neonPink transition-colors line-clamp-1" title={item.name}>
                         {item.name}
                       </h3>
                       
-                      <p className="text-xs text-slate-400 whitespace-nowrap truncate" title={item.description}>
+                      <p className="text-xs text-slate-400 line-clamp-2 leading-relaxed" title={item.description}>
                         {item.description}
                       </p>
                     </div>
                   </div>
 
-                  {/* Card Footer: Price & Add Button (Strict Single Line) */}
-                  <div className="p-4 pt-1 flex items-center justify-between">
+                  {/* Card Footer: Price & Add Button */}
+                  <div className="p-3.5 sm:p-4 pt-1 flex items-center justify-between">
                     <div className="whitespace-nowrap">
                       <span className="text-[10px] text-slate-500 uppercase tracking-wider block font-medium">Harga</span>
-                      <span className="font-display font-extrabold text-base text-white">
+                      <span className="font-display font-extrabold text-sm sm:text-base text-white">
                         {formatPrice(item.price)}
                       </span>
                     </div>
 
                     <button
                       onClick={() => handleAdd(item)}
-                      className={`px-3.5 py-2 rounded-xl font-bold text-xs flex items-center gap-1.5 transition-all duration-300 whitespace-nowrap ${
+                      className={`px-3 sm:px-3.5 py-2 rounded-xl font-bold text-xs flex items-center gap-1.5 transition-all duration-300 whitespace-nowrap ${
                         isJustAdded 
                           ? 'bg-emerald-500 text-white shadow-md shadow-emerald-500/30' 
                           : 'bg-neonPink/15 hover:bg-neonPink text-neonPink hover:text-white border border-neonPink/30 hover:border-transparent'

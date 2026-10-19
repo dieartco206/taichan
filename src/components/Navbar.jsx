@@ -75,15 +75,15 @@ export default function Navbar({ cartCount, onOpenCart }) {
             ))}
           </nav>
 
-          {/* Right: Only 2 Essential Actions (Instagram Icon & Cart Button) */}
-          <div className="flex items-center gap-3">
+          {/* Right: Actions (Mobile Optimized) */}
+          <div className="flex items-center gap-2 sm:gap-3">
             
-            {/* Instagram Sleek Icon Button */}
+            {/* Instagram Icon (Desktop only, available in mobile drawer) */}
             <a
               href={RESTAURANT_INFO.instagramUrl}
               target="_blank"
               rel="noopener noreferrer"
-              className="p-2 rounded-xl text-slate-300 hover:text-neonPink hover:bg-white/5 transition-colors"
+              className="hidden sm:flex p-2 rounded-xl text-slate-300 hover:text-neonPink hover:bg-white/5 transition-colors"
               title="Instagram @taichan56djoeanda"
             >
               <Instagram className="w-5 h-5" />
@@ -92,10 +92,10 @@ export default function Navbar({ cartCount, onOpenCart }) {
             {/* Primary Cart CTA */}
             <button
               onClick={onOpenCart}
-              className="px-4 py-2 rounded-xl bg-gradient-to-r from-neonPink to-rose-600 hover:from-neonPink/90 hover:to-rose-500 text-white font-bold text-xs flex items-center gap-2 shadow-[0_0_15px_rgba(255,26,117,0.35)] hover:shadow-[0_0_22px_rgba(255,26,117,0.55)] transition-all"
+              className="px-3 sm:px-4 py-2 rounded-xl bg-gradient-to-r from-neonPink to-rose-600 hover:from-neonPink/90 hover:to-rose-500 text-white font-bold text-xs flex items-center gap-1.5 sm:gap-2 shadow-[0_0_15px_rgba(255,26,117,0.35)] hover:shadow-[0_0_22px_rgba(255,26,117,0.55)] transition-all"
             >
               <ShoppingBag className="w-4 h-4" />
-              <span>Pesanan</span>
+              <span className="hidden xs:inline">Pesanan</span>
               {cartCount > 0 && (
                 <span className="px-1.5 py-0.2 rounded-full bg-white/20 text-white text-[10px] font-black">
                   {cartCount}
