@@ -2,6 +2,7 @@ import React, { useState } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
 import { Flame, Plus, Check, UtensilsCrossed } from 'lucide-react';
 import { MENU_CATEGORIES, MENU_ITEMS } from '../data/restaurantData';
+import { DoodleSate, DoodleChili, DoodleLime, DoodleCobek, DoodleFlame, DoodleSpice } from './FoodDoodles';
 
 export default function MenuSection({ onAddToCart, cartItems }) {
   const [activeCategory, setActiveCategory] = useState('all');
@@ -24,53 +25,47 @@ export default function MenuSection({ onAddToCart, cartItems }) {
   return (
     <section id="menu" className="py-16 sm:py-20 relative overflow-hidden bg-[#faf6ee]/70 border-y border-stone-200/70">
       
-      {/* Warm Ambient Radiance with Abstract Motifs */}
+      {/* Warm Ambient Radiance with Food Doodles */}
       <div className="absolute inset-0 pointer-events-none overflow-hidden">
         {/* Abstract Fluid Organic Gradient Pods */}
         <div className="absolute -top-12 -right-16 w-[560px] h-[560px] bg-gradient-to-bl from-amber-300/35 via-orange-200/25 to-transparent rounded-[50%_50%_70%_30%] blur-3xl" />
         <div className="absolute -bottom-20 -left-16 w-[520px] h-[520px] bg-gradient-to-tr from-rose-200/30 via-amber-200/25 to-transparent rounded-[40%_60%_35%_65%] blur-3xl" />
         <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[600px] h-[400px] bg-amber-100/25 rounded-full blur-3xl" />
 
-        {/* Abstract Stylized Grill & Culinary Waves SVG */}
-        <svg 
-          className="absolute inset-0 w-full h-full text-stone-400/[0.14]" 
-          viewBox="0 0 1440 900" 
-          fill="none" 
-          preserveAspectRatio="none"
-        >
-          {/* Subtle wavy divider line */}
-          <path 
-            d="M-50 120 C 350 40, 650 200, 1050 100 C 1250 50, 1400 150, 1550 110" 
-            stroke="currentColor" 
-            strokeWidth="1.2" 
-          />
-          <path 
-            d="M-100 800 C 300 700, 700 880, 1100 760 C 1300 700, 1450 820, 1600 770" 
-            stroke="currentColor" 
-            strokeWidth="1.2" 
-            strokeDasharray="6 6"
-          />
-
-          {/* Abstract geometric grill dashes on edges */}
-          <line x1="60" y1="280" x2="160" y2="180" stroke="currentColor" strokeWidth="1.5" strokeDasharray="4 6" />
-          <line x1="80" y1="310" x2="180" y2="210" stroke="currentColor" strokeWidth="1.5" strokeDasharray="4 6" />
-          <line x1="100" y1="340" x2="200" y2="240" stroke="currentColor" strokeWidth="1.5" strokeDasharray="4 6" />
-
-          <line x1="1280" y1="700" x2="1380" y2="600" stroke="currentColor" strokeWidth="1.5" strokeDasharray="4 6" />
-          <line x1="1300" y1="730" x2="1400" y2="630" stroke="currentColor" strokeWidth="1.5" strokeDasharray="4 6" />
-          <line x1="1320" y1="760" x2="1420" y2="660" stroke="currentColor" strokeWidth="1.5" strokeDasharray="4 6" />
-        </svg>
-
-        {/* Floating Abstract Spice Sparkles */}
-        <div className="absolute top-16 right-16 text-amber-500/30 hidden sm:block">
-          <svg width="22" height="22" viewBox="0 0 24 24" fill="currentColor">
-            <path d="M12 0L14 9L23 12L14 15L12 24L10 15L1 12L10 9Z" />
-          </svg>
+        {/* Food Doodles Scattered Artistically */}
+        {/* Top-Right: Sate Skewer */}
+        <div className="absolute top-12 right-10 select-none opacity-40 hover:opacity-70 transition-opacity">
+          <DoodleSate className="w-24 h-24 sm:w-28 sm:h-28 text-amber-700/30" rotate={-35} />
         </div>
-        <div className="absolute bottom-20 left-12 text-rose-500/25 hidden md:block">
-          <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor">
-            <path d="M12 0L14 9L23 12L14 15L12 24L10 15L1 12L10 9Z" />
-          </svg>
+
+        {/* Top-Left: Lime Slice */}
+        <div className="absolute top-16 left-8 select-none opacity-40">
+          <DoodleLime className="w-20 h-20 text-emerald-700/30" rotate={20} />
+        </div>
+
+        {/* Mid-Left: Cabai Rawit Merah */}
+        <div className="absolute top-1/3 -left-2 sm:left-4 select-none opacity-40">
+          <DoodleChili className="w-18 h-18 text-red-600/35" rotate={35} />
+        </div>
+
+        {/* Mid-Right: Cobek Ulek Sambal */}
+        <div className="absolute top-1/2 -right-2 sm:right-6 select-none opacity-35">
+          <DoodleCobek className="w-24 h-24 text-stone-600/30" rotate={-10} />
+        </div>
+
+        {/* Bottom-Left: Sate Skewer 2 */}
+        <div className="absolute bottom-20 left-10 select-none opacity-35 hidden sm:block">
+          <DoodleSate className="w-24 h-24 text-amber-800/25" rotate={50} />
+        </div>
+
+        {/* Bottom-Right: Flame Ember */}
+        <div className="absolute bottom-16 right-16 select-none opacity-40 hidden sm:block">
+          <DoodleFlame className="w-20 h-20 text-orange-600/30" rotate={15} />
+        </div>
+
+        {/* Spice Sparks */}
+        <div className="absolute top-2/3 left-1/4 opacity-25 hidden lg:block">
+          <DoodleSpice className="w-10 h-10 text-amber-600/30" rotate={45} />
         </div>
       </div>
 

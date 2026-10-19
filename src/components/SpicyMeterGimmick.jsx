@@ -3,6 +3,7 @@ import { motion, AnimatePresence } from 'framer-motion';
 import { Flame, UtensilsCrossed, Share2, Check } from 'lucide-react';
 import confetti from 'canvas-confetti';
 import { SPICE_LEVELS } from '../data/restaurantData';
+import { DoodleChili, DoodleCobek, DoodleFlame, DoodleLime } from './FoodDoodles';
 
 export default function SpicyMeterGimmick() {
   const [selectedLevelIndex, setSelectedLevelIndex] = useState(2); // Level 3: Nampol 56
@@ -38,7 +39,7 @@ export default function SpicyMeterGimmick() {
   return (
     <section id="spicy-meter" className="py-20 relative overflow-hidden bg-[#faf6ee]/70 border-y border-stone-200/80">
       
-      {/* Background glow dynamic with Abstract Heatwave Contours */}
+      {/* Background glow dynamic with Spicy Food Doodles */}
       <div className="absolute inset-0 pointer-events-none overflow-hidden">
         <div 
           className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[650px] h-[650px] rounded-full blur-[140px] transition-all duration-700 opacity-25"
@@ -47,36 +48,35 @@ export default function SpicyMeterGimmick() {
           }}
         />
 
-        {/* Abstract Thermal Vapor Curves SVG */}
-        <svg 
-          className="absolute inset-0 w-full h-full text-stone-400/[0.15]" 
-          viewBox="0 0 1440 700" 
-          fill="none" 
-          preserveAspectRatio="none"
-        >
-          <path 
-            d="M-50 180 C 350 300, 650 60, 1050 200 C 1250 280, 1400 120, 1550 160" 
-            stroke="currentColor" 
-            strokeWidth="1.2" 
-            strokeDasharray="6 6"
-          />
-          <path 
-            d="M-80 520 C 300 400, 700 620, 1100 480 C 1300 400, 1450 540, 1600 490" 
-            stroke="currentColor" 
-            strokeWidth="1.2" 
-          />
-        </svg>
-
-        {/* Floating Abstract Spice Sparks */}
-        <div className="absolute top-16 left-16 text-red-500/30 hidden sm:block">
-          <svg width="22" height="22" viewBox="0 0 24 24" fill="currentColor">
-            <path d="M12 0L14 9L23 12L14 15L12 24L10 15L1 12L10 9Z" />
-          </svg>
+        {/* Food Doodles - Chili & Flame Focus */}
+        {/* Top-Left: Large Fiery Chili */}
+        <div className="absolute top-10 left-10 select-none opacity-40">
+          <DoodleChili className="w-22 h-22 sm:w-28 sm:h-28 text-red-600/35" rotate={-25} />
         </div>
-        <div className="absolute bottom-20 right-16 text-amber-500/30 hidden sm:block">
-          <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor">
-            <path d="M12 0L14 9L23 12L14 15L12 24L10 15L1 12L10 9Z" />
-          </svg>
+
+        {/* Top-Right: Flame Ember */}
+        <div className="absolute top-12 right-12 select-none opacity-40">
+          <DoodleFlame className="w-24 h-24 sm:w-28 sm:h-28 text-orange-600/35" rotate={15} />
+        </div>
+
+        {/* Mid-Left: Cobek Ulek Sambal Batu */}
+        <div className="absolute top-1/2 -left-2 sm:left-8 select-none opacity-35">
+          <DoodleCobek className="w-24 h-24 sm:w-28 sm:h-28 text-stone-600/30" rotate={-10} />
+        </div>
+
+        {/* Mid-Right: Second Chili Pepper */}
+        <div className="absolute top-1/2 -right-2 sm:right-10 select-none opacity-40">
+          <DoodleChili className="w-20 h-20 sm:w-24 sm:h-24 text-red-600/35" rotate={40} />
+        </div>
+
+        {/* Bottom-Left: Fire Flame */}
+        <div className="absolute bottom-12 left-1/4 select-none opacity-35 hidden sm:block">
+          <DoodleFlame className="w-20 h-20 text-orange-600/30" rotate={-15} />
+        </div>
+
+        {/* Bottom-Right: Lime Slice (Penenang Pedas) */}
+        <div className="absolute bottom-12 right-1/4 select-none opacity-40 hidden sm:block">
+          <DoodleLime className="w-20 h-20 text-emerald-700/30" rotate={30} />
         </div>
       </div>
 

@@ -1,53 +1,37 @@
 import React from 'react';
 import { MapPin, Clock, Navigation, ExternalLink, Check } from 'lucide-react';
 import { RESTAURANT_INFO } from '../data/restaurantData';
+import { DoodleSate, DoodleLime, DoodleCobek, DoodleChili } from './FoodDoodles';
 
 export default function LocationSection() {
   return (
     <section id="lokasi" className="py-16 sm:py-20 relative overflow-hidden bg-[#fbf8f3] border-t border-stone-200/60">
       
-      {/* Warm Ambient Radiance with Abstract Map Contours */}
+      {/* Warm Ambient Radiance with Food Doodles */}
       <div className="absolute inset-0 pointer-events-none overflow-hidden">
         {/* Soft Organic Fluid Pods */}
         <div className="absolute -top-10 -left-16 w-[540px] h-[540px] bg-gradient-to-tr from-rose-200/35 via-orange-100/25 to-transparent rounded-[60%_40%_50%_50%] blur-3xl" />
         <div className="absolute -bottom-16 -right-16 w-[520px] h-[520px] bg-gradient-to-bl from-amber-200/35 via-orange-200/25 to-transparent rounded-[45%_55%_65%_35%] blur-3xl" />
 
-        {/* Abstract Stylized Topographic Map Curves SVG */}
-        <svg 
-          className="absolute inset-0 w-full h-full text-stone-400/[0.16]" 
-          viewBox="0 0 1440 800" 
-          fill="none" 
-          preserveAspectRatio="none"
-        >
-          {/* Topographic elevation curves */}
-          <path 
-            d="M-50 180 C 300 80, 600 240, 950 140 C 1200 70, 1400 200, 1550 150" 
-            stroke="currentColor" 
-            strokeWidth="1.2" 
-          />
-          <path 
-            d="M-80 320 C 250 200, 550 380, 900 260 C 1250 160, 1450 320, 1600 250" 
-            stroke="currentColor" 
-            strokeWidth="1.2" 
-            strokeDasharray="5 7"
-          />
-          <path 
-            d="M-40 680 C 400 550, 800 720, 1200 620 C 1380 570, 1500 650, 1620 600" 
-            stroke="currentColor" 
-            strokeWidth="1.2" 
-          />
+        {/* Food Doodles */}
+        {/* Top-Right: Sate Skewer */}
+        <div className="absolute top-12 right-12 select-none opacity-35">
+          <DoodleSate className="w-24 h-24 text-amber-700/30" rotate={-35} />
+        </div>
 
-          {/* Location Radar Concentric Rings on Left Side */}
-          <circle cx="280" cy="400" r="120" stroke="currentColor" strokeWidth="1" strokeDasharray="4 6" />
-          <circle cx="280" cy="400" r="200" stroke="currentColor" strokeWidth="1.2" />
-          <circle cx="280" cy="400" r="280" stroke="currentColor" strokeWidth="1" strokeDasharray="6 8" />
-        </svg>
+        {/* Mid-Left: Cobek Ulek Sambal */}
+        <div className="absolute top-1/2 -left-2 sm:left-6 select-none opacity-35">
+          <DoodleCobek className="w-24 h-24 text-stone-600/30" rotate={15} />
+        </div>
 
-        {/* Floating Abstract Sparkles */}
-        <div className="absolute top-24 right-20 text-rose-500/25 hidden md:block">
-          <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor">
-            <path d="M12 0L14 9L23 12L14 15L12 24L10 15L1 12L10 9Z" />
-          </svg>
+        {/* Bottom-Left: Lime Slice */}
+        <div className="absolute bottom-10 left-12 select-none opacity-40 hidden sm:block">
+          <DoodleLime className="w-20 h-20 text-emerald-700/30" rotate={25} />
+        </div>
+
+        {/* Bottom-Right: Chili Pepper */}
+        <div className="absolute bottom-12 right-16 select-none opacity-35 hidden sm:block">
+          <DoodleChili className="w-20 h-20 text-red-600/35" rotate={-20} />
         </div>
       </div>
 

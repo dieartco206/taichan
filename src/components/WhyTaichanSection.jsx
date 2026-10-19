@@ -2,6 +2,7 @@ import React from 'react';
 import { motion } from 'framer-motion';
 import { Drumstick, Flame, Leaf, MapPin, CheckCircle2, HeartHandshake, Utensils } from 'lucide-react';
 import { WHY_US_FEATURES, RESTAURANT_INFO } from '../data/restaurantData';
+import { DoodleSate, DoodleChili, DoodleLime, DoodleCobek, DoodleDaunJeruk, DoodleBawang } from './FoodDoodles';
 
 export default function WhyTaichanSection() {
   const getIcon = (iconName) => {
@@ -17,37 +18,41 @@ export default function WhyTaichanSection() {
   return (
     <section id="why-us" className="py-20 relative overflow-hidden bg-[#fbf8f3]">
       
-      {/* Warm ambient radiance with Abstract Geometric Contours */}
+      {/* Warm ambient radiance with Culinary Food Doodles */}
       <div className="absolute inset-0 pointer-events-none overflow-hidden">
         {/* Abstract Fluid Pods */}
         <div className="absolute top-10 -left-20 w-[500px] h-[500px] bg-gradient-to-tr from-amber-200/35 via-orange-100/25 to-transparent rounded-[60%_40%_50%_50%] blur-3xl" />
         <div className="absolute -bottom-16 -right-16 w-[520px] h-[520px] bg-gradient-to-bl from-rose-200/30 via-amber-200/25 to-transparent rounded-[45%_55%_65%_35%] blur-3xl" />
 
-        {/* Abstract Radiance Arc SVG behind Features */}
-        <svg 
-          className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[850px] h-[850px] text-stone-400/[0.15]" 
-          viewBox="0 0 600 600" 
-          fill="none"
-        >
-          <circle cx="300" cy="300" r="160" stroke="currentColor" strokeWidth="1" strokeDasharray="4 6" />
-          <circle cx="300" cy="300" r="230" stroke="currentColor" strokeWidth="1.2" />
-          <circle cx="300" cy="300" r="285" stroke="currentColor" strokeWidth="1" strokeDasharray="8 8" />
-          
-          {/* Gentle crosshair lines */}
-          <line x1="300" y1="40" x2="300" y2="560" stroke="currentColor" strokeWidth="0.8" strokeDasharray="5 5" />
-          <line x1="40" y1="300" x2="560" y2="300" stroke="currentColor" strokeWidth="0.8" strokeDasharray="5 5" />
-        </svg>
-
-        {/* Floating Abstract Spice Sparkles */}
-        <div className="absolute top-24 left-1/4 text-amber-500/25 hidden md:block">
-          <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor">
-            <path d="M12 0L14 9L23 12L14 15L12 24L10 15L1 12L10 9Z" />
-          </svg>
+        {/* Food Doodles Focused on Fresh Ingredients */}
+        {/* Top-Left: Daun Jeruk Purut */}
+        <div className="absolute top-12 left-10 select-none opacity-40">
+          <DoodleDaunJeruk className="w-20 h-20 text-emerald-800/30" rotate={-25} />
         </div>
-        <div className="absolute bottom-28 right-1/4 text-rose-500/25 hidden md:block">
-          <svg width="22" height="22" viewBox="0 0 24 24" fill="currentColor">
-            <path d="M12 0L14 9L23 12L14 15L12 24L10 15L1 12L10 9Z" />
-          </svg>
+
+        {/* Top-Right: Bawang Putih Gurih */}
+        <div className="absolute top-16 right-12 select-none opacity-40">
+          <DoodleBawang className="w-18 h-18 text-amber-800/30" rotate={20} />
+        </div>
+
+        {/* Mid-Left: Cobek Ulek Sambal Batu */}
+        <div className="absolute top-1/2 -left-2 sm:left-6 select-none opacity-35">
+          <DoodleCobek className="w-24 h-24 text-stone-600/30" rotate={10} />
+        </div>
+
+        {/* Mid-Right: Sate Skewer */}
+        <div className="absolute top-1/2 -right-2 sm:right-6 select-none opacity-40">
+          <DoodleSate className="w-24 h-24 text-amber-700/30" rotate={-45} />
+        </div>
+
+        {/* Bottom-Left: Cabai Rawit Merah */}
+        <div className="absolute bottom-16 left-1/4 select-none opacity-40 hidden sm:block">
+          <DoodleChili className="w-20 h-20 text-red-600/35" rotate={-30} />
+        </div>
+
+        {/* Bottom-Right: Jeruk Nipis Segar */}
+        <div className="absolute bottom-12 right-1/4 select-none opacity-40 hidden sm:block">
+          <DoodleLime className="w-20 h-20 text-emerald-700/30" rotate={45} />
         </div>
       </div>
 

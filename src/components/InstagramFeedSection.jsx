@@ -4,54 +4,37 @@ import { Heart, MessageCircle, ExternalLink } from 'lucide-react';
 import Instagram from './InstagramIcon';
 import TaichanLogo from './TaichanLogo';
 import { INSTAGRAM_POSTS, RESTAURANT_INFO } from '../data/restaurantData';
+import { DoodleSate, DoodleLime, DoodleChili } from './FoodDoodles';
 
 export default function InstagramFeedSection() {
   return (
     <section id="instagram" className="py-20 relative overflow-hidden bg-[#faf6ee]/50 border-b border-stone-200/60">
       
-      {/* Background with Abstract Editorial Shapes & Flame Glow */}
+      {/* Background with Food Doodles & Fluid Shapes */}
       <div className="absolute inset-0 pointer-events-none overflow-hidden">
         {/* Soft Organic Fluid Pods */}
         <div className="absolute -top-16 -right-20 w-[600px] h-[600px] bg-gradient-to-bl from-rose-200/35 via-orange-100/30 to-transparent rounded-[60%_40%_50%_50%] blur-3xl" />
         <div className="absolute -bottom-20 -left-20 w-[550px] h-[550px] bg-gradient-to-tr from-amber-200/35 via-orange-200/25 to-transparent rounded-[45%_55%_70%_30%] blur-3xl" />
 
-        {/* Abstract Camera Viewfinder & Wave Line Art SVG */}
-        <svg 
-          className="absolute inset-0 w-full h-full text-stone-400/[0.14]" 
-          viewBox="0 0 1440 800" 
-          fill="none" 
-          preserveAspectRatio="none"
-        >
-          {/* Gentle flowing line across feed */}
-          <path 
-            d="M-50 200 C 350 320, 700 80, 1100 240 C 1300 320, 1450 180, 1600 220" 
-            stroke="currentColor" 
-            strokeWidth="1.2" 
-            strokeDasharray="6 6"
-          />
-          <path 
-            d="M-100 650 C 400 520, 800 700, 1200 580 C 1380 520, 1500 620, 1650 560" 
-            stroke="currentColor" 
-            strokeWidth="1.2" 
-          />
-
-          {/* Minimalist framing crosshair glyphs */}
-          <path d="M 60 120 L 75 120 M 60 120 L 60 135" stroke="currentColor" strokeWidth="1.5" />
-          <path d="M 1380 120 L 1365 120 M 1380 120 L 1380 135" stroke="currentColor" strokeWidth="1.5" />
-          <path d="M 60 700 L 75 700 M 60 700 L 60 685" stroke="currentColor" strokeWidth="1.5" />
-          <path d="M 1380 700 L 1365 700 M 1380 700 L 1380 685" stroke="currentColor" strokeWidth="1.5" />
-        </svg>
-
-        {/* Floating Abstract Instagram Sparkles */}
-        <div className="absolute top-20 left-16 text-rose-500/25 hidden md:block">
-          <svg width="22" height="22" viewBox="0 0 24 24" fill="currentColor">
-            <path d="M12 0L14 9L23 12L14 15L12 24L10 15L1 12L10 9Z" />
-          </svg>
+        {/* Food Doodles */}
+        {/* Top-Left: Sate Skewer */}
+        <div className="absolute top-12 left-10 select-none opacity-35">
+          <DoodleSate className="w-24 h-24 text-amber-700/30" rotate={30} />
         </div>
-        <div className="absolute bottom-24 right-20 text-amber-500/30 hidden md:block">
-          <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor">
-            <path d="M12 0L14 9L23 12L14 15L12 24L10 15L1 12L10 9Z" />
-          </svg>
+
+        {/* Top-Right: Lime Slice */}
+        <div className="absolute top-16 right-12 select-none opacity-40">
+          <DoodleLime className="w-20 h-20 text-emerald-700/30" rotate={-15} />
+        </div>
+
+        {/* Bottom-Left: Chili Pepper */}
+        <div className="absolute bottom-12 left-16 select-none opacity-40 hidden sm:block">
+          <DoodleChili className="w-18 h-18 text-red-600/35" rotate={25} />
+        </div>
+
+        {/* Bottom-Right: Second Sate Skewer */}
+        <div className="absolute bottom-10 right-14 select-none opacity-35 hidden sm:block">
+          <DoodleSate className="w-24 h-24 text-amber-800/25" rotate={-40} />
         </div>
       </div>
 
