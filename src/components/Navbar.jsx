@@ -41,8 +41,8 @@ export default function Navbar({ cartCount, onOpenCart }) {
   return (
     <header className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 ${
       scrolled 
-        ? 'bg-white/92 backdrop-blur-md border-b border-stone-200/80 shadow-[0_4px_24px_rgba(28,25,23,0.06)] py-3' 
-        : 'bg-gradient-to-b from-[#fbf8f3]/95 via-[#fbf8f3]/85 to-transparent py-4 sm:py-5'
+        ? 'bg-white/95 backdrop-blur-md border-b border-stone-200/80 shadow-[0_4px_24px_rgba(28,25,23,0.06)] py-3' 
+        : 'bg-transparent py-4 sm:py-5'
     }`}>
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="flex items-center justify-between">
@@ -50,8 +50,10 @@ export default function Navbar({ cartCount, onOpenCart }) {
           {/* Left: Clean Brand Logo (Strict Single-Line on Mobile & Desktop) */}
           <a href="#" className="flex items-center gap-2 sm:gap-3 group flex-shrink-0">
             <TaichanLogo size="sm" className="w-8 h-8 sm:w-10 sm:h-10 flex-shrink-0" />
-            <span className="font-display font-black text-lg sm:text-xl text-stone-900 tracking-tight whitespace-nowrap">
-              <span className="text-amber-500">56</span> <span className="text-red-600">TAICHAN</span>
+            <span className={`font-display font-black text-lg sm:text-xl tracking-tight whitespace-nowrap transition-colors ${
+              scrolled ? 'text-stone-900' : 'text-white drop-shadow-md'
+            }`}>
+              <span className="text-amber-500">56</span> <span className={scrolled ? "text-red-600" : "text-white"}>TAICHAN</span>
             </span>
           </a>
 
@@ -61,7 +63,11 @@ export default function Navbar({ cartCount, onOpenCart }) {
               <a
                 key={link.href}
                 href={link.href}
-                className="text-xs font-semibold text-stone-600 hover:text-stone-950 transition-colors tracking-wide py-1 px-2 rounded-lg hover:bg-stone-100/60"
+                className={`text-xs font-semibold transition-colors tracking-wide py-1 px-2.5 rounded-lg ${
+                  scrolled 
+                    ? 'text-stone-600 hover:text-stone-950 hover:bg-stone-100/60' 
+                    : 'text-stone-100 hover:text-white hover:bg-white/10 drop-shadow'
+                }`}
               >
                 {link.label}
               </a>
@@ -76,7 +82,11 @@ export default function Navbar({ cartCount, onOpenCart }) {
               href={RESTAURANT_INFO.instagramUrl}
               target="_blank"
               rel="noopener noreferrer"
-              className="hidden sm:flex p-2 rounded-xl text-stone-600 hover:text-red-600 hover:bg-stone-100 transition-colors"
+              className={`hidden sm:flex p-2 rounded-xl transition-colors ${
+                scrolled 
+                  ? 'text-stone-600 hover:text-red-600 hover:bg-stone-100' 
+                  : 'text-stone-200 hover:text-white hover:bg-white/10 drop-shadow'
+              }`}
               title="Instagram @taichan56djoeanda"
             >
               <Instagram className="w-5 h-5" />
@@ -102,7 +112,11 @@ export default function Navbar({ cartCount, onOpenCart }) {
             {/* Mobile Menu Hamburger */}
             <button
               onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
-              className="md:hidden p-2 rounded-xl bg-stone-100 border border-stone-200 text-stone-700 hover:text-stone-900"
+              className={`md:hidden p-2 rounded-xl transition-colors ${
+                scrolled 
+                  ? 'bg-stone-100 border border-stone-200 text-stone-700 hover:text-stone-900' 
+                  : 'bg-black/40 border border-white/20 text-white hover:bg-black/60 backdrop-blur-md'
+              }`}
             >
               {mobileMenuOpen ? <X className="w-5 h-5" /> : <Menu className="w-5 h-5" />}
             </button>

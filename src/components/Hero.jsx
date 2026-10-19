@@ -58,9 +58,6 @@ export default function Hero({ onExploreMenu, onOrderDirect }) {
 
         {/* Clear Cinematic Culinary Dark Tint - Zero Milky White Wash */}
         <div className="absolute inset-0 bg-stone-950/55 backdrop-blur-[0.5px]" />
-        
-        {/* Subtle Bottom Transition into Next Section */}
-        <div className="absolute bottom-0 inset-x-0 h-20 bg-gradient-to-t from-[#f5efe6] via-[#f5efe6]/40 to-transparent" />
       </div>
 
       <div className="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10 w-full text-center">
