@@ -4,7 +4,7 @@
 
 @layer base {
   body {
-    @apply bg-[#08090d] text-slate-100 antialiased;
+    @apply bg-[#0d101a] text-slate-100 antialiased;
     font-feature-settings: "cv02", "cv03", "cv04", "cv11";
   }
 }
@@ -15,24 +15,25 @@
 }
 
 ::-webkit-scrollbar-track {
-  background: #0c0e14;
+  background: #0f121d;
 }
 
 ::-webkit-scrollbar-thumb {
-  background: #232733;
+  background: #2b334a;
   border-radius: 9999px;
 }
 
 ::-webkit-scrollbar-thumb:hover {
-  background: #ff4d00;
+  background: #ff1a75;
 }
 
 /* Glassmorphism & Glow utilities */
 .glass-panel {
-  background: rgba(18, 21, 29, 0.7);
+  background: rgba(20, 25, 40, 0.72);
   backdrop-filter: blur(16px);
   -webkit-backdrop-filter: blur(16px);
-  border: 1px solid rgba(255, 255, 255, 0.08);
+  border: 1px solid rgba(255, 255, 255, 0.12);
+  box-shadow: 0 8px 32px 0 rgba(0, 0, 0, 0.3);
 }
 
 .glass-panel-glow {

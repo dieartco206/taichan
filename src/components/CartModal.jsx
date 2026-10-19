@@ -74,8 +74,8 @@ export default function CartModal({ isOpen, onClose, cartItems, onUpdateQty, onR
               <ShoppingBag className="w-4 h-4" />
             </div>
             <div>
-              <h3 className="font-display font-bold text-lg text-white whitespace-nowrap">Keranjang Pesanan Taichan 56</h3>
-              <span className="text-[11px] text-slate-400 whitespace-nowrap">{totalQty} item dipilih</span>
+              <h3 className="font-display font-bold text-base sm:text-lg text-white">Keranjang</h3>
+              <span className="text-[11px] text-slate-400">{totalQty} item</span>
             </div>
           </div>
 
@@ -88,7 +88,7 @@ export default function CartModal({ isOpen, onClose, cartItems, onUpdateQty, onR
         </div>
 
         {/* Modal Body */}
-        <div className="p-5 overflow-y-auto space-y-5 flex-1">
+        <div className="p-4 sm:p-5 overflow-y-auto space-y-4 flex-1">
           
           {/* Cart Empty State */}
           {cartItems.length === 0 ? (
@@ -96,31 +96,31 @@ export default function CartModal({ isOpen, onClose, cartItems, onUpdateQty, onR
               <div className="w-16 h-16 rounded-full bg-white/5 border border-white/10 flex items-center justify-center mx-auto text-slate-500">
                 <ShoppingBag className="w-8 h-8" />
               </div>
-              <h4 className="font-display font-bold text-base text-white">Keranjangmu Masih Kosong</h4>
+              <h4 className="font-display font-bold text-base text-white">Keranjang Kosong</h4>
               <p className="text-xs text-slate-400 max-w-xs mx-auto">
-                Yuk pilih Sate Taichan favoritmu di daftar menu dan tambahkan ke keranjang.
+                Pilih menu untuk mulai pesan.
               </p>
             </div>
           ) : (
             <>
               {/* Item List */}
-              <div className="space-y-3">
+              <div className="space-y-2.5">
                 {cartItems.map((item) => (
                   <div 
                     key={item.id} 
-                    className="p-3.5 rounded-2xl bg-white/5 border border-white/5 flex items-center justify-between gap-3"
+                    className="p-3 rounded-2xl bg-white/[0.04] border border-white/10 flex items-center justify-between gap-3"
                   >
                     <div className="flex-1 min-w-0">
-                      <h4 className="font-display font-bold text-sm text-white truncate">{item.name}</h4>
-                      <div className="flex items-center gap-2 text-xs text-slate-400 mt-0.5">
+                      <h4 className="font-display font-bold text-xs sm:text-sm text-white leading-snug line-clamp-2">{item.name}</h4>
+                      <div className="flex items-center gap-1.5 text-[11px] text-slate-400 mt-0.5">
                         <span>{item.portion}</span>
                         <span>•</span>
-                        <span className="text-flame-400 font-semibold">{formatPrice(item.price)}</span>
+                        <span className="text-neonPink font-semibold">{formatPrice(item.price)}</span>
                       </div>
                     </div>
 
                     {/* Qty controls */}
-                    <div className="flex items-center gap-2">
+                    <div className="flex items-center gap-2 flex-shrink-0">
                       <div className="flex items-center bg-charcoal-950 border border-white/10 rounded-xl overflow-hidden">
                         <button
                           onClick={() => onUpdateQty(item.id, item.qty - 1)}
@@ -128,7 +128,7 @@ export default function CartModal({ isOpen, onClose, cartItems, onUpdateQty, onR
                         >
                           <Minus className="w-3.5 h-3.5" />
                         </button>
-                        <span className="px-2 text-xs font-bold text-white min-w-[24px] text-center">
+                        <span className="px-2 text-xs font-bold text-white min-w-[20px] text-center">
                           {item.qty}
                         </span>
                         <button
@@ -141,7 +141,7 @@ export default function CartModal({ isOpen, onClose, cartItems, onUpdateQty, onR
 
                       <button
                         onClick={() => onRemoveItem(item.id)}
-                        className="p-2 text-slate-500 hover:text-chili-500 transition-colors"
+                        className="p-1.5 text-slate-500 hover:text-rose-400 transition-colors"
                         title="Hapus"
                       >
                         <Trash2 className="w-4 h-4" />
@@ -152,26 +152,26 @@ export default function CartModal({ isOpen, onClose, cartItems, onUpdateQty, onR
               </div>
 
               {/* Order Options */}
-              <div className="pt-3 space-y-4">
+              <div className="pt-2 space-y-3.5">
                 
                 {/* Tipe Pesanan */}
                 <div>
-                  <label className="block text-xs font-bold text-slate-300 uppercase tracking-wider mb-2">
+                  <label className="block text-[11px] font-bold text-slate-300 uppercase tracking-wider mb-1.5">
                     Tipe Pesanan
                   </label>
                   <div className="grid grid-cols-3 gap-2">
                     {[
-                      { id: 'takeaway', label: 'Take Away (Bungkus)' },
-                      { id: 'dinein', label: 'Dine-In (Makan di Tempat)' },
-                      { id: 'delivery', label: 'Delivery (Antar)' }
+                      { id: 'takeaway', label: 'Bungkus' },
+                      { id: 'dinein', label: 'Dine In' },
+                      { id: 'delivery', label: 'Delivery' }
                     ].map((type) => (
                       <button
                         key={type.id}
                         type="button"
                         onClick={() => setOrderType(type.id)}
-                        className={`py-2 px-2.5 rounded-xl text-xs font-semibold border transition-all text-center ${
+                        className={`py-2 px-2 rounded-xl text-xs font-semibold border transition-all text-center ${
                           orderType === type.id 
-                            ? 'bg-flame-500 text-white border-flame-400 shadow-md' 
+                            ? 'bg-gradient-to-r from-neonPink to-rose-600 text-white border-neonPink shadow-md' 
                             : 'bg-white/5 border-white/10 text-slate-400 hover:bg-white/10'
                         }`}
                       >
@@ -183,8 +183,8 @@ export default function CartModal({ isOpen, onClose, cartItems, onUpdateQty, onR
 
                 {/* Pilihan Sambal */}
                 <div>
-                  <label className="block text-xs font-bold text-slate-300 uppercase tracking-wider mb-2">
-                    Pilihan Sambal & Jeruk Nipis
+                  <label className="block text-[11px] font-bold text-slate-300 uppercase tracking-wider mb-1.5">
+                    Sambal
                   </label>
                   <div className="grid grid-cols-2 gap-2">
                     <button
@@ -192,22 +192,22 @@ export default function CartModal({ isOpen, onClose, cartItems, onUpdateQty, onR
                       onClick={() => setSambalOption('pisah')}
                       className={`py-2 px-3 rounded-xl text-xs font-semibold border transition-all text-center ${
                         sambalOption === 'pisah' 
-                          ? 'bg-flame-500/20 text-flame-300 border-flame-500/50' 
+                          ? 'bg-neonPink/20 text-neonPink border-neonPink/50 font-bold' 
                           : 'bg-white/5 border-white/10 text-slate-400'
                       }`}
                     >
-                      Sambal Dipisah (Rekomendasi)
+                      Dipisah
                     </button>
                     <button
                       type="button"
                       onClick={() => setSambalOption('campur')}
                       className={`py-2 px-3 rounded-xl text-xs font-semibold border transition-all text-center ${
                         sambalOption === 'campur' 
-                          ? 'bg-flame-500/20 text-flame-300 border-flame-500/50' 
+                          ? 'bg-neonPink/20 text-neonPink border-neonPink/50 font-bold' 
                           : 'bg-white/5 border-white/10 text-slate-400'
                       }`}
                     >
-                      Langsung Disiram
+                      Dicampur
                     </button>
                   </div>
                 </div>
@@ -215,37 +215,37 @@ export default function CartModal({ isOpen, onClose, cartItems, onUpdateQty, onR
                 {/* Nama & Alamat Input */}
                 <div className="space-y-2.5">
                   <div>
-                    <label className="block text-xs font-medium text-slate-400 mb-1">Nama Pemesan</label>
+                    <label className="block text-xs font-medium text-slate-400 mb-1">Nama</label>
                     <input
                       type="text"
-                      placeholder="Contoh: Kak Dika (Margonda)"
+                      placeholder="Nama Anda"
                       value={customerName}
                       onChange={(e) => setCustomerName(e.target.value)}
-                      className="w-full px-3.5 py-2.5 rounded-xl bg-charcoal-950 border border-white/10 text-xs sm:text-sm text-white focus:outline-none focus:border-flame-500"
+                      className="w-full px-3.5 py-2.5 rounded-xl bg-charcoal-950 border border-white/10 text-xs sm:text-sm text-white focus:outline-none focus:border-neonPink"
                     />
                   </div>
 
                   {orderType === 'delivery' && (
                     <div>
-                      <label className="block text-xs font-medium text-slate-400 mb-1">Alamat Pengiriman</label>
+                      <label className="block text-xs font-medium text-slate-400 mb-1">Alamat</label>
                       <input
                         type="text"
-                        placeholder="Contoh: Kost Margonda Residence / Jl. Margonda No. 12"
+                        placeholder="Alamat lengkap / patokan"
                         value={customerAddress}
                         onChange={(e) => setCustomerAddress(e.target.value)}
-                        className="w-full px-3.5 py-2.5 rounded-xl bg-charcoal-950 border border-white/10 text-xs sm:text-sm text-white focus:outline-none focus:border-flame-500"
+                        className="w-full px-3.5 py-2.5 rounded-xl bg-charcoal-950 border border-white/10 text-xs sm:text-sm text-white focus:outline-none focus:border-neonPink"
                       />
                     </div>
                   )}
 
                   <div>
-                    <label className="block text-xs font-medium text-slate-400 mb-1">Catatan Tambahan (Opsional)</label>
+                    <label className="block text-xs font-medium text-slate-400 mb-1">Catatan (Opsional)</label>
                     <input
                       type="text"
-                      placeholder="Contoh: Jeruk nipis lebihin, bakar kering, sambal uleg ekstra pedas"
+                      placeholder="Misal: bakar kering, jeruk nipis lebih"
                       value={specialNotes}
                       onChange={(e) => setSpecialNotes(e.target.value)}
-                      className="w-full px-3.5 py-2.5 rounded-xl bg-charcoal-950 border border-white/10 text-xs sm:text-sm text-white focus:outline-none focus:border-flame-500"
+                      className="w-full px-3.5 py-2.5 rounded-xl bg-charcoal-950 border border-white/10 text-xs sm:text-sm text-white focus:outline-none focus:border-neonPink"
                     />
                   </div>
                 </div>
@@ -261,7 +261,7 @@ export default function CartModal({ isOpen, onClose, cartItems, onUpdateQty, onR
           <div className="p-5 border-t border-white/[0.04] bg-charcoal-950 space-y-3">
             <div className="flex items-center justify-between">
               <div>
-                <span className="text-[11px] text-slate-400 uppercase tracking-wider block">Total Estimasi</span>
+                <span className="text-[11px] text-slate-400 uppercase tracking-wider block">Total</span>
                 <span className="font-display font-extrabold text-xl text-white">
                   {formatPrice(totalAmount)}
                 </span>
@@ -277,14 +277,14 @@ export default function CartModal({ isOpen, onClose, cartItems, onUpdateQty, onR
 
             <button
               onClick={handleSendToWhatsApp}
-              className="w-full py-4 rounded-2xl bg-gradient-to-r from-emerald-500 to-green-600 hover:from-emerald-600 hover:to-green-700 text-white font-bold text-sm flex items-center justify-center gap-2 shadow-xl shadow-emerald-600/30 transition-all hover:scale-[1.01]"
+              className="w-full py-3.5 rounded-2xl bg-gradient-to-r from-emerald-500 to-green-600 hover:from-emerald-600 hover:to-green-700 text-white font-bold text-sm flex items-center justify-center gap-2 shadow-xl shadow-emerald-600/30 transition-all hover:scale-[1.01]"
             >
               <Send className="w-4 h-4" />
-              <span>Kirim Format Order ke WhatsApp</span>
+              <span>Pesan via WhatsApp</span>
             </button>
             
             <p className="text-[11px] text-center text-slate-500">
-              Pesan langsung terkirim ke WhatsApp resmi Taichan 56 Margonda.
+              Otomatis terhubung ke WhatsApp resmi Taichan 56
             </p>
           </div>
         )}

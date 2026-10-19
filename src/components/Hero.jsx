@@ -14,15 +14,16 @@ export default function Hero({ onExploreMenu, onOrderDirect }) {
         <img 
           src="/brand/bg_hero_grill.jpg" 
           alt="Sate Taichan Grill Atmosphere" 
-          className="w-full h-full object-cover object-center opacity-30 scale-105 filter brightness-75 contrast-125"
+          className="w-full h-full object-cover object-center opacity-55 scale-100 filter brightness-95 contrast-115"
         />
-        {/* Dark Vignette & Gradient Overlays */}
-        <div className="absolute inset-0 bg-gradient-to-b from-[#07080d]/90 via-[#07080d]/80 to-[#07080d]" />
-        <div className="absolute inset-0 bg-[radial-gradient(ellipse_at_center,_var(--tw-gradient-stops))] from-transparent via-[#07080d]/70 to-[#07080d]" />
+        {/* Radiant Vignette & Atmospheric Overlays */}
+        <div className="absolute inset-0 bg-gradient-to-b from-[#0d111e]/60 via-[#0d111e]/75 to-[#0d111e]" />
+        <div className="absolute inset-0 bg-[radial-gradient(ellipse_at_center,_var(--tw-gradient-stops))] from-transparent via-[#0d111e]/50 to-[#0d111e]" />
         
-        {/* Ambient Neon Glows */}
-        <div className="absolute top-1/4 left-1/3 -translate-y-1/2 w-[600px] h-[600px] bg-neonPink/15 rounded-full blur-[160px]" />
-        <div className="absolute top-1/3 right-1/4 w-[500px] h-[500px] bg-neonCyan/12 rounded-full blur-[140px]" />
+        {/* Luminous Neon & Warm Ember Glows */}
+        <div className="absolute -top-10 left-1/4 w-[650px] h-[650px] bg-neonPink/25 rounded-full blur-[140px]" />
+        <div className="absolute top-1/3 right-10 w-[550px] h-[550px] bg-neonCyan/20 rounded-full blur-[130px]" />
+        <div className="absolute bottom-10 left-1/3 w-[450px] h-[450px] bg-orange-500/20 rounded-full blur-[120px]" />
       </div>
 
       <div className="max-w-[1440px] mx-auto px-4 sm:px-6 lg:px-10 relative z-10 w-full">

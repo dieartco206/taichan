@@ -78,15 +78,20 @@ export default function App() {
   const totalCartCount = cartItems.reduce((acc, item) => acc + item.qty, 0);
 
   return (
-    <div className="min-h-screen bg-[#07080d] text-slate-100 flex flex-col selection:bg-neonPink selection:text-white relative">
+    <div className="min-h-screen bg-[#0c101d] text-slate-100 flex flex-col selection:bg-neonPink selection:text-white relative overflow-x-hidden">
       {/* Global Ambient Charcoal Dot Texture */}
       <div 
-        className="fixed inset-0 pointer-events-none opacity-[0.03] z-0" 
+        className="fixed inset-0 pointer-events-none opacity-[0.04] z-0" 
         style={{
-          backgroundImage: `radial-gradient(rgba(255, 255, 255, 0.5) 1px, transparent 1px)`,
+          backgroundImage: `radial-gradient(rgba(255, 255, 255, 0.6) 1px, transparent 1px)`,
           backgroundSize: '24px 24px'
         }}
       />
+
+      {/* Global Ambient Radiant Glow Orbs */}
+      <div className="fixed top-0 left-1/4 w-[700px] h-[700px] bg-neonPink/[0.08] rounded-full blur-[180px] pointer-events-none z-0" />
+      <div className="fixed bottom-1/4 right-10 w-[600px] h-[600px] bg-neonCyan/[0.07] rounded-full blur-[170px] pointer-events-none z-0" />
+      <div className="fixed top-1/2 left-0 w-[500px] h-[500px] bg-amber-500/[0.05] rounded-full blur-[160px] pointer-events-none z-0" />
 
       {/* Top Navbar */}
       <Navbar 

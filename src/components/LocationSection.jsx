@@ -4,19 +4,20 @@ import { RESTAURANT_INFO } from '../data/restaurantData';
 
 export default function LocationSection() {
   return (
-    <section id="lokasi" className="py-16 sm:py-20 relative overflow-hidden bg-charcoal-950">
+    <section id="lokasi" className="py-16 sm:py-20 relative overflow-hidden bg-[#0d111e]/90">
       
       {/* Background night street ambience */}
       <div className="absolute inset-0 pointer-events-none overflow-hidden">
         <img 
           src="/brand/bg_night_street.jpg" 
           alt="Night Street Margonda Atmosphere" 
-          className="w-full h-full object-cover object-center opacity-20 filter brightness-50"
+          className="w-full h-full object-cover object-center opacity-35 filter brightness-85 contrast-110"
         />
-        <div className="absolute inset-0 bg-gradient-to-b from-[#07080d] via-[#07080d]/80 to-[#07080d]" />
+        <div className="absolute inset-0 bg-gradient-to-b from-[#0d111e] via-[#0d111e]/75 to-[#0d111e]" />
         
-        {/* Ambient glow */}
-        <div className="absolute top-1/2 left-0 w-[500px] h-[500px] bg-neonPink/10 rounded-full blur-[160px]" />
+        {/* Luminous ambient glows */}
+        <div className="absolute top-1/2 -left-10 w-[550px] h-[550px] bg-neonPink/20 rounded-full blur-[140px]" />
+        <div className="absolute bottom-10 -right-10 w-[450px] h-[450px] bg-neonCyan/15 rounded-full blur-[130px]" />
       </div>
 
       <div className="max-w-[1440px] mx-auto px-4 sm:px-6 lg:px-10 relative z-10">

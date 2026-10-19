@@ -89,21 +89,21 @@ export default function Navbar({ cartCount, onOpenCart }) {
               <Instagram className="w-5 h-5" />
             </a>
 
-            {/* Primary Cart CTA with Floating Badge */}
+            {/* Primary Cart CTA with Floating Badge (Icon Only) */}
             <button
               onClick={onOpenCart}
-              className="relative p-2.5 sm:px-4 sm:py-2 rounded-xl bg-gradient-to-r from-neonPink to-rose-600 hover:from-neonPink/90 hover:to-rose-500 text-white font-bold text-xs flex items-center gap-2 shadow-[0_0_15px_rgba(255,26,117,0.35)] hover:shadow-[0_0_22px_rgba(255,26,117,0.55)] transition-all flex-shrink-0"
+              className="relative p-2.5 rounded-xl bg-gradient-to-r from-neonPink to-rose-600 hover:from-neonPink/90 hover:to-rose-500 text-white flex items-center justify-center shadow-[0_0_15px_rgba(255,26,117,0.4)] hover:shadow-[0_0_22px_rgba(255,26,117,0.6)] hover:scale-105 active:scale-95 transition-all flex-shrink-0"
               title="Keranjang Pesanan"
+              aria-label="Keranjang Pesanan"
             >
               <div className="relative flex items-center justify-center">
-                <ShoppingBag className="w-4 h-4" />
+                <ShoppingBag className="w-5 h-5" />
                 {cartCount > 0 && (
                   <span className="absolute -top-2.5 -right-2.5 flex h-4 min-w-[16px] px-1 items-center justify-center rounded-full bg-white text-charcoal-950 text-[10px] font-black shadow-md border border-neonPink/30 leading-none">
                     {cartCount}
                   </span>
                 )}
               </div>
-              <span className="hidden sm:inline font-bold">Pesanan</span>
             </button>
 
             {/* Mobile Menu Hamburger */}

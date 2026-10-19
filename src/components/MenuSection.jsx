@@ -22,20 +22,21 @@ export default function MenuSection({ onAddToCart, cartItems }) {
   };
 
   return (
-    <section id="menu" className="py-16 sm:py-20 relative overflow-hidden bg-charcoal-950">
+    <section id="menu" className="py-16 sm:py-20 relative overflow-hidden bg-[#0d111e]/80">
       
-      {/* Background dark culinary texture */}
+      {/* Background culinary charcoal texture */}
       <div className="absolute inset-0 pointer-events-none overflow-hidden">
         <img 
           src="/brand/bg_dark_texture.jpg" 
           alt="Charcoal Texture Backdrop" 
-          className="w-full h-full object-cover object-center opacity-15 filter brightness-50"
+          className="w-full h-full object-cover object-center opacity-30 filter brightness-90 contrast-110"
         />
-        <div className="absolute inset-0 bg-gradient-to-b from-[#07080d] via-transparent to-[#07080d]" />
+        <div className="absolute inset-0 bg-gradient-to-b from-[#0d111e] via-transparent to-[#0d111e]" />
         
-        {/* Neon ambient glows */}
-        <div className="absolute top-1/4 right-0 w-[500px] h-[500px] bg-neonPink/10 rounded-full blur-[160px]" />
-        <div className="absolute bottom-10 left-0 w-[500px] h-[500px] bg-neonCyan/10 rounded-full blur-[160px]" />
+        {/* Luminous ambient neon glows */}
+        <div className="absolute top-1/4 -right-10 w-[550px] h-[550px] bg-neonPink/20 rounded-full blur-[140px]" />
+        <div className="absolute bottom-10 -left-10 w-[550px] h-[550px] bg-neonCyan/20 rounded-full blur-[140px]" />
+        <div className="absolute top-1/2 left-1/3 w-[400px] h-[400px] bg-orange-500/10 rounded-full blur-[130px]" />
       </div>
 
       <div className="max-w-[1440px] mx-auto px-4 sm:px-6 lg:px-10 relative z-10">
