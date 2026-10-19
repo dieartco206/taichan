@@ -5,7 +5,7 @@ import { TESTIMONIALS } from '../data/restaurantData';
 
 export default function TestimonialSection() {
   return (
-    <section className="py-20 relative overflow-hidden bg-charcoal-900/50 border-t border-white/5">
+    <section className="py-20 relative overflow-hidden bg-charcoal-900/30">
       
       {/* Background glow */}
       <div className="absolute top-1/2 right-10 w-[500px] h-[500px] bg-neonPink/10 rounded-full blur-[160px] pointer-events-none" />
@@ -53,7 +53,7 @@ export default function TestimonialSection() {
               </div>
 
               {/* Author & Favorite in Single Line */}
-              <div className="pt-3 border-t border-white/10 flex items-center justify-between gap-2 whitespace-nowrap">
+              <div className="pt-3 flex items-center justify-between gap-2 whitespace-nowrap">
                 <div className="truncate">
                   <h4 className="font-display font-bold text-sm text-white truncate">{testi.name}</h4>
                   <span className="text-[11px] text-slate-400 truncate block">{testi.role}</span>

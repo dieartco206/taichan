@@ -146,7 +146,7 @@ export default function MenuSection({ onAddToCart, cartItems }) {
                   </div>
 
                   {/* Card Footer: Price & Add Button (Strict Single Line) */}
-                  <div className="p-4 pt-2 flex items-center justify-between border-t border-white/5">
+                  <div className="p-4 pt-1 flex items-center justify-between">
                     <div className="whitespace-nowrap">
                       <span className="text-[10px] text-slate-500 uppercase tracking-wider block font-medium">Harga</span>
                       <span className="font-display font-extrabold text-base text-white">

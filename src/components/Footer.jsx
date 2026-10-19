@@ -6,10 +6,10 @@ import { RESTAURANT_INFO } from '../data/restaurantData';
 
 export default function Footer() {
   return (
-    <footer className="bg-charcoal-950 border-t border-neonPink/20 pt-14 pb-10 text-slate-400 text-xs sm:text-sm">
+    <footer className="bg-charcoal-950 pt-16 pb-10 text-slate-400 text-xs sm:text-sm">
       <div className="max-w-[1440px] mx-auto px-4 sm:px-6 lg:px-10">
         
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-12 gap-8 pb-10 border-b border-white/10">
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-12 gap-8 pb-10 border-b border-white/[0.04]">
           
           {/* Col 1: Brand Info */}
           <div className="lg:col-span-5 space-y-3.5">

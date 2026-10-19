@@ -65,7 +65,7 @@ export default function LocationSection() {
               </div>
 
               {/* Features list in Single Lines */}
-              <div className="pt-2 border-t border-white/10 space-y-2 text-xs text-slate-300">
+              <div className="pt-2 space-y-2 text-xs text-slate-300">
                 <div className="flex items-center gap-2 whitespace-nowrap">
                   <Check className="w-4 h-4 text-emerald-400 flex-shrink-0" />
                   <span>Dine-In (Makan di tempat suasana santai malam Depok)</span>
@@ -83,7 +83,7 @@ export default function LocationSection() {
             </div>
 
             {/* Direction Action Buttons */}
-            <div className="pt-3 border-t border-white/10 flex flex-col sm:flex-row gap-2.5">
+            <div className="pt-2 flex flex-col sm:flex-row gap-2.5">
               <a
                 href={RESTAURANT_INFO.mapsUrl}
                 target="_blank"

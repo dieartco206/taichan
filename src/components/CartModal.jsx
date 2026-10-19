@@ -68,7 +68,7 @@ export default function CartModal({ isOpen, onClose, cartItems, onUpdateQty, onR
       >
         
         {/* Modal Header */}
-        <div className="p-5 border-b border-white/10 flex items-center justify-between bg-charcoal-950/80">
+        <div className="p-5 border-b border-white/[0.04] flex items-center justify-between bg-charcoal-950/80">
           <div className="flex items-center gap-2.5">
             <div className="w-8 h-8 rounded-xl bg-neonPink/20 text-neonPink flex items-center justify-center">
               <ShoppingBag className="w-4 h-4" />
@@ -152,7 +152,7 @@ export default function CartModal({ isOpen, onClose, cartItems, onUpdateQty, onR
               </div>
 
               {/* Order Options */}
-              <div className="pt-3 border-t border-white/10 space-y-4">
+              <div className="pt-3 space-y-4">
                 
                 {/* Tipe Pesanan */}
                 <div>
@@ -258,7 +258,7 @@ export default function CartModal({ isOpen, onClose, cartItems, onUpdateQty, onR
 
         {/* Modal Footer: Total & WA Button */}
         {cartItems.length > 0 && (
-          <div className="p-5 border-t border-white/10 bg-charcoal-950 space-y-3">
+          <div className="p-5 border-t border-white/[0.04] bg-charcoal-950 space-y-3">
             <div className="flex items-center justify-between">
               <div>
                 <span className="text-[11px] text-slate-400 uppercase tracking-wider block">Total Estimasi</span>

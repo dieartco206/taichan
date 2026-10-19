@@ -43,7 +43,7 @@ export default function InstagramFeedSection() {
                   <span><strong>1</strong> following</span>
                 </div>
 
-                <div className="text-xs text-slate-300 flex flex-wrap items-center justify-center sm:justify-start gap-2 pt-1 border-t border-white/10 whitespace-nowrap">
+                <div className="text-xs text-slate-300 flex flex-wrap items-center justify-center sm:justify-start gap-2 pt-1.5 whitespace-nowrap">
                   <span className="font-bold text-neonCyan">{RESTAURANT_INFO.tagline}</span>
                   <span className="text-slate-500">•</span>
                   <span className="text-slate-400">Available on : GoFood • GrabFood • ShopeeFood</span>
@@ -133,7 +133,7 @@ export default function InstagramFeedSection() {
                   {post.caption}
                 </p>
 
-                <div className="pt-2 border-t border-white/5 flex items-center justify-between text-[11px] text-slate-400 whitespace-nowrap">
+                <div className="pt-2 flex items-center justify-between text-[11px] text-slate-400 whitespace-nowrap">
                   <span className="flex items-center gap-1 font-medium text-neonPink">
                     <Instagram className="w-3.5 h-3.5" />
                     taichan56djoeanda

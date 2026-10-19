@@ -15,7 +15,7 @@ export default function WhyTaichanSection() {
   };
 
   return (
-    <section id="why-us" className="py-20 relative overflow-hidden bg-charcoal-900/40 border-t border-white/5">
+    <section id="why-us" className="py-20 relative overflow-hidden bg-charcoal-900/30">
       
       {/* Background glow */}
       <div className="absolute inset-0 pointer-events-none">
@@ -65,7 +65,7 @@ export default function WhyTaichanSection() {
                 </p>
               </div>
 
-              <div className="mt-4 pt-3 border-t border-white/5 flex items-center justify-between text-[11px] whitespace-nowrap">
+              <div className="mt-4 pt-1 flex items-center justify-between text-[11px] whitespace-nowrap">
                 <span className="text-slate-500">Jaminan Rasa</span>
                 <span className="text-neonCyan font-bold">100% Authentic</span>
               </div>

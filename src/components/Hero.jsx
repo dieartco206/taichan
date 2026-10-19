@@ -160,7 +160,7 @@ export default function Hero({ onExploreMenu, onOrderDirect }) {
               </div>
 
               {/* 3 Quick Specs in Single Line */}
-              <div className="grid grid-cols-3 gap-2 mt-3 pt-2 border-t border-white/10 text-center text-xs">
+              <div className="grid grid-cols-3 gap-2 mt-3 pt-1 text-center text-xs">
                 <div className="p-2 rounded-xl bg-white/[0.03] border border-white/5 whitespace-nowrap">
                   <span className="block text-[10px] text-slate-400 font-semibold uppercase">Pilihan Daging</span>
                   <span className="font-bold text-white">Dada, Paha & Kulit</span>

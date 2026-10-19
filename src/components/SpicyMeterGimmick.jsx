@@ -35,7 +35,7 @@ export default function SpicyMeterGimmick() {
   };
 
   return (
-    <section id="spicy-meter" className="py-20 relative overflow-hidden bg-charcoal-900/60 border-y border-white/5">
+    <section id="spicy-meter" className="py-20 relative overflow-hidden bg-charcoal-900/40">
       
       {/* Background glow dynamic */}
       <div className="absolute inset-0 pointer-events-none">
@@ -98,7 +98,7 @@ export default function SpicyMeterGimmick() {
                   </h4>
                 </div>
 
-                <div className="mt-3 pt-2 border-t border-white/10 flex items-center justify-between text-[11px] whitespace-nowrap">
+                <div className="mt-3 pt-1 flex items-center justify-between text-[11px] whitespace-nowrap">
                   <span className="text-slate-400 font-mono">{lvl.scoville}</span>
                   <span className={`font-semibold ${isSelected ? 'text-neonPink' : 'text-slate-500'}`}>
                     {lvl.heatPercentage}% Heat
