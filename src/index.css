@@ -44,9 +44,35 @@
 }
 
 .text-gradient-flame {
-  background: linear-gradient(135deg, #fff 20%, #ff8843 60%, #ff4d00 100%);
+  background: linear-gradient(135deg, #fff 15%, #ff2a85 55%, #00e5ff 100%);
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
+}
+
+.text-gradient-neon {
+  background: linear-gradient(135deg, #00e5ff 0%, #ff1a75 50%, #ff8843 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+.neon-text-pink {
+  color: #ff1a75;
+  text-shadow: 0 0 10px rgba(255, 26, 117, 0.7), 0 0 25px rgba(255, 26, 117, 0.4);
+}
+
+.neon-text-cyan {
+  color: #00e5ff;
+  text-shadow: 0 0 10px rgba(0, 229, 255, 0.7), 0 0 25px rgba(0, 229, 255, 0.4);
+}
+
+.neon-border-pink {
+  border-color: rgba(255, 26, 117, 0.4);
+  box-shadow: 0 0 15px -3px rgba(255, 26, 117, 0.3);
+}
+
+.neon-border-cyan {
+  border-color: rgba(0, 229, 255, 0.4);
+  box-shadow: 0 0 15px -3px rgba(0, 229, 255, 0.3);
 }
 
 .text-gradient-gold {

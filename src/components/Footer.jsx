@@ -1,11 +1,12 @@
 import React from 'react';
 import { Flame, MapPin, Clock, Phone, Heart } from 'lucide-react';
 import Instagram from './InstagramIcon';
+import TaichanLogo from './TaichanLogo';
 import { RESTAURANT_INFO } from '../data/restaurantData';
 
 export default function Footer() {
   return (
-    <footer className="bg-charcoal-950 border-t border-white/10 pt-16 pb-12 text-slate-400 text-xs sm:text-sm">
+    <footer className="bg-charcoal-950 border-t border-neonPink/20 pt-16 pb-12 text-slate-400 text-xs sm:text-sm">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-12 gap-10 pb-12 border-b border-white/10">
@@ -13,15 +14,13 @@ export default function Footer() {
           {/* Col 1: Brand Info */}
           <div className="lg:col-span-5 space-y-4">
             <div className="flex items-center gap-3">
-              <div className="w-10 h-10 rounded-xl bg-gradient-to-br from-flame-500 to-chili-600 flex items-center justify-center shadow-lg shadow-flame-500/30 text-white">
-                <Flame className="w-6 h-6 animate-pulse" />
-              </div>
+              <TaichanLogo size="md" />
               <div>
-                <span className="font-display font-extrabold text-xl tracking-tight text-white block">
-                  TAICHAN 56 DJOEANDA
+                <span className="font-display font-black text-xl tracking-tight text-white block">
+                  <span className="text-neonCyan">56</span> <span className="text-neonPink">TAICHAN</span> DJOEANDA
                 </span>
-                <span className="text-xs text-flame-400 font-semibold">
-                  Kuliner Malam Legendaris Margonda Depok
+                <span className="text-xs text-neonCyan font-semibold">
+                  {RESTAURANT_INFO.officialTitle} • {RESTAURANT_INFO.tagline}
                 </span>
               </div>
             </div>

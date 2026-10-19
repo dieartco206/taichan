@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from 'react';
-import { Flame, ShoppingBag, MapPin, Clock, Menu, X } from 'lucide-react';
+import { ShoppingBag, MapPin, Clock, Menu, X, Flame } from 'lucide-react';
 import Instagram from './InstagramIcon';
+import TaichanLogo from './TaichanLogo';
 import { RESTAURANT_INFO } from '../data/restaurantData';
 
 export default function Navbar({ cartCount, onOpenCart }) {
@@ -20,12 +21,10 @@ export default function Navbar({ cartCount, onOpenCart }) {
   useEffect(() => {
     const checkOpenStatus = () => {
       const now = new Date();
-      // Konversi ke WIB (UTC+7)
       const utc = now.getTime() + (now.getTimezoneOffset() * 60000);
       const wibTime = new Date(utc + (3600000 * 7));
       const hours = wibTime.getHours();
 
-      // Buka antara jam 18:00 sampai 02:00 subuh
       const open = (hours >= 18 || hours < 2);
       setIsOpenNow(open);
     };
@@ -46,29 +45,27 @@ export default function Navbar({ cartCount, onOpenCart }) {
   return (
     <header className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 ${
       scrolled 
-        ? 'bg-charcoal-950/85 backdrop-blur-md border-b border-white/10 shadow-2xl py-3' 
-        : 'bg-gradient-to-b from-charcoal-950/90 to-transparent py-5'
+        ? 'bg-[#07080d]/90 backdrop-blur-md border-b border-[#ff1a75]/20 shadow-[0_4px_30px_rgba(0,0,0,0.8)] py-3' 
+        : 'bg-gradient-to-b from-[#07080d]/95 to-transparent py-4'
     }`}>
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="flex items-center justify-between">
           
-          {/* Logo & Brand */}
+          {/* Official Logo & Brand */}
           <a href="#" className="flex items-center gap-3 group">
-            <div className="w-10 h-10 rounded-xl bg-gradient-to-br from-flame-500 to-chili-600 flex items-center justify-center shadow-lg shadow-flame-500/30 group-hover:scale-105 transition-transform duration-300">
-              <Flame className="w-6 h-6 text-white animate-pulse" />
-            </div>
+            <TaichanLogo size="md" />
             <div>
               <div className="flex items-center gap-1.5">
-                <span className="font-display font-extrabold text-xl tracking-tight text-white group-hover:text-flame-500 transition-colors">
-                  TAICHAN 56
+                <span className="font-display font-black text-xl tracking-tight text-white group-hover:text-neonPink transition-colors">
+                  <span className="text-neonCyan">56</span> TAICHAN
                 </span>
-                <span className="text-xs font-semibold px-2 py-0.5 rounded-full bg-flame-500/20 text-flame-500 border border-flame-500/30">
+                <span className="text-[10px] font-bold px-2 py-0.5 rounded-full bg-neonPink/20 text-neonPink border border-neonPink/40 tracking-wider">
                   DJOEANDA
                 </span>
               </div>
               <div className="text-[11px] text-slate-400 flex items-center gap-1 font-medium">
-                <MapPin className="w-3 h-3 text-chili-500" />
-                <span>Margonda Raya, Depok</span>
+                <MapPin className="w-3 h-3 text-neonPink" />
+                <span>Samping KFC Margonda, Depok</span>
               </div>
             </div>
           </a>

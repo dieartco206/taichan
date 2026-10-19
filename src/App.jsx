@@ -9,6 +9,7 @@ import TestimonialSection from './components/TestimonialSection';
 import LocationSection from './components/LocationSection';
 import Footer from './components/Footer';
 import CartModal from './components/CartModal';
+import TaichanLogo from './components/TaichanLogo';
 import { ShoppingBag, Flame, ArrowUp } from 'lucide-react';
 import { RESTAURANT_INFO } from './data/restaurantData';
 
@@ -131,12 +132,10 @@ export default function App() {
       <div className="fixed bottom-4 left-4 right-4 sm:hidden z-40">
         <div className="p-3 rounded-2xl bg-charcoal-900/95 border border-flame-500/40 backdrop-blur-xl shadow-2xl flex items-center justify-between gap-3">
           <div className="flex items-center gap-2.5">
-            <div className="w-8 h-8 rounded-xl bg-flame-500/20 text-flame-500 flex items-center justify-center">
-              <Flame className="w-4 h-4 animate-pulse" />
-            </div>
+            <TaichanLogo size="sm" />
             <div>
-              <span className="text-xs font-bold text-white block">Taichan 56 Margonda</span>
-              <span className="text-[10px] text-slate-400">18:00 - 02:00 WIB</span>
+              <span className="text-xs font-bold text-white block">56 Taichan Djoeanda</span>
+              <span className="text-[10px] text-neonCyan font-medium">Buka 18:00 - 02:00 WIB</span>
             </div>
           </div>
 

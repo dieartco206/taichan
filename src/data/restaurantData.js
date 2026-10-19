@@ -3,9 +3,10 @@
 // Lokasi: Jl. Margonda Raya (Samping KFC Margonda), Depok
 
 export const RESTAURANT_INFO = {
-  name: "Sate Taichan 56 Djoeanda",
-  tagline: "Sensasi Sate Taichan Pedas Gurih Nampol di Margonda Depok",
-  shortDesc: "Daging ayam tebal & juicy dibakar sempurna, disiram sambal uleg rawit merah pedas segar berpadu perasan jeruk nipis asli dan nasi daun jeruk wangi legendaris.",
+  name: "Taichan 56 Djoeanda",
+  officialTitle: "SATE TAICHAN DEPOK",
+  tagline: "THE GRILL TAICHAN 🔥",
+  shortDesc: "Sate Taichan Depok daging tebal juicy dipadu lelehan mozarella, sambal uleg rawit segar, perasan jeruk nipis asli, dan taburan bumbu gurih khas Taichan 56.",
   instagramHandle: "taichan56djoeanda",
   instagramUrl: "https://www.instagram.com/taichan56djoeanda/",
   locationName: "Jl. Margonda Raya (Samping KFC Margonda)",
@@ -17,9 +18,9 @@ export const RESTAURANT_INFO = {
   openTimeHour: 18,
   closeTimeHour: 2, // 02:00 next day
   whatsappNumber: "6281299565656",
+  shopeefoodUrl: "https://shopee.co.id/universal-link/now-food/shop/20311468",
   gofoodUrl: "https://gofood.link",
   grabfoodUrl: "https://grab.com",
-  shopeefoodUrl: "https://shopee.co.id",
   rating: 4.8,
   totalReviews: "1.200+",
   skewersSoldThisMonth: "25.000+"
@@ -42,7 +43,7 @@ export const MENU_ITEMS = [
     price: 35000,
     portion: "10 Tusuk",
     description: "Kombinasi juara daging dada empuk tebal dan kulit renyah gurih. Sudah termasuk sambal taichan khas & jeruk nipis.",
-    image: "https://images.unsplash.com/photo-1555939594-58d7cb561ad1?auto=format&fit=crop&w=800&q=80",
+    image: "/brand/post_taichan_kulit.png",
     isBestSeller: true,
     spicyLevel: 3,
     badge: "Paling Laris 🔥"
@@ -54,7 +55,7 @@ export const MENU_ITEMS = [
     price: 35000,
     portion: "10 Tusuk",
     description: "Daging dada ayam pilihan tanpa lemak, potongan tebal, juicy di dalam, dan dibakar dengan marinasi kaldu gurih.",
-    image: "https://images.unsplash.com/photo-1529563021893-cc83c992d75d?auto=format&fit=crop&w=800&q=80",
+    image: "/brand/post_taichan_original.png",
     isBestSeller: true,
     spicyLevel: 3,
     badge: "Favorit Fitness/Lean"
@@ -66,7 +67,7 @@ export const MENU_ITEMS = [
     price: 35000,
     portion: "10 Tusuk",
     description: "Daging paha ayam super lembut (tender), berpadu gurih alaminya sari daging ayam saat dibakar arang panas.",
-    image: "https://images.unsplash.com/photo-1544025162-d76694265947?auto=format&fit=crop&w=800&q=80",
+    image: "/brand/post_taichan_original.png",
     isBestSeller: true,
     spicyLevel: 3,
     badge: "Super Tender"
@@ -78,7 +79,7 @@ export const MENU_ITEMS = [
     price: 35000,
     portion: "10 Tusuk",
     description: "Kulit ayam renyah garing di luar, kenyal gurih di dalam. Bumbu meresap sampai gigitan terakhir.",
-    image: "https://images.unsplash.com/photo-1626645738196-c2a7c87a8f58?auto=format&fit=crop&w=800&q=80",
+    image: "/brand/post_taichan_kulit.png",
     isBestSeller: false,
     spicyLevel: 3,
     badge: "Kriuk Nagih"
@@ -90,7 +91,7 @@ export const MENU_ITEMS = [
     price: 40000,
     portion: "10 Tusuk",
     description: "Sate taichan daging tebal dibalut keju mozarella tebal yang ditorch hingga meleleh gurih creamy.",
-    image: "https://images.unsplash.com/photo-1534308983496-4fabb1a015ee?auto=format&fit=crop&w=800&q=80",
+    image: "/brand/post_mozzarella.png",
     isBestSeller: false,
     spicyLevel: 2,
     badge: "Special Mozza"
@@ -275,51 +276,30 @@ export const SPICE_LEVELS = [
 export const INSTAGRAM_POSTS = [
   {
     id: "ig-1",
-    imageUrl: "https://images.unsplash.com/photo-1555939594-58d7cb561ad1?auto=format&fit=crop&w=800&q=80",
-    caption: "Malam-malam di Margonda paling nikmat bakar sate taichan yang dagingnya tebel-tebel! 🔥🍢 #taichan56djoeanda #kulinermargonda",
+    imageUrl: "/brand/post_mozzarella.png",
+    caption: "Lelehan keju Mozarella tebal di atas sate taichan daging bakar panas dipadu perasan jeruk nipis segar & sambal uleg rawit! 🔥🧀 #thegrilltaichan #taichan56djoeanda",
     likes: 842,
     comments: 54,
-    isReel: false
+    isReel: false,
+    title: "Taichan Mozarella Melt"
   },
   {
     id: "ig-2",
-    imageUrl: "https://images.unsplash.com/photo-1588166524941-3bf61a9c41db?auto=format&fit=crop&w=800&q=80",
-    caption: "Kunci nikmatnya ada di perasan jeruk nipis segar di atas sambal rawit merah uleg asli. Segar, pedas, gurih! 🌶️🍋",
+    imageUrl: "/brand/post_taichan_original.png",
+    caption: "Sate Taichan daging pilihan dengan taburan bumbu gurih khas 56, sambal pedas segar, dan jeruk nipis murni. THE GRILL TAICHAN 🔥",
     likes: 1205,
     comments: 89,
-    isReel: true
+    isReel: false,
+    title: "Sate Taichan Daging + Taburan Gurih"
   },
   {
     id: "ig-3",
-    imageUrl: "https://images.unsplash.com/photo-1626645738196-c2a7c87a8f58?auto=format&fit=crop&w=800&q=80",
-    caption: "Siapa tim kulit krispi? Garing di luar tapi pas digigit juicy kenyal gurihnya meledak di mulut! 🤤✨",
+    imageUrl: "/brand/post_taichan_kulit.png",
+    caption: "Sate Taichan Kulit Crispy & Daging Mix bakar empuk juicy. Sensasi gurih kenyal renyah nagih khas Margonda Depok! 🍢🍋",
     likes: 963,
     comments: 63,
-    isReel: false
-  },
-  {
-    id: "ig-4",
-    imageUrl: "https://images.unsplash.com/photo-1512058564366-18510be2db19?auto=format&fit=crop&w=800&q=80",
-    caption: "Aroma nasi daun jeruknya aja udah bikin lapar. Dipakein sate taichan paha + kuah kaldu pedas, auto nambah porsi!",
-    likes: 1530,
-    comments: 112,
-    isReel: false
-  },
-  {
-    id: "ig-5",
-    imageUrl: "https://images.unsplash.com/photo-1534308983496-4fabb1a015ee?auto=format&fit=crop&w=800&q=80",
-    caption: "Topping Mozarella Melt yang ditorch langsung pas kamu pesan. Lelehannya creamy banget nemenin pedasnya taichan! 🧀🔥",
-    likes: 1140,
-    comments: 77,
-    isReel: true
-  },
-  {
-    id: "ig-6",
-    imageUrl: "https://images.unsplash.com/photo-1544025162-d76694265947?auto=format&fit=crop&w=800&q=80",
-    caption: "Paket Sultan 30 tusuk siap meluncur nemenin nobar & nongkrong malam ini di samping KFC Margonda! Kuy merapat!",
-    likes: 1890,
-    comments: 145,
-    isReel: false
+    isReel: false,
+    title: "Sate Taichan Kulit & Mix"
   }
 ];
 

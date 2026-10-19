@@ -30,6 +30,16 @@ export default {
         limeaccent: {
           400: '#a3e635',
           500: '#84cc16',
+        },
+        neonPink: {
+          DEFAULT: '#ff1a75',
+          glow: 'rgba(255, 26, 117, 0.65)',
+          light: '#ff66a3',
+        },
+        neonCyan: {
+          DEFAULT: '#00e5ff',
+          glow: 'rgba(0, 229, 255, 0.65)',
+          light: '#70f3ff',
         }
       },
       fontFamily: {
