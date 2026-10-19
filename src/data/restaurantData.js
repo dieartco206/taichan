@@ -43,7 +43,7 @@ export const MENU_ITEMS = [
     price: 35000,
     portion: "10 Tusuk",
     description: "Kombinasi juara daging dada empuk tebal dan kulit renyah gurih. Sudah termasuk sambal taichan khas & jeruk nipis.",
-    image: "/brand/post_taichan_kulit.png",
+    image: "/menu/sate_taichan_jakarta.jpg",
     isBestSeller: true,
     spicyLevel: 3,
     badge: "Paling Laris 🔥"
@@ -55,7 +55,7 @@ export const MENU_ITEMS = [
     price: 35000,
     portion: "10 Tusuk",
     description: "Daging dada ayam pilihan tanpa lemak, potongan tebal, juicy di dalam, dan dibakar dengan marinasi kaldu gurih.",
-    image: "/brand/post_taichan_original.png",
+    image: "/menu/sate_taichan.jpg",
     isBestSeller: true,
     spicyLevel: 3,
     badge: "Favorit Fitness/Lean"
@@ -79,7 +79,7 @@ export const MENU_ITEMS = [
     price: 35000,
     portion: "10 Tusuk",
     description: "Kulit ayam renyah garing di luar, kenyal gurih di dalam. Bumbu meresap sampai gigitan terakhir.",
-    image: "/brand/post_taichan_kulit.png",
+    image: "/menu/sate_kulit.jpg",
     isBestSeller: false,
     spicyLevel: 3,
     badge: "Kriuk Nagih"
@@ -103,10 +103,10 @@ export const MENU_ITEMS = [
     price: 100000,
     portion: "30 Tusuk",
     description: "Pilihan puas rame-rame bareng teman/keluarga. Bebas mix Dada, Paha, dan Kulit + 2 Porsi Sambal Original & Jeruk Nipis.",
-    image: "https://images.unsplash.com/photo-1598515214211-89d3c73ae83b?auto=format&fit=crop&w=800&q=80",
+    image: "/menu/paket_sultan.jpg",
     isBestSeller: true,
     spicyLevel: 3,
-    badge: "Super Hemat 💰"
+    badge: "Super Hemat"
   },
   {
     id: "paket-kombo-kenyang",
@@ -115,7 +115,7 @@ export const MENU_ITEMS = [
     price: 48000,
     portion: "1 Porsi Lengkap",
     description: "10 Tusuk Sate Taichan (Bebas Pilih Varian) + 1 Nasi Gurih Daun Jeruk + 1 Es Teh Manis Segar Jumbo.",
-    image: "https://images.unsplash.com/photo-1532550907401-a500c9a57435?auto=format&fit=crop&w=800&q=80",
+    image: "/menu/sate_taichan_jakarta.jpg",
     isBestSeller: true,
     spicyLevel: 3,
     badge: "Kombo Komplit"
@@ -127,7 +127,7 @@ export const MENU_ITEMS = [
     price: 10000,
     portion: "1 Porsi",
     description: "Nasi pulen hangat dimasak dengan rempah kaldu dan rajangan daun jeruk wangi khas Taichan 56 Djoeanda.",
-    image: "https://images.unsplash.com/photo-1512058564366-18510be2db19?auto=format&fit=crop&w=800&q=80",
+    image: "/menu/nasi_uduk.jpg",
     isBestSeller: true,
     spicyLevel: 0,
     badge: "Wajib Coba"
@@ -139,7 +139,7 @@ export const MENU_ITEMS = [
     price: 6000,
     portion: "1 Porsi",
     description: "Lontong lembut dan kenyal dibungkus daun pisang alami, cocok dipadu sambal pedas taichan.",
-    image: "https://images.unsplash.com/photo-1563379091339-03b21ab4a4f8?auto=format&fit=crop&w=800&q=80",
+    image: "/menu/lontong_daun.jpg",
     isBestSeller: false,
     spicyLevel: 0,
   },
@@ -150,7 +150,7 @@ export const MENU_ITEMS = [
     price: 7000,
     portion: "1 Porsi",
     description: "Nasi putih hangat berkualitas tinggi yang pulen dan bersih.",
-    image: "https://images.unsplash.com/photo-1512058564366-18510be2db19?auto=format&fit=crop&w=800&q=80",
+    image: "/menu/nasi_putih.jpg",
     isBestSeller: false,
     spicyLevel: 0,
   },
@@ -161,7 +161,7 @@ export const MENU_ITEMS = [
     price: 7000,
     portion: "1 Cup",
     description: "Saus mentai gurih khas Jepang dengan tobiko lembut yang ditorch beraroma smokey.",
-    image: "https://images.unsplash.com/photo-1588166524941-3bf61a9c41db?auto=format&fit=crop&w=800&q=80",
+    image: "/menu/saus_mentai.jpg",
     isBestSeller: false,
     spicyLevel: 1,
     badge: "Creamy"
@@ -173,7 +173,7 @@ export const MENU_ITEMS = [
     price: 7000,
     portion: "1 Cup",
     description: "Rajangan cabai rawit merah, bawang merah segar, serai, dan siraman minyak kelapa wangi.",
-    image: "https://images.unsplash.com/photo-1588166524941-3bf61a9c41db?auto=format&fit=crop&w=800&q=80",
+    image: "/menu/sambal_matah.jpg",
     isBestSeller: false,
     spicyLevel: 3,
     badge: "Segar"
@@ -185,7 +185,7 @@ export const MENU_ITEMS = [
     price: 7000,
     portion: "1 Cup",
     description: "Saus BBQ kental dengan cita rasa manis, gurih, dan aroma asap yang pekat.",
-    image: "https://images.unsplash.com/photo-1588166524941-3bf61a9c41db?auto=format&fit=crop&w=800&q=80",
+    image: "/menu/saus_bbq.jpg",
     isBestSeller: false,
     spicyLevel: 1,
   },
@@ -196,7 +196,7 @@ export const MENU_ITEMS = [
     price: 18000,
     portion: "1 Porsi",
     description: "Pisang uli pilihan dibakar wangi, bertabur keju cheddar gurih parut, cokelat meses, dan susu kental manis.",
-    image: "https://images.unsplash.com/photo-1528825871115-3581a5387919?auto=format&fit=crop&w=800&q=80",
+    image: "/menu/pisang_bakar.jpg",
     isBestSeller: false,
     spicyLevel: 0,
     badge: "Penetral Pedas"
@@ -208,10 +208,10 @@ export const MENU_ITEMS = [
     price: 10000,
     portion: "Gelas Jumbo",
     description: "Perasan jeruk peras asli dengan rasa asam manis segar yang langsung mendinginkan lidah.",
-    image: "https://images.unsplash.com/photo-1513558161293-cdaf765ed2fd?auto=format&fit=crop&w=800&q=80",
+    image: "/menu/es_jeruk.jpg",
     isBestSeller: true,
     spicyLevel: 0,
-    badge: "Best Drink 🍊"
+    badge: "Best Drink"
   },
   {
     id: "es-teh",
@@ -220,7 +220,7 @@ export const MENU_ITEMS = [
     price: 6000,
     portion: "Gelas Jumbo",
     description: "Teh seduh wangi melati dengan gula murni, disajikan dingin menyegarkan.",
-    image: "https://images.unsplash.com/photo-1556679343-c7306c1976bc?auto=format&fit=crop&w=800&q=80",
+    image: "/menu/es_teh.jpg",
     isBestSeller: false,
     spicyLevel: 0,
   }

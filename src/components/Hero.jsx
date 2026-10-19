@@ -61,52 +61,61 @@ export default function Hero({ onExploreMenu, onOrderDirect }) {
               Kuliner Sate Taichan Daging Tebal, Mozarella Melt, Kulit Crispy & Sambal Rawit Segar di Margonda.
             </p>
 
-            {/* Social Proof & Metrics in Mobile-Friendly Stack/Row */}
-            <div className="pt-1 flex flex-col sm:flex-row items-stretch sm:items-center justify-center lg:justify-start gap-2.5 text-xs font-semibold text-slate-300">
-              <div className="flex items-center justify-center gap-2 bg-charcoal-900/90 px-3.5 py-2.5 rounded-xl border border-neonPink/25 shadow-sm">
-                <span className="font-bold text-white">Rating 4.8 / 5.0</span>
-                <span className="text-slate-400 text-[11px]">(GoFood • Grab • ShopeeFood)</span>
+            {/* Social Proof & Hours (Compact Pill Badges) */}
+            <div className="pt-1 flex flex-wrap items-center justify-center lg:justify-start gap-2 text-[11px] sm:text-xs text-slate-300">
+              <div className="inline-flex items-center gap-1.5 bg-white/[0.06] backdrop-blur-sm px-3 py-1.5 rounded-full border border-white/10">
+                <span className="font-bold text-white">4.8 / 5.0</span>
+                <span className="text-slate-400 hidden xs:inline">(GoFood • Grab • ShopeeFood)</span>
               </div>
 
-              <div className="flex items-center justify-center gap-2 bg-charcoal-900/90 px-3.5 py-2.5 rounded-xl border border-neonCyan/25 shadow-sm">
-                <Flame className="w-4 h-4 text-neonPink flex-shrink-0" />
-                <span className="font-bold text-neonCyan">Buka 18.00 - 02.00 WIB</span>
-                <span className="text-slate-400 text-[11px]">(Dine-in & Take Away)</span>
+              <div className="inline-flex items-center gap-1.5 bg-white/[0.06] backdrop-blur-sm px-3 py-1.5 rounded-full border border-neonCyan/30">
+                <span className="w-1.5 h-1.5 rounded-full bg-neonCyan"></span>
+                <span className="font-bold text-neonCyan">Buka 18.00 - 02.00</span>
+                <span className="text-slate-400 hidden xs:inline">(Dine-in & Bungkus)</span>
               </div>
             </div>
 
-            {/* Call To Action Buttons */}
-            <div className="pt-2 flex flex-col sm:flex-row items-stretch sm:items-center justify-center lg:justify-start gap-2.5 sm:gap-3">
-              <button
-                onClick={onOrderDirect}
-                className="w-full sm:w-auto px-6 py-3.5 rounded-2xl bg-gradient-to-r from-neonPink via-rose-600 to-neonCyan text-white font-bold text-xs sm:text-sm tracking-wide shadow-[0_0_20px_rgba(255,26,117,0.4)] hover:shadow-[0_0_30px_rgba(255,26,117,0.6)] transition-all duration-300 flex items-center justify-center gap-2 group hover:scale-[1.02]"
-              >
-                <span>Pesan Sekarang (WhatsApp)</span>
-                <ArrowRight className="w-4 h-4 group-hover:translate-x-1 transition-transform" />
-              </button>
+            {/* Call To Action Buttons (Side-by-side on Mobile, Zero Clutter) */}
+            <div className="pt-1 space-y-2.5">
+              <div className="grid grid-cols-2 sm:flex sm:items-center sm:justify-start gap-2.5 sm:gap-3">
+                <button
+                  onClick={onOrderDirect}
+                  className="w-full sm:w-auto px-4 sm:px-6 py-3 rounded-xl bg-gradient-to-r from-neonPink via-rose-600 to-neonCyan text-white font-bold text-xs sm:text-sm tracking-wide shadow-[0_0_20px_rgba(255,26,117,0.35)] hover:shadow-[0_0_28px_rgba(255,26,117,0.55)] transition-all flex items-center justify-center gap-1.5 group active:scale-95"
+                >
+                  <span>Pesan Sekarang</span>
+                  <ArrowRight className="w-3.5 h-3.5 group-hover:translate-x-0.5 transition-transform" />
+                </button>
 
-              <button
-                onClick={onExploreMenu}
-                className="w-full sm:w-auto px-6 py-3.5 rounded-2xl bg-charcoal-900 hover:bg-charcoal-800 text-slate-200 hover:text-white font-bold text-xs sm:text-sm border border-neonCyan/30 hover:border-neonCyan transition-all duration-300 flex items-center justify-center gap-2"
-              >
-                <span>Lihat Menu & Harga</span>
-              </button>
+                <button
+                  onClick={onExploreMenu}
+                  className="w-full sm:w-auto px-4 sm:px-6 py-3 rounded-xl bg-charcoal-900/90 hover:bg-charcoal-800 text-slate-200 hover:text-white font-bold text-xs sm:text-sm border border-neonCyan/30 hover:border-neonCyan transition-all flex items-center justify-center gap-1.5 active:scale-95"
+                >
+                  <span>Lihat Menu</span>
+                </button>
+              </div>
 
-              <a
-                href={RESTAURANT_INFO.shopeefoodUrl}
-                target="_blank"
-                rel="noopener noreferrer"
-                className="w-full sm:w-auto px-5 py-3.5 rounded-2xl bg-orange-500/15 hover:bg-orange-500/25 text-orange-400 hover:text-orange-300 font-bold text-xs sm:text-sm border border-orange-500/40 transition-all duration-300 flex items-center justify-center gap-1.5"
-              >
-                <span>Order ShopeeFood</span>
-                <ExternalLink className="w-3.5 h-3.5" />
-              </a>
+              {/* Online Delivery Sub-link */}
+              <div className="flex items-center justify-center lg:justify-start gap-2 text-[11px] text-slate-400">
+                <span>Tersedia di:</span>
+                <a
+                  href={RESTAURANT_INFO.shopeefoodUrl}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="text-orange-400 hover:text-orange-300 font-semibold inline-flex items-center gap-0.5 transition-colors"
+                >
+                  ShopeeFood <ExternalLink className="w-2.5 h-2.5" />
+                </a>
+                <span>•</span>
+                <span className="text-slate-300">GoFood</span>
+                <span>•</span>
+                <span className="text-slate-300">GrabFood</span>
+              </div>
             </div>
 
             {/* Location Info */}
-            <div className="pt-1 flex items-center justify-center lg:justify-start gap-2 text-xs text-slate-400 text-center lg:text-left">
-              <MapPin className="w-4 h-4 text-neonPink flex-shrink-0" />
-              <span>Lokasi: Jl. Margonda Raya (Samping KFC Margonda, Beji - Depok)</span>
+            <div className="pt-0.5 flex items-center justify-center lg:justify-start gap-2 text-[11px] sm:text-xs text-slate-400 text-center lg:text-left">
+              <MapPin className="w-3.5 h-3.5 text-neonPink flex-shrink-0" />
+              <span className="truncate">Jl. Margonda Raya (Samping KFC Margonda, Depok)</span>
             </div>
 
           </motion.div>
