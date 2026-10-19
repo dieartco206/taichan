@@ -89,18 +89,21 @@ export default function Navbar({ cartCount, onOpenCart }) {
               <Instagram className="w-5 h-5" />
             </a>
 
-            {/* Primary Cart CTA */}
+            {/* Primary Cart CTA with Floating Badge */}
             <button
               onClick={onOpenCart}
-              className="px-3 sm:px-4 py-2 rounded-xl bg-gradient-to-r from-neonPink to-rose-600 hover:from-neonPink/90 hover:to-rose-500 text-white font-bold text-xs flex items-center gap-1.5 sm:gap-2 shadow-[0_0_15px_rgba(255,26,117,0.35)] hover:shadow-[0_0_22px_rgba(255,26,117,0.55)] transition-all"
+              className="relative p-2.5 sm:px-4 sm:py-2 rounded-xl bg-gradient-to-r from-neonPink to-rose-600 hover:from-neonPink/90 hover:to-rose-500 text-white font-bold text-xs flex items-center gap-2 shadow-[0_0_15px_rgba(255,26,117,0.35)] hover:shadow-[0_0_22px_rgba(255,26,117,0.55)] transition-all flex-shrink-0"
+              title="Keranjang Pesanan"
             >
-              <ShoppingBag className="w-4 h-4" />
-              <span className="hidden xs:inline">Pesanan</span>
-              {cartCount > 0 && (
-                <span className="px-1.5 py-0.2 rounded-full bg-white/20 text-white text-[10px] font-black">
-                  {cartCount}
-                </span>
-              )}
+              <div className="relative flex items-center justify-center">
+                <ShoppingBag className="w-4 h-4" />
+                {cartCount > 0 && (
+                  <span className="absolute -top-2.5 -right-2.5 flex h-4 min-w-[16px] px-1 items-center justify-center rounded-full bg-white text-charcoal-950 text-[10px] font-black shadow-md border border-neonPink/30 leading-none">
+                    {cartCount}
+                  </span>
+                )}
+              </div>
+              <span className="hidden sm:inline font-bold">Pesanan</span>
             </button>
 
             {/* Mobile Menu Hamburger */}

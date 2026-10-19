@@ -150,10 +150,17 @@ export default function App() {
 
           <button
             onClick={() => setIsCartOpen(true)}
-            className="px-4 py-2 rounded-xl bg-gradient-to-r from-flame-500 to-chili-600 text-white font-bold text-xs flex items-center gap-1.5 shadow-lg shadow-flame-500/30"
+            className="px-4 py-2.5 rounded-xl bg-gradient-to-r from-neonPink to-rose-600 text-white font-bold text-xs flex items-center gap-2 shadow-lg shadow-neonPink/30"
           >
-            <ShoppingBag className="w-3.5 h-3.5" />
-            <span>Pesan ({totalCartCount})</span>
+            <div className="relative flex items-center justify-center">
+              <ShoppingBag className="w-4 h-4" />
+              {totalCartCount > 0 && (
+                <span className="absolute -top-2 -right-2 flex h-3.5 min-w-[14px] px-0.5 items-center justify-center rounded-full bg-white text-charcoal-950 text-[9px] font-black shadow-sm leading-none">
+                  {totalCartCount}
+                </span>
+              )}
+            </div>
+            <span>Pesan</span>
           </button>
         </div>
       </div>
