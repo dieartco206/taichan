@@ -193,18 +193,18 @@ export default function Hero({ onExploreMenu, onOrderDirect }) {
             {/* Ambient Back Glow */}
             <div className="absolute inset-0 bg-gradient-to-br from-neonPink/25 via-purple-600/15 to-neonCyan/25 rounded-3xl blur-2xl transform rotate-2 scale-95" />
 
-            {/* Main Showcase Card with Auto-Rotating Slider */}
-            <div className="relative glass-panel rounded-3xl p-3.5 sm:p-5 overflow-hidden border border-white/15 shadow-2xl">
+            {/* Main Showcase Card with Clean Luxury Layout */}
+            <div className="relative glass-panel rounded-3xl overflow-hidden border border-white/15 shadow-2xl">
               
-              {/* Product Hero Image Carousel */}
-              <div className="relative h-64 sm:h-72 md:h-80 w-full rounded-2xl overflow-hidden bg-charcoal-900">
+              {/* Product Hero Image Carousel (Clean & Unobstructed) */}
+              <div className="relative h-60 sm:h-72 w-full overflow-hidden bg-charcoal-900">
                 <AnimatePresence mode="wait">
                   <motion.div
                     key={currentItem.id}
-                    initial={{ opacity: 0, scale: 1.04 }}
+                    initial={{ opacity: 0, scale: 1.03 }}
                     animate={{ opacity: 1, scale: 1 }}
                     exit={{ opacity: 0, scale: 0.98 }}
-                    transition={{ duration: 0.45 }}
+                    transition={{ duration: 0.4 }}
                     className="absolute inset-0"
                   >
                     <img 
@@ -213,63 +213,91 @@ export default function Hero({ onExploreMenu, onOrderDirect }) {
                       className="w-full h-full object-cover object-center"
                     />
                     
-                    {/* Subtle vignette gradient */}
-                    <div className="absolute inset-0 bg-gradient-to-t from-charcoal-950/95 via-charcoal-950/20 to-transparent" />
+                    {/* Subtle bottom fade */}
+                    <div className="absolute inset-0 bg-gradient-to-t from-charcoal-950/80 via-transparent to-transparent" />
 
-                    {/* Floating Badges */}
-                    <div className="absolute top-3 left-3 px-3 py-1 rounded-full bg-charcoal-950/80 backdrop-blur-md border border-white/10 text-white text-xs font-bold flex items-center gap-1.5 shadow-lg">
+                    {/* Top Floating Badges */}
+                    <div className="absolute top-3 left-3 px-3 py-1 rounded-full bg-black/60 backdrop-blur-md border border-white/15 text-white text-xs font-bold flex items-center gap-1.5 shadow-lg">
                       <Flame className="w-3.5 h-3.5 text-neonPink fill-neonPink" />
                       <span>{currentItem.badge}</span>
                     </div>
 
-                    <div className="absolute top-3 right-3 px-2.5 py-1 rounded-full bg-neonPink/90 text-white text-xs font-black shadow-lg">
-                      {currentItem.portion} • {currentItem.price}
-                    </div>
-
-                    {/* Bottom title on image */}
-                    <div className="absolute bottom-3 left-3.5 right-3.5 text-left">
-                      <h3 className="font-display font-black text-base sm:text-lg text-white">
-                        {currentItem.name}
-                      </h3>
-                      <p className="text-xs text-slate-300 mt-0.5 line-clamp-1">
-                        {currentItem.desc}
-                      </p>
+                    <div className="absolute top-3 right-3 px-2.5 py-1 rounded-full bg-black/60 backdrop-blur-md border border-white/15 text-slate-200 text-xs font-semibold shadow-lg">
+                      {currentItem.portion}
                     </div>
                   </motion.div>
                 </AnimatePresence>
               </div>
 
-              {/* Bottom Quick Bar with Carousel Progress Dots */}
-              <div className="mt-3 pt-0.5 flex items-center justify-between gap-2.5">
-                <div className="flex items-center gap-2">
-                  <div className="flex items-center gap-1">
-                    {SHOWCASE_ITEMS.map((item, idx) => (
-                      <button
-                        key={item.id}
-                        onClick={() => setCurrentIndex(idx)}
-                        className={`h-1.5 rounded-full transition-all duration-300 ${
-                          idx === currentIndex 
-                            ? 'w-5 bg-neonPink shadow-[0_0_8px_rgba(255,26,117,0.8)]' 
-                            : 'w-1.5 bg-white/20 hover:bg-white/50'
-                        }`}
-                        title={item.name}
-                        aria-label={item.name}
-                      />
-                    ))}
-                  </div>
+              {/* Dedicated Card Body Below Photo */}
+              <div className="p-4 sm:p-5 space-y-3 bg-charcoal-900/90">
+                {/* Title & Description with smooth transition */}
+                <AnimatePresence mode="wait">
+                  <motion.div
+                    key={currentItem.id}
+                    initial={{ opacity: 0, y: 6 }}
+                    animate={{ opacity: 1, y: 0 }}
+                    exit={{ opacity: 0, y: -6 }}
+                    transition={{ duration: 0.25 }}
+                    className="space-y-1"
+                  >
+                    <h3 className="font-display font-black text-base sm:text-lg text-white">
+                      {currentItem.name}
+                    </h3>
+                    <p className="text-xs text-slate-400 leading-relaxed line-clamp-2">
+                      {currentItem.desc}
+                    </p>
+                  </motion.div>
+                </AnimatePresence>
 
-                  <span className="px-2 py-0.5 rounded-md bg-white/5 border border-white/10 text-[10px] text-slate-300 font-medium">
+                {/* Feature Tags */}
+                <div className="flex items-center gap-2 pt-0.5">
+                  <span className="px-2.5 py-0.5 rounded-lg bg-white/[0.05] border border-white/10 text-[11px] text-slate-300 font-medium">
                     {currentItem.tag}
+                  </span>
+                  <span className="px-2.5 py-0.5 rounded-lg bg-neonPink/10 border border-neonPink/25 text-[11px] text-neonPink font-semibold">
+                    100% Halal
                   </span>
                 </div>
 
-                <button
-                  onClick={onOrderDirect}
-                  className="px-4 py-2 rounded-xl bg-gradient-to-r from-neonPink to-rose-600 hover:from-neonPink/90 hover:to-rose-500 text-white font-bold text-xs flex items-center gap-1.5 shadow-md shadow-neonPink/25 transition-all flex-shrink-0 active:scale-95"
-                >
-                  <span>Pesan</span>
-                  <ArrowRight className="w-3.5 h-3.5" />
-                </button>
+                {/* Bottom Row: Price + Carousel Dots + Order CTA */}
+                <div className="pt-2 border-t border-white/[0.08] flex items-center justify-between gap-3">
+                  <div>
+                    <span className="text-[10px] text-slate-500 uppercase tracking-wider block font-semibold">Harga Porsi</span>
+                    <span className="font-display font-black text-xl sm:text-2xl text-white">
+                      {currentItem.price}
+                    </span>
+                  </div>
+
+                  <div className="flex items-center gap-3">
+                    {/* Carousel Dots */}
+                    <div className="flex items-center gap-1">
+                      {SHOWCASE_ITEMS.map((item, idx) => (
+                        <button
+                          key={item.id}
+                          onClick={() => setCurrentIndex(idx)}
+                          className={`h-1.5 rounded-full transition-all duration-300 ${
+                            idx === currentIndex 
+                              ? 'w-4 bg-neonPink shadow-[0_0_8px_rgba(255,26,117,0.8)]' 
+                              : 'w-1.5 bg-white/20 hover:bg-white/40'
+                          }`}
+                          title={item.name}
+                          aria-label={item.name}
+                        />
+                      ))}
+                    </div>
+
+                    {/* Order Button */}
+                    <button
+                      onClick={onOrderDirect}
+                      className="px-4 py-2 sm:px-5 sm:py-2.5 rounded-xl bg-gradient-to-r from-neonPink to-rose-600 hover:from-neonPink/90 hover:to-rose-500 text-white font-bold text-xs sm:text-sm flex items-center gap-1.5 shadow-lg shadow-neonPink/25 hover:shadow-neonPink/40 transition-all hover:scale-[1.02] active:scale-95 flex-shrink-0"
+                    >
+                      <span>Pesan</span>
+                      <ArrowRight className="w-3.5 h-3.5 sm:w-4 sm:h-4" />
+                    </button>
+                  </div>
+                </div>
+
               </div>
 
             </div>
