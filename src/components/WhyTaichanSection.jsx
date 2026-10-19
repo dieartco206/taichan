@@ -17,9 +17,38 @@ export default function WhyTaichanSection() {
   return (
     <section id="why-us" className="py-20 relative overflow-hidden bg-[#fbf8f3]">
       
-      {/* Warm ambient radiance */}
-      <div className="absolute inset-0 pointer-events-none">
-        <div className="absolute bottom-0 right-1/4 w-[500px] h-[500px] bg-amber-200/25 rounded-full blur-[160px]" />
+      {/* Warm ambient radiance with Abstract Geometric Contours */}
+      <div className="absolute inset-0 pointer-events-none overflow-hidden">
+        {/* Abstract Fluid Pods */}
+        <div className="absolute top-10 -left-20 w-[500px] h-[500px] bg-gradient-to-tr from-amber-200/35 via-orange-100/25 to-transparent rounded-[60%_40%_50%_50%] blur-3xl" />
+        <div className="absolute -bottom-16 -right-16 w-[520px] h-[520px] bg-gradient-to-bl from-rose-200/30 via-amber-200/25 to-transparent rounded-[45%_55%_65%_35%] blur-3xl" />
+
+        {/* Abstract Radiance Arc SVG behind Features */}
+        <svg 
+          className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[850px] h-[850px] text-stone-400/[0.15]" 
+          viewBox="0 0 600 600" 
+          fill="none"
+        >
+          <circle cx="300" cy="300" r="160" stroke="currentColor" strokeWidth="1" strokeDasharray="4 6" />
+          <circle cx="300" cy="300" r="230" stroke="currentColor" strokeWidth="1.2" />
+          <circle cx="300" cy="300" r="285" stroke="currentColor" strokeWidth="1" strokeDasharray="8 8" />
+          
+          {/* Gentle crosshair lines */}
+          <line x1="300" y1="40" x2="300" y2="560" stroke="currentColor" strokeWidth="0.8" strokeDasharray="5 5" />
+          <line x1="40" y1="300" x2="560" y2="300" stroke="currentColor" strokeWidth="0.8" strokeDasharray="5 5" />
+        </svg>
+
+        {/* Floating Abstract Spice Sparkles */}
+        <div className="absolute top-24 left-1/4 text-amber-500/25 hidden md:block">
+          <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor">
+            <path d="M12 0L14 9L23 12L14 15L12 24L10 15L1 12L10 9Z" />
+          </svg>
+        </div>
+        <div className="absolute bottom-28 right-1/4 text-rose-500/25 hidden md:block">
+          <svg width="22" height="22" viewBox="0 0 24 24" fill="currentColor">
+            <path d="M12 0L14 9L23 12L14 15L12 24L10 15L1 12L10 9Z" />
+          </svg>
+        </div>
       </div>
 
       <div className="max-w-[1440px] mx-auto px-4 sm:px-6 lg:px-10 relative z-10">

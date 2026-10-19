@@ -38,14 +38,46 @@ export default function SpicyMeterGimmick() {
   return (
     <section id="spicy-meter" className="py-20 relative overflow-hidden bg-[#faf6ee]/70 border-y border-stone-200/80">
       
-      {/* Background glow dynamic */}
-      <div className="absolute inset-0 pointer-events-none">
+      {/* Background glow dynamic with Abstract Heatwave Contours */}
+      <div className="absolute inset-0 pointer-events-none overflow-hidden">
         <div 
-          className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[600px] h-[600px] rounded-full blur-[160px] transition-all duration-700 opacity-15"
+          className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[650px] h-[650px] rounded-full blur-[140px] transition-all duration-700 opacity-25"
           style={{
-            backgroundColor: selectedLevelIndex === 3 ? '#e11d48' : selectedLevelIndex === 2 ? '#ea580c' : '#f59e0b'
+            backgroundColor: selectedLevelIndex === 3 ? '#f43f5e' : selectedLevelIndex === 2 ? '#fb923c' : '#fbbf24'
           }}
         />
+
+        {/* Abstract Thermal Vapor Curves SVG */}
+        <svg 
+          className="absolute inset-0 w-full h-full text-stone-400/[0.15]" 
+          viewBox="0 0 1440 700" 
+          fill="none" 
+          preserveAspectRatio="none"
+        >
+          <path 
+            d="M-50 180 C 350 300, 650 60, 1050 200 C 1250 280, 1400 120, 1550 160" 
+            stroke="currentColor" 
+            strokeWidth="1.2" 
+            strokeDasharray="6 6"
+          />
+          <path 
+            d="M-80 520 C 300 400, 700 620, 1100 480 C 1300 400, 1450 540, 1600 490" 
+            stroke="currentColor" 
+            strokeWidth="1.2" 
+          />
+        </svg>
+
+        {/* Floating Abstract Spice Sparks */}
+        <div className="absolute top-16 left-16 text-red-500/30 hidden sm:block">
+          <svg width="22" height="22" viewBox="0 0 24 24" fill="currentColor">
+            <path d="M12 0L14 9L23 12L14 15L12 24L10 15L1 12L10 9Z" />
+          </svg>
+        </div>
+        <div className="absolute bottom-20 right-16 text-amber-500/30 hidden sm:block">
+          <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor">
+            <path d="M12 0L14 9L23 12L14 15L12 24L10 15L1 12L10 9Z" />
+          </svg>
+        </div>
       </div>
 
       <div className="max-w-[1440px] mx-auto px-4 sm:px-6 lg:px-10 relative z-10">

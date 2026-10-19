@@ -80,17 +80,17 @@ export default function App() {
     <div className="min-h-screen bg-[#fbf8f3] text-stone-900 flex flex-col selection:bg-red-600 selection:text-white relative overflow-x-hidden">
       {/* Global Ambient Warm Dot Texture */}
       <div 
-        className="fixed inset-0 pointer-events-none opacity-[0.25] z-0" 
+        className="fixed inset-0 pointer-events-none opacity-[0.35] z-0" 
         style={{
-          backgroundImage: `radial-gradient(rgba(168, 162, 158, 0.25) 1px, transparent 1px)`,
+          backgroundImage: `radial-gradient(rgba(140, 130, 122, 0.3) 1px, transparent 1px)`,
           backgroundSize: '24px 24px'
         }}
       />
 
       {/* Global Ambient Soft Hearth Glows */}
-      <div className="fixed top-0 left-1/4 w-[700px] h-[700px] bg-amber-400/[0.08] rounded-full blur-[180px] pointer-events-none z-0" />
-      <div className="fixed bottom-1/4 right-10 w-[600px] h-[600px] bg-orange-400/[0.06] rounded-full blur-[170px] pointer-events-none z-0" />
-      <div className="fixed top-1/2 left-0 w-[500px] h-[500px] bg-red-400/[0.05] rounded-full blur-[160px] pointer-events-none z-0" />
+      <div className="fixed -top-20 left-1/4 w-[750px] h-[750px] bg-amber-300/[0.14] rounded-full blur-[160px] pointer-events-none z-0" />
+      <div className="fixed bottom-1/4 right-0 w-[650px] h-[650px] bg-orange-300/[0.12] rounded-full blur-[150px] pointer-events-none z-0" />
+      <div className="fixed top-1/2 -left-20 w-[550px] h-[550px] bg-rose-300/[0.10] rounded-full blur-[150px] pointer-events-none z-0" />
 
       {/* Top Navbar */}
       <Navbar 

@@ -36,14 +36,68 @@ export default function Hero({ onExploreMenu, onOrderDirect }) {
   return (
     <section className="relative min-h-[86vh] flex items-center justify-center pt-24 sm:pt-28 pb-14 sm:pb-16 overflow-hidden">
       
-      {/* Warm Ambient Bistro Hearth Backdrop */}
+      {/* Warm Ambient Bistro Hearth Backdrop with Abstract Artistic Shapes */}
       <div className="absolute inset-0 pointer-events-none overflow-hidden">
         <div className="absolute inset-0 bg-gradient-to-b from-[#fbf8f3] via-[#fbf8f3] to-[#fbf8f3]" />
         
-        {/* Soft Organic Amber & Warm Peach Radiance */}
-        <div className="absolute -top-20 left-1/4 w-[650px] h-[650px] bg-amber-200/45 rounded-full blur-[140px]" />
-        <div className="absolute top-1/3 right-10 w-[550px] h-[550px] bg-orange-200/35 rounded-full blur-[130px]" />
-        <div className="absolute bottom-5 left-1/3 w-[450px] h-[450px] bg-red-100/40 rounded-full blur-[120px]" />
+        {/* Abstract Fluid Organic Gradient Pods (Warm & Visible) */}
+        <div className="absolute -top-24 -left-16 w-[480px] h-[480px] bg-gradient-to-br from-amber-300/35 via-orange-200/30 to-transparent rounded-[45%_55%_70%_35%] blur-2xl" />
+        <div className="absolute top-1/4 right-0 w-[550px] h-[550px] bg-gradient-to-bl from-rose-200/35 via-amber-200/30 to-orange-100/20 rounded-[60%_40%_45%_55%] blur-3xl" />
+        <div className="absolute -bottom-20 left-1/3 w-[500px] h-[400px] bg-gradient-to-tr from-orange-200/25 via-amber-100/30 to-transparent rounded-[50%_60%_30%_70%] blur-2xl" />
+
+        {/* Abstract Flowing Contour Waves SVG */}
+        <svg 
+          className="absolute inset-0 w-full h-full text-stone-400/[0.18]" 
+          viewBox="0 0 1440 800" 
+          fill="none" 
+          preserveAspectRatio="none"
+        >
+          <path 
+            d="M-100 250 C 250 150, 450 380, 800 240 C 1150 100, 1350 320, 1600 200" 
+            stroke="currentColor" 
+            strokeWidth="1.5" 
+            strokeDasharray="6 8"
+          />
+          <path 
+            d="M-50 450 C 300 350, 600 580, 950 420 C 1300 260, 1400 480, 1600 380" 
+            stroke="currentColor" 
+            strokeWidth="1.2" 
+          />
+          <path 
+            d="M100 680 C 400 560, 750 720, 1100 610 C 1350 530, 1500 640, 1650 590" 
+            stroke="currentColor" 
+            strokeWidth="1.5" 
+            strokeDasharray="4 6"
+          />
+        </svg>
+
+        {/* Abstract Aroma Ripple Rings behind Food Showcase (Right Side) */}
+        <svg 
+          className="absolute -top-10 right-4 sm:right-16 lg:right-24 w-[500px] sm:w-[620px] h-[500px] sm:h-[620px] text-amber-500/[0.16]" 
+          viewBox="0 0 400 400" 
+          fill="none"
+        >
+          <circle cx="200" cy="200" r="90" stroke="currentColor" strokeWidth="1.2" strokeDasharray="5 5" />
+          <circle cx="200" cy="200" r="140" stroke="currentColor" strokeWidth="1" />
+          <circle cx="200" cy="200" r="185" stroke="currentColor" strokeWidth="1.2" strokeDasharray="8 8" />
+        </svg>
+
+        {/* Floating Abstract Spice Star & Sparkle Accents */}
+        <div className="absolute top-28 left-12 text-amber-500/35 hidden sm:block">
+          <svg width="24" height="24" viewBox="0 0 24 24" fill="currentColor">
+            <path d="M12 0L14 9L23 12L14 15L12 24L10 15L1 12L10 9Z" />
+          </svg>
+        </div>
+        <div className="absolute top-1/2 left-6 text-rose-500/25 hidden md:block">
+          <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor">
+            <path d="M12 0L14 9L23 12L14 15L12 24L10 15L1 12L10 9Z" />
+          </svg>
+        </div>
+        <div className="absolute bottom-24 right-1/3 text-orange-500/30 hidden lg:block">
+          <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor">
+            <path d="M12 0L14 9L23 12L14 15L12 24L10 15L1 12L10 9Z" />
+          </svg>
+        </div>
       </div>
 
       <div className="max-w-[1440px] mx-auto px-4 sm:px-6 lg:px-10 relative z-10 w-full">

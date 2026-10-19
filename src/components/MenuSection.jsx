@@ -24,10 +24,54 @@ export default function MenuSection({ onAddToCart, cartItems }) {
   return (
     <section id="menu" className="py-16 sm:py-20 relative overflow-hidden bg-[#faf6ee]/70 border-y border-stone-200/70">
       
-      {/* Warm Ambient Radiance */}
+      {/* Warm Ambient Radiance with Abstract Motifs */}
       <div className="absolute inset-0 pointer-events-none overflow-hidden">
-        <div className="absolute top-1/4 -right-10 w-[550px] h-[550px] bg-amber-200/30 rounded-full blur-[140px]" />
-        <div className="absolute bottom-10 -left-10 w-[550px] h-[550px] bg-orange-200/25 rounded-full blur-[140px]" />
+        {/* Abstract Fluid Organic Gradient Pods */}
+        <div className="absolute -top-12 -right-16 w-[560px] h-[560px] bg-gradient-to-bl from-amber-300/35 via-orange-200/25 to-transparent rounded-[50%_50%_70%_30%] blur-3xl" />
+        <div className="absolute -bottom-20 -left-16 w-[520px] h-[520px] bg-gradient-to-tr from-rose-200/30 via-amber-200/25 to-transparent rounded-[40%_60%_35%_65%] blur-3xl" />
+        <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[600px] h-[400px] bg-amber-100/25 rounded-full blur-3xl" />
+
+        {/* Abstract Stylized Grill & Culinary Waves SVG */}
+        <svg 
+          className="absolute inset-0 w-full h-full text-stone-400/[0.14]" 
+          viewBox="0 0 1440 900" 
+          fill="none" 
+          preserveAspectRatio="none"
+        >
+          {/* Subtle wavy divider line */}
+          <path 
+            d="M-50 120 C 350 40, 650 200, 1050 100 C 1250 50, 1400 150, 1550 110" 
+            stroke="currentColor" 
+            strokeWidth="1.2" 
+          />
+          <path 
+            d="M-100 800 C 300 700, 700 880, 1100 760 C 1300 700, 1450 820, 1600 770" 
+            stroke="currentColor" 
+            strokeWidth="1.2" 
+            strokeDasharray="6 6"
+          />
+
+          {/* Abstract geometric grill dashes on edges */}
+          <line x1="60" y1="280" x2="160" y2="180" stroke="currentColor" strokeWidth="1.5" strokeDasharray="4 6" />
+          <line x1="80" y1="310" x2="180" y2="210" stroke="currentColor" strokeWidth="1.5" strokeDasharray="4 6" />
+          <line x1="100" y1="340" x2="200" y2="240" stroke="currentColor" strokeWidth="1.5" strokeDasharray="4 6" />
+
+          <line x1="1280" y1="700" x2="1380" y2="600" stroke="currentColor" strokeWidth="1.5" strokeDasharray="4 6" />
+          <line x1="1300" y1="730" x2="1400" y2="630" stroke="currentColor" strokeWidth="1.5" strokeDasharray="4 6" />
+          <line x1="1320" y1="760" x2="1420" y2="660" stroke="currentColor" strokeWidth="1.5" strokeDasharray="4 6" />
+        </svg>
+
+        {/* Floating Abstract Spice Sparkles */}
+        <div className="absolute top-16 right-16 text-amber-500/30 hidden sm:block">
+          <svg width="22" height="22" viewBox="0 0 24 24" fill="currentColor">
+            <path d="M12 0L14 9L23 12L14 15L12 24L10 15L1 12L10 9Z" />
+          </svg>
+        </div>
+        <div className="absolute bottom-20 left-12 text-rose-500/25 hidden md:block">
+          <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor">
+            <path d="M12 0L14 9L23 12L14 15L12 24L10 15L1 12L10 9Z" />
+          </svg>
+        </div>
       </div>
 
       <div className="max-w-[1440px] mx-auto px-4 sm:px-6 lg:px-10 relative z-10">
