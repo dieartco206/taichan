@@ -37,60 +37,29 @@ export default function Hero({ onExploreMenu, onOrderDirect }) {
   return (
     <section className="relative min-h-[86vh] flex items-center justify-center pt-24 sm:pt-28 pb-14 sm:pb-16 overflow-hidden">
       
-      {/* Warm Ambient Bistro Hearth Backdrop with Culinary Abstract Doodles */}
-      <div className="absolute inset-0 pointer-events-none overflow-hidden">
-        <div className="absolute inset-0 bg-gradient-to-b from-[#fbf8f3] via-[#fbf8f3] to-[#fbf8f3]" />
-        
-        {/* Abstract Fluid Organic Gradient Pods (Warm & Visible) */}
-        <div className="absolute -top-24 -left-16 w-[480px] h-[480px] bg-gradient-to-br from-amber-300/35 via-orange-200/30 to-transparent rounded-[45%_55%_70%_35%] blur-2xl" />
-        <div className="absolute top-1/4 right-0 w-[550px] h-[550px] bg-gradient-to-bl from-rose-200/35 via-amber-200/30 to-orange-100/20 rounded-[60%_40%_45%_55%] blur-3xl" />
-        <div className="absolute -bottom-20 left-1/3 w-[500px] h-[400px] bg-gradient-to-tr from-orange-200/25 via-amber-100/30 to-transparent rounded-[50%_60%_30%_70%] blur-2xl" />
+      {/* Full-Bleed Sate Taichan Background with Warm Editorial Mask */}
+      <div className="absolute inset-0 overflow-hidden pointer-events-none">
+        {/* Dynamic Taichan Food Photography Canvas */}
+        <AnimatePresence mode="wait">
+          <motion.div
+            key={currentItem.id}
+            initial={{ opacity: 0, scale: 1.04 }}
+            animate={{ opacity: 1, scale: 1 }}
+            exit={{ opacity: 0 }}
+            transition={{ duration: 0.8, ease: "easeOut" }}
+            className="absolute inset-0"
+          >
+            <img 
+              src={currentItem.image} 
+              alt={currentItem.name} 
+              className="w-full h-full object-cover object-[center_right] sm:object-[65%_center] lg:object-[72%_center]"
+            />
+          </motion.div>
+        </AnimatePresence>
 
-        {/* Abstract Food Line Art Doodles - Sate Taichan Theme */}
-        {/* Sate Skewer 1 (Top Left) */}
-        <div className="absolute top-16 left-8 sm:left-14 select-none opacity-40 hover:opacity-70 transition-opacity">
-          <DoodleSate className="w-24 h-24 sm:w-28 sm:h-28 text-amber-700/30" rotate={25} />
-        </div>
-
-        {/* Cabai Rawit (Top Center) */}
-        <div className="absolute top-20 left-1/2 -translate-x-1/2 select-none opacity-35 hidden sm:block">
-          <DoodleChili className="w-16 h-16 text-red-600/35" rotate={-15} />
-        </div>
-
-        {/* Jeruk Nipis Slice (Mid Left) */}
-        <div className="absolute top-1/2 -left-4 sm:left-6 select-none opacity-40">
-          <DoodleLime className="w-20 h-20 sm:w-24 sm:h-24 text-emerald-700/30" rotate={35} />
-        </div>
-
-        {/* Sate Skewer 2 (Behind Showcase Platter Right) */}
-        <div className="absolute top-20 right-6 sm:right-16 select-none opacity-40">
-          <DoodleSate className="w-28 h-28 sm:w-36 sm:h-36 text-amber-800/25" rotate={-45} />
-        </div>
-
-        {/* Smoke Swirls (Behind Platter Right) */}
-        <div className="absolute top-1/3 right-1/4 select-none opacity-30 hidden md:block">
-          <DoodleSmoke className="w-28 h-28 text-stone-500/25" rotate={10} />
-        </div>
-
-        {/* Cabai Rawit Merah (Bottom Left) */}
-        <div className="absolute bottom-20 left-1/4 select-none opacity-40 hidden sm:block">
-          <DoodleChili className="w-20 h-20 text-red-600/35" rotate={40} />
-        </div>
-
-        {/* Flame Ember (Bottom Center) */}
-        <div className="absolute -bottom-6 left-1/2 -translate-x-1/2 select-none opacity-35">
-          <DoodleFlame className="w-24 h-24 text-orange-600/30" rotate={0} />
-        </div>
-
-        {/* Jeruk Nipis (Bottom Right) */}
-        <div className="absolute bottom-16 right-10 select-none opacity-40 hidden sm:block">
-          <DoodleLime className="w-20 h-20 text-emerald-700/30" rotate={-20} />
-        </div>
-
-        {/* Spice Stars & Sparkles */}
-        <div className="absolute top-36 left-1/3 opacity-30 hidden lg:block">
-          <DoodleSpice className="w-12 h-12 text-amber-600/30" rotate={15} />
-        </div>
+        {/* Seamless Warm Ivory Editorial Gradient Mask */}
+        <div className="absolute inset-0 bg-gradient-to-r from-[#fbf8f3] via-[#fbf8f3]/95 sm:via-[#fbf8f3]/85 lg:via-[#fbf8f3]/65 to-[#fbf8f3]/25" />
+        <div className="absolute inset-0 bg-gradient-to-b from-[#fbf8f3]/90 via-transparent to-[#fbf8f3]" />
       </div>
 
       <div className="max-w-[1440px] mx-auto px-4 sm:px-6 lg:px-10 relative z-10 w-full">
@@ -180,39 +149,49 @@ export default function Hero({ onExploreMenu, onOrderDirect }) {
 
           </motion.div>
 
-          {/* Right Column: Gourmet Circular Platter Showcase with Thin Rim */}
+          {/* Right Column: Interactive Menu Showcase Badge on Top of the Food Background */}
           <motion.div 
-            initial={{ opacity: 0, scale: 0.95 }}
-            animate={{ opacity: 1, scale: 1 }}
-            transition={{ duration: 0.7, delay: 0.15 }}
-            className="lg:col-span-5 relative flex items-center justify-center py-2"
+            initial={{ opacity: 0, y: 20 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.7, delay: 0.2 }}
+            className="lg:col-span-5 relative flex flex-col items-center lg:items-end justify-center py-4"
           >
-            {/* Warm Hearth Halo Glow Behind Platter */}
-            <div className="absolute inset-0 bg-gradient-to-tr from-amber-300/40 via-orange-300/30 to-red-200/30 rounded-full blur-3xl -z-10 pointer-events-none" />
+            <div className="p-4 sm:p-5 rounded-3xl bg-white/92 backdrop-blur-md border border-stone-200/90 shadow-[0_12px_36px_rgba(28,25,23,0.12)] max-w-sm space-y-2 text-left pointer-events-auto">
+              <div className="flex items-center justify-between">
+                <span className="inline-flex items-center gap-1.5 px-2.5 py-0.5 rounded-full bg-red-50 text-red-600 border border-red-200 text-[10px] font-extrabold uppercase tracking-wide">
+                  <Flame className="w-3 h-3 fill-red-600 text-red-600" />
+                  Andalan Margonda
+                </span>
+                <span className="text-[11px] font-bold text-amber-600">★ 4.8</span>
+              </div>
 
-            {/* Circular Gourmet Plate Presentation (Clean White Rim & Soft Natural Shadow) */}
-            <div className="relative w-[320px] h-[320px] sm:w-[410px] sm:h-[410px] lg:w-[460px] lg:h-[460px] rounded-full overflow-hidden border-4 border-white shadow-[0_20px_50px_rgba(28,25,23,0.18)] group">
-              <AnimatePresence mode="wait">
-                <motion.div
-                  key={currentItem.id}
-                  initial={{ opacity: 0, scale: 1.05 }}
-                  animate={{ opacity: 1, scale: 1.15 }}
-                  exit={{ opacity: 0, scale: 0.98 }}
-                  transition={{ duration: 0.5, ease: "easeOut" }}
-                  className="absolute inset-0 flex items-center justify-center"
-                >
-                  <img 
-                    src={currentItem.image} 
-                    alt={currentItem.name} 
-                    className="w-full h-full object-cover object-[42%_center] group-hover:scale-120 transition-transform duration-700"
-                  />
-                </motion.div>
-              </AnimatePresence>
+              <h3 className="font-display font-extrabold text-base sm:text-lg text-stone-900 leading-snug">
+                {currentItem.name}
+              </h3>
 
-              {/* Subtle Soft Vignette Overlay */}
-              <div className="absolute inset-0 rounded-full bg-gradient-to-t from-stone-900/25 via-transparent to-transparent pointer-events-none" />
+              <p className="text-xs text-stone-600 leading-relaxed">
+                Daging ayam tebal empuk dibakar gurih, disajikan dengan sambal rawit uleg asli dan perasan jeruk nipis segar.
+              </p>
+
+              {/* Dish Carousel Switcher */}
+              <div className="pt-2 flex items-center justify-between border-t border-stone-100 text-xs">
+                <span className="text-[11px] text-stone-500 font-medium">Ganti Tampilan Menu:</span>
+                <div className="flex items-center gap-1.5">
+                  {SHOWCASE_ITEMS.map((item, idx) => (
+                    <button
+                      key={item.id}
+                      onClick={() => setCurrentIndex(idx)}
+                      className={`h-2.5 rounded-full transition-all ${
+                        currentIndex === idx 
+                          ? 'w-6 bg-red-600 shadow-sm' 
+                          : 'w-2.5 bg-stone-300 hover:bg-stone-400'
+                      }`}
+                      title={item.name}
+                    />
+                  ))}
+                </div>
+              </div>
             </div>
-
           </motion.div>
 
         </div>
