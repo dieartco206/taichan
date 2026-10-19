@@ -18,7 +18,7 @@ export default function TaichanLogo({ size = "md", className = "" }) {
       <img 
         src="/brand/logo.png" 
         alt="Logo Sate Taichan 56 Djoeanda" 
-        className="w-full h-full object-cover object-center rounded-full group-hover:scale-105 transition-transform duration-300"
+        className="w-full h-full object-contain object-center rounded-full group-hover:scale-105 transition-transform duration-300"
       />
     </div>
   );
