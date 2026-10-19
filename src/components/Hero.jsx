@@ -57,17 +57,6 @@ export default function Hero({ onExploreMenu, onOrderDirect }) {
             className="lg:col-span-7 space-y-4 sm:space-y-5 text-center lg:text-left flex flex-col items-center lg:items-start"
           >
             
-            {/* Top Brand Pill (Warm & Punchy) */}
-            <div className="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-red-50 border border-red-200/80 shadow-2xs max-w-full">
-              <span className="flex h-2 w-2 relative flex-shrink-0">
-                <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-red-500 opacity-75"></span>
-                <span className="relative inline-flex rounded-full h-2 w-2 bg-red-600"></span>
-              </span>
-              <span className="text-[11px] sm:text-xs font-bold text-stone-700 tracking-wide truncate">
-                <span className="text-red-600 font-extrabold">TAICHAN 56 MARGONDA</span> • Buka 18.00 - 02.00 WIB
-              </span>
-            </div>
-
             {/* Main Appetite Headline: Hunger-Inducing & Confident */}
             <h1 className="font-display font-black text-3xl sm:text-4xl md:text-5xl xl:text-6xl text-stone-900 tracking-tight leading-tight sm:leading-none">
               <span className="text-gradient-flame">Daging Tebal.</span> <br className="hidden sm:inline" />
