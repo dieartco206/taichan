@@ -48,16 +48,16 @@ export default function Navbar({ cartCount, onOpenCart }) {
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="flex items-center justify-between">
           
-          {/* Left: Clean Brand Logo */}
-          <a href="#" className="flex items-center gap-3 group">
-            <TaichanLogo size="sm" className="sm:w-10 sm:h-10" />
-            <div className="flex items-center gap-2">
-              <span className="font-display font-black text-xl text-white tracking-tight">
+          {/* Left: Clean Brand Logo (Strict Single-Line on Mobile & Desktop) */}
+          <a href="#" className="flex items-center gap-2 sm:gap-3 group flex-shrink-0">
+            <TaichanLogo size="sm" className="w-8 h-8 sm:w-10 sm:h-10 flex-shrink-0" />
+            <div className="flex items-center gap-1.5 sm:gap-2 whitespace-nowrap flex-shrink-0">
+              <span className="font-display font-black text-lg sm:text-xl text-white tracking-tight whitespace-nowrap">
                 <span className="text-neonCyan">56</span> <span className="text-neonPink">TAICHAN</span>
               </span>
-              <span className="flex items-center gap-1.5 px-2 py-0.5 rounded-full bg-white/5 border border-white/10 text-[10px] text-slate-300 font-medium">
-                <span className={`w-1.5 h-1.5 rounded-full ${isOpenNow ? 'bg-emerald-400 animate-pulse' : 'bg-amber-400'}`} />
-                <span>{isOpenNow ? 'Buka' : '18.00-02.00'}</span>
+              <span className="flex items-center gap-1.5 px-2 py-0.5 rounded-full bg-white/5 border border-white/10 text-[10px] text-slate-300 font-medium whitespace-nowrap flex-shrink-0">
+                <span className={`w-1.5 h-1.5 rounded-full flex-shrink-0 ${isOpenNow ? 'bg-emerald-400 animate-pulse' : 'bg-amber-400'}`} />
+                <span className="whitespace-nowrap">{isOpenNow ? 'Buka' : '18.00-02.00'}</span>
               </span>
             </div>
           </a>
@@ -76,7 +76,7 @@ export default function Navbar({ cartCount, onOpenCart }) {
           </nav>
 
           {/* Right: Actions (Mobile Optimized) */}
-          <div className="flex items-center gap-2 sm:gap-3">
+          <div className="flex items-center gap-1.5 sm:gap-3 flex-shrink-0">
             
             {/* Instagram Icon (Desktop only, available in mobile drawer) */}
             <a
