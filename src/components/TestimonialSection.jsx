@@ -8,13 +8,13 @@ export default function TestimonialSection() {
     <section className="py-20 relative overflow-hidden bg-charcoal-900/30">
       
       {/* Background glow */}
-      <div className="absolute top-1/2 right-10 w-[500px] h-[500px] bg-neonPink/10 rounded-full blur-[160px] pointer-events-none" />
+      <div className="absolute top-1/2 right-10 w-[500px] h-[500px] bg-red-600/10 rounded-full blur-[160px] pointer-events-none" />
 
       <div className="max-w-[1440px] mx-auto px-4 sm:px-6 lg:px-10 relative z-10">
         
         {/* Section Header (Strict Single-Line on Desktop) */}
         <div className="text-center space-y-1.5 mb-10">
-          <div className="inline-flex items-center gap-1.5 px-3.5 py-1 rounded-full bg-white/5 border border-white/10 text-gold-400 text-xs font-bold uppercase tracking-wider whitespace-nowrap">
+          <div className="inline-flex items-center gap-1.5 px-3.5 py-1 rounded-full bg-red-950/40 border border-red-500/30 text-amber-400 text-xs font-bold uppercase tracking-wider whitespace-nowrap">
             <Quote className="w-3.5 h-3.5" />
             <span>Cerita Pelanggan Margonda</span>
           </div>
@@ -35,7 +35,7 @@ export default function TestimonialSection() {
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
               transition={{ duration: 0.35, delay: index * 0.08 }}
-              className="p-5 sm:p-6 rounded-2xl glass-panel border border-white/10 hover:border-neonPink/30 card-hover-effect flex flex-col justify-between"
+              className="p-5 sm:p-6 rounded-2xl glass-panel border border-white/10 hover:border-red-500/30 card-hover-effect flex flex-col justify-between"
             >
               <div>
                 {/* Star rating in Single Line */}
@@ -59,7 +59,7 @@ export default function TestimonialSection() {
                   <span className="text-[11px] text-slate-400 truncate block">{testi.role}</span>
                 </div>
                 
-                <span className="text-[10px] font-semibold px-2 py-0.5 rounded-full bg-neonPink/15 text-neonPink border border-neonPink/25 flex-shrink-0">
+                <span className="text-[10px] font-semibold px-2 py-0.5 rounded-full bg-red-950/40 text-rose-400 border border-red-500/30 flex-shrink-0">
                   {testi.favorite}
                 </span>
               </div>

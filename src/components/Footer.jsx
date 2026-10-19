@@ -17,9 +17,9 @@ export default function Footer() {
               <TaichanLogo size="md" />
               <div>
                 <span className="font-display font-black text-xl tracking-tight text-white block whitespace-nowrap">
-                  <span className="text-neonCyan">56</span> <span className="text-neonPink">TAICHAN</span> DJOEANDA
+                  <span className="text-amber-400">56</span> <span className="text-red-500">TAICHAN</span> DJOEANDA
                 </span>
-                <span className="text-xs text-neonCyan font-semibold whitespace-nowrap">
+                <span className="text-xs text-amber-400/90 font-semibold whitespace-nowrap">
                   {RESTAURANT_INFO.officialTitle} • {RESTAURANT_INFO.tagline}
                 </span>
               </div>
@@ -34,7 +34,7 @@ export default function Footer() {
                 href={RESTAURANT_INFO.instagramUrl}
                 target="_blank"
                 rel="noopener noreferrer"
-                className="w-8 h-8 rounded-xl bg-white/5 border border-white/10 hover:border-neonPink hover:text-neonPink flex items-center justify-center transition-colors text-slate-300"
+                className="w-8 h-8 rounded-xl bg-white/5 border border-white/10 hover:border-red-500 hover:text-rose-400 flex items-center justify-center transition-colors text-slate-300"
                 title="Instagram Resmi"
               >
                 <Instagram className="w-4 h-4" />
@@ -43,7 +43,7 @@ export default function Footer() {
                 href={RESTAURANT_INFO.mapsUrl}
                 target="_blank"
                 rel="noopener noreferrer"
-                className="w-8 h-8 rounded-xl bg-white/5 border border-white/10 hover:border-neonCyan hover:text-neonCyan flex items-center justify-center transition-colors text-slate-300"
+                className="w-8 h-8 rounded-xl bg-white/5 border border-white/10 hover:border-amber-400 hover:text-amber-400 flex items-center justify-center transition-colors text-slate-300"
                 title="Google Maps"
               >
                 <MapPin className="w-4 h-4" />
@@ -58,16 +58,16 @@ export default function Footer() {
             </h4>
             <ul className="space-y-1.5 text-xs">
               <li>
-                <a href="#menu" className="hover:text-neonPink transition-colors">Menu Sate & Paket</a>
+                <a href="#menu" className="hover:text-rose-400 transition-colors">Menu Sate & Paket</a>
               </li>
               <li>
-                <a href="#why-us" className="hover:text-neonPink transition-colors">Kualitas & Keunggulan</a>
+                <a href="#why-us" className="hover:text-rose-400 transition-colors">Kualitas & Keunggulan</a>
               </li>
               <li>
-                <a href="#instagram" className="hover:text-neonPink transition-colors">Instagram</a>
+                <a href="#instagram" className="hover:text-rose-400 transition-colors">Instagram</a>
               </li>
               <li>
-                <a href="#lokasi" className="hover:text-neonPink transition-colors">Lokasi Margonda</a>
+                <a href="#lokasi" className="hover:text-rose-400 transition-colors">Lokasi Margonda</a>
               </li>
             </ul>
           </div>
@@ -79,15 +79,15 @@ export default function Footer() {
             </h4>
             <div className="space-y-2 text-xs text-slate-300">
               <div className="flex items-start gap-2">
-                <MapPin className="w-4 h-4 text-neonPink flex-shrink-0 mt-0.5" />
+                <MapPin className="w-4 h-4 text-rose-400 flex-shrink-0 mt-0.5" />
                 <span className="leading-snug">{RESTAURANT_INFO.fullAddress}</span>
               </div>
               <div className="flex items-center gap-2 whitespace-nowrap">
-                <Clock className="w-4 h-4 text-neonCyan flex-shrink-0" />
+                <Clock className="w-4 h-4 text-amber-400 flex-shrink-0" />
                 <span>Buka Setiap Hari: 18:00 - 02:00 WIB</span>
               </div>
               <div className="flex items-center gap-2 whitespace-nowrap">
-                <Instagram className="w-4 h-4 text-neonPink flex-shrink-0" />
+                <Instagram className="w-4 h-4 text-rose-400 flex-shrink-0" />
                 <a 
                   href={RESTAURANT_INFO.instagramUrl} 
                   target="_blank" 
@@ -109,7 +109,7 @@ export default function Footer() {
           </div>
           <div className="flex items-center gap-1.5">
             <span>Dibuat dengan</span>
-            <Flame className="w-3.5 h-3.5 text-neonPink fill-neonPink" />
+            <Flame className="w-3.5 h-3.5 text-rose-500 fill-rose-500" />
             <span>untuk pecinta kuliner malam sejati.</span>
           </div>
         </div>

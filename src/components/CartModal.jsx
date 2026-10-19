@@ -69,7 +69,7 @@ export default function CartModal({ isOpen, onClose, cartItems, onUpdateQty, onR
         {/* Modal Header */}
         <div className="p-5 border-b border-white/[0.04] flex items-center justify-between bg-charcoal-950/80">
           <div className="flex items-center gap-2.5">
-            <div className="w-8 h-8 rounded-xl bg-neonPink/20 text-neonPink flex items-center justify-center">
+            <div className="w-8 h-8 rounded-xl bg-red-950/40 text-rose-400 border border-red-500/30 flex items-center justify-center">
               <ShoppingBag className="w-4 h-4" />
             </div>
             <div>
@@ -114,7 +114,7 @@ export default function CartModal({ isOpen, onClose, cartItems, onUpdateQty, onR
                       <div className="flex items-center gap-1.5 text-[11px] text-slate-400 mt-0.5">
                         <span>{item.portion}</span>
                         <span>•</span>
-                        <span className="text-neonPink font-semibold">{formatPrice(item.price)}</span>
+                        <span className="text-rose-400 font-semibold">{formatPrice(item.price)}</span>
                       </div>
                     </div>
 
@@ -170,7 +170,7 @@ export default function CartModal({ isOpen, onClose, cartItems, onUpdateQty, onR
                         onClick={() => setOrderType(type.id)}
                         className={`py-2 px-2 rounded-xl text-xs font-semibold border transition-all text-center ${
                           orderType === type.id 
-                            ? 'bg-gradient-to-r from-neonPink to-rose-600 text-white border-neonPink shadow-md' 
+                            ? 'bg-gradient-to-r from-red-600 to-orange-500 text-white border-red-500 shadow-md' 
                             : 'bg-white/5 border-white/10 text-slate-400 hover:bg-white/10'
                         }`}
                       >
@@ -191,7 +191,7 @@ export default function CartModal({ isOpen, onClose, cartItems, onUpdateQty, onR
                       onClick={() => setSambalOption('pisah')}
                       className={`py-2 px-3 rounded-xl text-xs font-semibold border transition-all text-center ${
                         sambalOption === 'pisah' 
-                          ? 'bg-neonPink/20 text-neonPink border-neonPink/50 font-bold' 
+                          ? 'bg-red-950/40 text-rose-400 border-red-500/50 font-bold' 
                           : 'bg-white/5 border-white/10 text-slate-400'
                       }`}
                     >
@@ -202,7 +202,7 @@ export default function CartModal({ isOpen, onClose, cartItems, onUpdateQty, onR
                       onClick={() => setSambalOption('campur')}
                       className={`py-2 px-3 rounded-xl text-xs font-semibold border transition-all text-center ${
                         sambalOption === 'campur' 
-                          ? 'bg-neonPink/20 text-neonPink border-neonPink/50 font-bold' 
+                          ? 'bg-red-950/40 text-rose-400 border-red-500/50 font-bold' 
                           : 'bg-white/5 border-white/10 text-slate-400'
                       }`}
                     >
@@ -220,7 +220,7 @@ export default function CartModal({ isOpen, onClose, cartItems, onUpdateQty, onR
                       placeholder="Nama Anda"
                       value={customerName}
                       onChange={(e) => setCustomerName(e.target.value)}
-                      className="w-full px-3.5 py-2.5 rounded-xl bg-charcoal-950 border border-white/10 text-xs sm:text-sm text-white focus:outline-none focus:border-neonPink"
+                      className="w-full px-3.5 py-2.5 rounded-xl bg-charcoal-950 border border-white/10 text-xs sm:text-sm text-white focus:outline-none focus:border-red-500"
                     />
                   </div>
 
@@ -232,7 +232,7 @@ export default function CartModal({ isOpen, onClose, cartItems, onUpdateQty, onR
                         placeholder="Alamat lengkap / patokan"
                         value={customerAddress}
                         onChange={(e) => setCustomerAddress(e.target.value)}
-                        className="w-full px-3.5 py-2.5 rounded-xl bg-charcoal-950 border border-white/10 text-xs sm:text-sm text-white focus:outline-none focus:border-neonPink"
+                        className="w-full px-3.5 py-2.5 rounded-xl bg-charcoal-950 border border-white/10 text-xs sm:text-sm text-white focus:outline-none focus:border-red-500"
                       />
                     </div>
                   )}
@@ -244,7 +244,7 @@ export default function CartModal({ isOpen, onClose, cartItems, onUpdateQty, onR
                       placeholder="Misal: bakar kering, jeruk nipis lebih"
                       value={specialNotes}
                       onChange={(e) => setSpecialNotes(e.target.value)}
-                      className="w-full px-3.5 py-2.5 rounded-xl bg-charcoal-950 border border-white/10 text-xs sm:text-sm text-white focus:outline-none focus:border-neonPink"
+                      className="w-full px-3.5 py-2.5 rounded-xl bg-charcoal-950 border border-white/10 text-xs sm:text-sm text-white focus:outline-none focus:border-red-500"
                     />
                   </div>
                 </div>

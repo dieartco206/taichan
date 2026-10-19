@@ -8,20 +8,21 @@ export default {
     extend: {
       colors: {
         charcoal: {
-          950: '#0c0e17',
-          900: '#121624',
-          800: '#1b2032',
-          700: '#262d46',
-          600: '#353e5e',
+          950: '#09080b',
+          900: '#120f14',
+          800: '#1b1620',
+          700: '#26202c',
+          600: '#362e3e',
         },
         flame: {
-          500: '#ff4d00',
-          600: '#e63e00',
-          700: '#cc3300',
+          500: '#ff3d00',
+          600: '#ea3a00',
+          700: '#c92e00',
         },
         chili: {
-          500: '#ef4444',
-          600: '#dc2626',
+          500: '#f43f5e',
+          600: '#e11d48',
+          700: '#be123c',
         },
         gold: {
           400: '#fbbf24',
@@ -32,14 +33,14 @@ export default {
           500: '#84cc16',
         },
         neonPink: {
-          DEFAULT: '#ff1a75',
-          glow: 'rgba(255, 26, 117, 0.65)',
-          light: '#ff66a3',
+          DEFAULT: '#e11d48',
+          glow: 'rgba(225, 29, 72, 0.65)',
+          light: '#fb7185',
         },
         neonCyan: {
-          DEFAULT: '#00e5ff',
-          glow: 'rgba(0, 229, 255, 0.65)',
-          light: '#70f3ff',
+          DEFAULT: '#f59e0b',
+          glow: 'rgba(245, 158, 11, 0.65)',
+          light: '#fde68a',
         }
       },
       fontFamily: {

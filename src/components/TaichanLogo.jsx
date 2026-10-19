@@ -9,10 +9,10 @@ export default function TaichanLogo({ size = "md", className = "" }) {
   };
 
   return (
-    <div className={`relative flex-shrink-0 rounded-full overflow-hidden bg-[#07080e] border border-[#ff1a75]/40 shadow-[0_0_20px_rgba(255,26,117,0.4)] group ${sizeMap[size] || sizeMap.md} ${className}`}>
+    <div className={`relative flex-shrink-0 rounded-full overflow-hidden bg-[#09080b] border border-red-500/40 shadow-[0_0_20px_rgba(225,29,72,0.35)] group ${sizeMap[size] || sizeMap.md} ${className}`}>
       
-      {/* Outer Cyan Glow Ring */}
-      <div className="absolute inset-0 rounded-full border border-[#00e5ff]/40 group-hover:border-[#00e5ff]/80 transition-colors z-10 pointer-events-none" />
+      {/* Outer Ember Glow Ring */}
+      <div className="absolute inset-0 rounded-full border border-amber-400/35 group-hover:border-amber-400/75 transition-colors z-10 pointer-events-none" />
 
       {/* High-res Centered Logo Image */}
       <img 

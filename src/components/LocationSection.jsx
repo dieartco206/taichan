@@ -4,7 +4,7 @@ import { RESTAURANT_INFO } from '../data/restaurantData';
 
 export default function LocationSection() {
   return (
-    <section id="lokasi" className="py-16 sm:py-20 relative overflow-hidden bg-[#0d111e]/90">
+    <section id="lokasi" className="py-16 sm:py-20 relative overflow-hidden bg-[#0b090d]/95">
       
       {/* Background night street ambience */}
       <div className="absolute inset-0 pointer-events-none overflow-hidden">
@@ -13,18 +13,18 @@ export default function LocationSection() {
           alt="Night Street Margonda Atmosphere" 
           className="w-full h-full object-cover object-center opacity-35 filter brightness-85 contrast-110"
         />
-        <div className="absolute inset-0 bg-gradient-to-b from-[#0d111e] via-[#0d111e]/75 to-[#0d111e]" />
+        <div className="absolute inset-0 bg-gradient-to-b from-[#0b090d] via-[#0b090d]/80 to-[#0b090d]" />
         
         {/* Luminous ambient glows */}
-        <div className="absolute top-1/2 -left-10 w-[550px] h-[550px] bg-neonPink/20 rounded-full blur-[140px]" />
-        <div className="absolute bottom-10 -right-10 w-[450px] h-[450px] bg-neonCyan/15 rounded-full blur-[130px]" />
+        <div className="absolute top-1/2 -left-10 w-[550px] h-[550px] bg-red-600/15 rounded-full blur-[140px]" />
+        <div className="absolute bottom-10 -right-10 w-[450px] h-[450px] bg-amber-500/12 rounded-full blur-[130px]" />
       </div>
 
       <div className="max-w-[1440px] mx-auto px-4 sm:px-6 lg:px-10 relative z-10">
         
         {/* Section Header (Strict Single-Line on Desktop) */}
         <div className="text-center space-y-1.5 mb-10">
-          <div className="inline-flex items-center gap-1.5 px-3.5 py-1 rounded-full bg-white/5 border border-white/10 text-neonPink text-xs font-bold uppercase tracking-wider whitespace-nowrap">
+          <div className="inline-flex items-center gap-1.5 px-3.5 py-1 rounded-full bg-red-950/40 border border-red-500/30 text-rose-400 text-xs font-bold uppercase tracking-wider whitespace-nowrap">
             <MapPin className="w-3.5 h-3.5" />
             <span>Kunjungi Kedai Taichan 56</span>
           </div>
@@ -45,7 +45,7 @@ export default function LocationSection() {
               
               {/* Address card */}
               <div className="flex items-start gap-3.5">
-                <div className="w-10 h-10 rounded-xl bg-neonPink/15 text-neonPink border border-neonPink/30 flex items-center justify-center flex-shrink-0 shadow-inner">
+                <div className="w-10 h-10 rounded-xl bg-red-950/40 text-rose-400 border border-red-500/30 flex items-center justify-center flex-shrink-0 shadow-inner">
                   <MapPin className="w-5 h-5" />
                 </div>
                 <div>
@@ -53,7 +53,7 @@ export default function LocationSection() {
                   <p className="text-xs sm:text-sm text-slate-300 mt-1 leading-relaxed">
                     {RESTAURANT_INFO.fullAddress}
                   </p>
-                  <span className="inline-block mt-2 text-[11px] font-bold text-neonPink bg-neonPink/10 px-2.5 py-0.5 rounded-md border border-neonPink/25 whitespace-nowrap">
+                  <span className="inline-block mt-2 text-[11px] font-bold text-rose-400 bg-red-950/40 px-2.5 py-0.5 rounded-md border border-red-500/30 whitespace-nowrap">
                     📍 Patokan: Tepat di samping KFC Margonda
                   </span>
                 </div>
@@ -61,7 +61,7 @@ export default function LocationSection() {
 
               {/* Hours card */}
               <div className="flex items-start gap-3.5">
-                <div className="w-10 h-10 rounded-xl bg-neonCyan/15 text-neonCyan border border-neonCyan/30 flex items-center justify-center flex-shrink-0 shadow-inner">
+                <div className="w-10 h-10 rounded-xl bg-amber-500/15 text-amber-400 border border-amber-500/30 flex items-center justify-center flex-shrink-0 shadow-inner">
                   <Clock className="w-5 h-5" />
                 </div>
                 <div>
@@ -99,9 +99,9 @@ export default function LocationSection() {
                 href={RESTAURANT_INFO.mapsUrl}
                 target="_blank"
                 rel="noopener noreferrer"
-                className="flex-1 py-3 px-4 rounded-xl bg-charcoal-800 hover:bg-charcoal-700 text-white font-bold text-xs sm:text-sm border border-white/15 hover:border-neonPink/50 flex items-center justify-center gap-2 transition-all shadow-lg"
+                className="flex-1 py-3 px-4 rounded-xl bg-charcoal-800 hover:bg-charcoal-700 text-white font-bold text-xs sm:text-sm border border-white/15 hover:border-red-500/50 flex items-center justify-center gap-2 transition-all shadow-lg"
               >
-                <Navigation className="w-4 h-4 text-neonPink" />
+                <Navigation className="w-4 h-4 text-rose-400" />
                 <span>Google Maps</span>
               </a>
 
@@ -135,7 +135,7 @@ export default function LocationSection() {
             {/* Map overlay card */}
             <div className="absolute top-3.5 left-3.5 bg-charcoal-950/90 backdrop-blur-md px-3.5 py-2 rounded-xl border border-white/15 shadow-xl whitespace-nowrap">
               <div className="flex items-center gap-2">
-                <span className="w-2 h-2 rounded-full bg-neonPink animate-ping" />
+                <span className="w-2 h-2 rounded-full bg-red-500 animate-ping" />
                 <span className="text-xs font-bold text-white">Taichan 56 Margonda</span>
               </div>
               <p className="text-[10px] text-slate-400 mt-0.5">Samping KFC Margonda Raya Depok</p>

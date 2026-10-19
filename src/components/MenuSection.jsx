@@ -22,7 +22,7 @@ export default function MenuSection({ onAddToCart, cartItems }) {
   };
 
   return (
-    <section id="menu" className="py-16 sm:py-20 relative overflow-hidden bg-[#0d111e]/80">
+    <section id="menu" className="py-16 sm:py-20 relative overflow-hidden bg-[#0b090d]/90">
       
       {/* Background culinary charcoal texture */}
       <div className="absolute inset-0 pointer-events-none overflow-hidden">
@@ -31,19 +31,19 @@ export default function MenuSection({ onAddToCart, cartItems }) {
           alt="Charcoal Texture Backdrop" 
           className="w-full h-full object-cover object-center opacity-30 filter brightness-90 contrast-110"
         />
-        <div className="absolute inset-0 bg-gradient-to-b from-[#0d111e] via-transparent to-[#0d111e]" />
+        <div className="absolute inset-0 bg-gradient-to-b from-[#0b090d] via-transparent to-[#0b090d]" />
         
-        {/* Luminous ambient neon glows */}
-        <div className="absolute top-1/4 -right-10 w-[550px] h-[550px] bg-neonPink/20 rounded-full blur-[140px]" />
-        <div className="absolute bottom-10 -left-10 w-[550px] h-[550px] bg-neonCyan/20 rounded-full blur-[140px]" />
-        <div className="absolute top-1/2 left-1/3 w-[400px] h-[400px] bg-orange-500/10 rounded-full blur-[130px]" />
+        {/* Warm ambient flame & ember glows */}
+        <div className="absolute top-1/4 -right-10 w-[550px] h-[550px] bg-red-600/15 rounded-full blur-[140px]" />
+        <div className="absolute bottom-10 -left-10 w-[550px] h-[550px] bg-orange-500/15 rounded-full blur-[140px]" />
+        <div className="absolute top-1/2 left-1/3 w-[400px] h-[400px] bg-amber-500/10 rounded-full blur-[130px]" />
       </div>
 
       <div className="max-w-[1440px] mx-auto px-4 sm:px-6 lg:px-10 relative z-10">
         
         {/* Section Header */}
         <div className="text-center space-y-2 mb-8 sm:mb-10">
-          <div className="inline-flex items-center gap-1.5 px-3.5 py-1 rounded-full bg-white/5 border border-white/10 text-neonPink text-xs font-bold uppercase tracking-wider">
+          <div className="inline-flex items-center gap-1.5 px-3.5 py-1 rounded-full bg-red-950/40 border border-red-500/30 text-rose-400 text-xs font-bold uppercase tracking-wider">
             <UtensilsCrossed className="w-3.5 h-3.5" />
             <span>Katalog Resmi & Harga Tertera</span>
           </div>
@@ -65,14 +65,14 @@ export default function MenuSection({ onAddToCart, cartItems }) {
                 onClick={() => setActiveCategory(cat.id)}
                 className={`flex-shrink-0 px-3.5 sm:px-4 py-2 rounded-full text-xs font-bold transition-all duration-300 flex items-center gap-1.5 whitespace-nowrap ${
                   isActive 
-                    ? 'bg-gradient-to-r from-neonPink to-rose-600 text-white shadow-[0_0_15px_rgba(255,26,117,0.4)] scale-105' 
+                    ? 'bg-gradient-to-r from-red-600 via-rose-600 to-orange-500 text-white shadow-[0_0_15px_rgba(225,29,72,0.45)] scale-105' 
                     : 'bg-charcoal-900 text-slate-300 hover:text-white hover:bg-charcoal-800 border border-white/10'
                 }`}
               >
                 <span>{cat.name}</span>
                 {cat.badge && (
                   <span className={`text-[10px] px-1.5 py-0.2 rounded-full ${
-                    isActive ? 'bg-black/30 text-white' : 'bg-neonPink/20 text-neonPink'
+                    isActive ? 'bg-black/30 text-white' : 'bg-red-950/40 text-rose-400 border border-red-500/30'
                   }`}>
                     {cat.badge}
                   </span>
@@ -100,7 +100,7 @@ export default function MenuSection({ onAddToCart, cartItems }) {
                   exit={{ opacity: 0, scale: 0.96 }}
                   transition={{ duration: 0.25 }}
                   key={item.id}
-                  className="group relative glass-panel rounded-2xl overflow-hidden border border-white/10 hover:border-neonPink/40 card-hover-effect flex flex-col justify-between"
+                  className="group relative glass-panel rounded-2xl overflow-hidden border border-white/10 hover:border-red-500/40 card-hover-effect flex flex-col justify-between"
                 >
                   <div>
                     {/* Image thumbnail */}
@@ -117,7 +117,7 @@ export default function MenuSection({ onAddToCart, cartItems }) {
                       {/* Top Badges */}
                       <div className="absolute top-2 left-2 flex flex-wrap items-center gap-1">
                         {item.badge && (
-                          <span className="px-1.5 py-0.5 rounded-full bg-neonPink/90 text-white font-bold text-[9px] sm:text-[10px] backdrop-blur-md shadow-md">
+                          <span className="px-1.5 py-0.5 rounded-full bg-red-600/90 text-white font-bold text-[9px] sm:text-[10px] backdrop-blur-md shadow-md">
                             {item.badge}
                           </span>
                         )}
@@ -130,7 +130,7 @@ export default function MenuSection({ onAddToCart, cartItems }) {
                       {item.spicyLevel > 0 && (
                         <div className="absolute top-2 right-2 px-1.5 py-0.5 rounded-full bg-charcoal-950/80 backdrop-blur-md border border-white/10 hidden xs:flex items-center gap-0.5">
                           {Array.from({ length: item.spicyLevel }).map((_, i) => (
-                            <Flame key={i} className="w-2.5 h-2.5 sm:w-3 sm:h-3 text-neonPink fill-neonPink" />
+                            <Flame key={i} className="w-2.5 h-2.5 sm:w-3 sm:h-3 text-rose-500 fill-rose-500" />
                           ))}
                         </div>
                       )}
@@ -147,7 +147,7 @@ export default function MenuSection({ onAddToCart, cartItems }) {
 
                     {/* Card Content (Readable Title & Description) */}
                     <div className="p-2.5 sm:p-3.5 space-y-1">
-                      <h3 className="font-display font-bold text-xs sm:text-sm md:text-base text-white group-hover:text-neonPink transition-colors line-clamp-1" title={item.name}>
+                      <h3 className="font-display font-bold text-xs sm:text-sm md:text-base text-white group-hover:text-rose-400 transition-colors line-clamp-1" title={item.name}>
                         {item.name}
                       </h3>
                       
@@ -171,7 +171,7 @@ export default function MenuSection({ onAddToCart, cartItems }) {
                       className={`p-2 sm:px-3 sm:py-2 rounded-xl font-bold text-xs flex items-center justify-center gap-1 transition-all flex-shrink-0 ${
                         isJustAdded 
                           ? 'bg-emerald-500 text-white shadow-md shadow-emerald-500/30' 
-                          : 'bg-neonPink/15 hover:bg-neonPink text-neonPink hover:text-white border border-neonPink/30 hover:border-transparent'
+                          : 'bg-red-950/40 hover:bg-red-600 text-rose-300 hover:text-white border border-red-500/30 hover:border-transparent'
                       }`}
                       title="Tambah ke pesanan"
                     >

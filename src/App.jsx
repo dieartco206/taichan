@@ -77,7 +77,7 @@ export default function App() {
   const totalCartCount = cartItems.reduce((acc, item) => acc + item.qty, 0);
 
   return (
-    <div className="min-h-screen bg-[#0c101d] text-slate-100 flex flex-col selection:bg-neonPink selection:text-white relative overflow-x-hidden">
+    <div className="min-h-screen bg-[#0b090d] text-slate-100 flex flex-col selection:bg-red-600 selection:text-white relative overflow-x-hidden">
       {/* Global Ambient Charcoal Dot Texture */}
       <div 
         className="fixed inset-0 pointer-events-none opacity-[0.04] z-0" 
@@ -87,10 +87,10 @@ export default function App() {
         }}
       />
 
-      {/* Global Ambient Radiant Glow Orbs */}
-      <div className="fixed top-0 left-1/4 w-[700px] h-[700px] bg-neonPink/[0.08] rounded-full blur-[180px] pointer-events-none z-0" />
-      <div className="fixed bottom-1/4 right-10 w-[600px] h-[600px] bg-neonCyan/[0.07] rounded-full blur-[170px] pointer-events-none z-0" />
-      <div className="fixed top-1/2 left-0 w-[500px] h-[500px] bg-amber-500/[0.05] rounded-full blur-[160px] pointer-events-none z-0" />
+      {/* Global Ambient Radiant Hearth Glow Orbs */}
+      <div className="fixed top-0 left-1/4 w-[700px] h-[700px] bg-red-600/[0.08] rounded-full blur-[180px] pointer-events-none z-0" />
+      <div className="fixed bottom-1/4 right-10 w-[600px] h-[600px] bg-orange-500/[0.07] rounded-full blur-[170px] pointer-events-none z-0" />
+      <div className="fixed top-1/2 left-0 w-[500px] h-[500px] bg-amber-500/[0.06] rounded-full blur-[160px] pointer-events-none z-0" />
 
       {/* Top Navbar */}
       <Navbar 
@@ -145,13 +145,13 @@ export default function App() {
             <TaichanLogo size="sm" />
             <div>
               <span className="text-xs font-bold text-white block">56 Taichan Djoeanda</span>
-              <span className="text-[10px] text-neonCyan font-medium">Buka 18:00 - 02:00 WIB</span>
+              <span className="text-[10px] text-amber-400 font-medium">Buka 18:00 - 02:00 WIB</span>
             </div>
           </div>
 
           <button
             onClick={() => setIsCartOpen(true)}
-            className="px-4 py-2.5 rounded-xl bg-gradient-to-r from-neonPink to-rose-600 text-white font-bold text-xs flex items-center gap-2 shadow-lg shadow-neonPink/30"
+            className="px-4 py-2.5 rounded-xl bg-gradient-to-r from-red-600 via-rose-600 to-orange-500 hover:from-red-500 hover:to-orange-400 text-white font-bold text-xs flex items-center gap-2 shadow-lg shadow-red-600/35 active:scale-95 transition-all"
           >
             <div className="relative flex items-center justify-center">
               <ShoppingBag className="w-4 h-4" />

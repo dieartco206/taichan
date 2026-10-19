@@ -17,7 +17,7 @@ export default function SpicyMeterGimmick() {
         particleCount: 50,
         spread: 70,
         origin: { y: 0.7 },
-        colors: ['#ff1a75', '#00e5ff', '#ff8843']
+        colors: ['#e11d48', '#f97316', '#f59e0b', '#dc2626']
       });
     }
   };
@@ -29,7 +29,8 @@ export default function SpicyMeterGimmick() {
     confetti({
       particleCount: 40,
       spread: 60,
-      origin: { y: 0.8 }
+      origin: { y: 0.8 },
+      colors: ['#e11d48', '#f97316', '#f59e0b']
     });
     setTimeout(() => setCopied(false), 2500);
   };
@@ -42,7 +43,7 @@ export default function SpicyMeterGimmick() {
         <div 
           className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[600px] h-[600px] rounded-full blur-[160px] transition-all duration-700 opacity-20"
           style={{
-            backgroundColor: selectedLevelIndex === 3 ? '#ff1a75' : selectedLevelIndex === 2 ? '#ff4d00' : '#00e5ff'
+            backgroundColor: selectedLevelIndex === 3 ? '#e11d48' : selectedLevelIndex === 2 ? '#ea580c' : '#f59e0b'
           }}
         />
       </div>
@@ -51,8 +52,8 @@ export default function SpicyMeterGimmick() {
         
         {/* Section Header (Strict Single-Line on Desktop) */}
         <div className="text-center space-y-2 mb-10">
-          <div className="inline-flex items-center gap-2 px-3.5 py-1 rounded-full bg-neonPink/10 border border-neonPink/30 text-neonPink text-xs font-bold uppercase tracking-wider whitespace-nowrap">
-            <Flame className="w-3.5 h-3.5 fill-neonPink" />
+          <div className="inline-flex items-center gap-2 px-3.5 py-1 rounded-full bg-red-950/40 border border-red-500/30 text-rose-400 text-xs font-bold uppercase tracking-wider whitespace-nowrap">
+            <Flame className="w-3.5 h-3.5 fill-rose-500 text-rose-500" />
             <span>Spiciness Simulator Taichan 56</span>
           </div>
           <h2 className="font-display font-extrabold text-2xl sm:text-3xl md:text-4xl text-white whitespace-normal md:whitespace-nowrap">
@@ -73,7 +74,7 @@ export default function SpicyMeterGimmick() {
                 onClick={() => handleSelectLevel(index)}
                 className={`relative p-4 rounded-2xl border transition-all duration-300 text-left flex flex-col justify-between ${
                   isSelected 
-                    ? 'bg-charcoal-800 border-neonPink shadow-[0_0_20px_rgba(255,26,117,0.3)] ring-1 ring-neonPink/50' 
+                    ? 'bg-charcoal-800 border-red-500/60 shadow-[0_0_20px_rgba(225,29,72,0.3)] ring-1 ring-red-500/40' 
                     : 'bg-charcoal-900/80 border-white/10 hover:border-white/20 hover:bg-charcoal-800/60'
                 }`}
               >
@@ -87,7 +88,7 @@ export default function SpicyMeterGimmick() {
                         <Flame 
                           key={i} 
                           className={`w-3.5 h-3.5 ${
-                            isSelected ? 'text-neonPink fill-neonPink animate-pulse' : 'text-slate-500'
+                            isSelected ? 'text-red-500 fill-red-500 animate-pulse' : 'text-slate-500'
                           }`} 
                         />
                       ))}
@@ -100,7 +101,7 @@ export default function SpicyMeterGimmick() {
 
                 <div className="mt-3 pt-1 flex items-center justify-between text-[11px] whitespace-nowrap">
                   <span className="text-slate-400 font-mono">{lvl.scoville}</span>
-                  <span className={`font-semibold ${isSelected ? 'text-neonPink' : 'text-slate-500'}`}>
+                  <span className={`font-semibold ${isSelected ? 'text-rose-400' : 'text-slate-500'}`}>
                     {lvl.heatPercentage}% Heat
                   </span>
                 </div>
@@ -117,13 +118,13 @@ export default function SpicyMeterGimmick() {
             animate={{ opacity: 1, y: 0 }}
             exit={{ opacity: 0, y: -12 }}
             transition={{ duration: 0.25 }}
-            className="glass-panel rounded-3xl p-6 sm:p-7 border border-neonPink/30 relative overflow-hidden shadow-2xl"
+            className="glass-panel rounded-3xl p-6 sm:p-7 border border-red-500/30 relative overflow-hidden shadow-2xl"
           >
             {/* Heat Meter Progress Bar */}
             <div className="mb-5">
               <div className="flex items-center justify-between text-xs font-semibold mb-2 whitespace-nowrap">
                 <span className="text-slate-400 uppercase tracking-wider flex items-center gap-1.5">
-                  <Flame className="w-4 h-4 text-neonPink" />
+                  <Flame className="w-4 h-4 text-rose-500 fill-rose-500" />
                   Tingkat Kepedasan Cabai Rawit Merah
                 </span>
                 <span className="text-white font-mono">{currentLevel.heatPercentage}% - {currentLevel.scoville}</span>
@@ -133,7 +134,7 @@ export default function SpicyMeterGimmick() {
                   initial={{ width: 0 }}
                   animate={{ width: `${currentLevel.heatPercentage}%` }}
                   transition={{ duration: 0.5, ease: "easeOut" }}
-                  className={`h-full rounded-full bg-gradient-to-r from-neonCyan via-neonPink to-rose-600`}
+                  className={`h-full rounded-full bg-gradient-to-r from-amber-400 via-orange-500 to-red-600`}
                 />
               </div>
             </div>
@@ -143,7 +144,7 @@ export default function SpicyMeterGimmick() {
               {/* Left description */}
               <div className="lg:col-span-8 space-y-3">
                 <div className="flex flex-wrap items-center gap-2 sm:gap-3">
-                  <span className="text-xs font-bold text-neonPink uppercase tracking-wider">
+                  <span className="text-xs font-bold text-rose-400 uppercase tracking-wider">
                     {currentLevel.tagline}
                   </span>
                   <span className="text-slate-600 hidden sm:inline">•</span>
@@ -158,7 +159,7 @@ export default function SpicyMeterGimmick() {
 
                 {/* Recommendation Pill */}
                 <div className="p-3 rounded-2xl bg-white/[0.04] border border-white/10 flex items-start sm:items-center gap-2.5 sm:gap-3 text-xs">
-                  <div className="w-7 h-7 rounded-lg bg-neonCyan/15 text-neonCyan flex items-center justify-center flex-shrink-0 mt-0.5 sm:mt-0">
+                  <div className="w-7 h-7 rounded-lg bg-amber-500/15 text-amber-400 flex items-center justify-center flex-shrink-0 mt-0.5 sm:mt-0">
                     <UtensilsCrossed className="w-3.5 h-3.5" />
                   </div>
                   <div className="leading-relaxed">
@@ -172,7 +173,7 @@ export default function SpicyMeterGimmick() {
               <div className="lg:col-span-4 flex flex-col gap-2 justify-center">
                 <button
                   onClick={handleChallengeFriend}
-                  className="w-full py-3 px-4 rounded-xl bg-charcoal-800 hover:bg-charcoal-700 border border-neonPink/40 text-white font-bold text-xs flex items-center justify-center gap-2 transition-all hover:scale-[1.01] shadow-lg"
+                  className="w-full py-3 px-4 rounded-xl bg-charcoal-800 hover:bg-charcoal-700 border border-red-500/40 hover:border-red-500/70 text-white font-bold text-xs flex items-center justify-center gap-2 transition-all hover:scale-[1.01] shadow-lg"
                 >
                   {copied ? (
                     <>
@@ -181,7 +182,7 @@ export default function SpicyMeterGimmick() {
                     </>
                   ) : (
                     <>
-                      <Share2 className="w-4 h-4 text-neonPink flex-shrink-0" />
+                      <Share2 className="w-4 h-4 text-rose-400 flex-shrink-0" />
                       <span>Tantang Teman ({currentLevel.name.split(':')[0]})</span>
                     </>
                   )}

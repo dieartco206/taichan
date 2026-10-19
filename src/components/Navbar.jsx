@@ -52,7 +52,7 @@ export default function Navbar({ cartCount, onOpenCart }) {
             <TaichanLogo size="sm" className="w-8 h-8 sm:w-10 sm:h-10 flex-shrink-0" />
             <div className="flex items-center gap-1.5 sm:gap-2 whitespace-nowrap flex-shrink-0">
               <span className="font-display font-black text-lg sm:text-xl text-white tracking-tight whitespace-nowrap">
-                <span className="text-neonCyan">56</span> <span className="text-neonPink">TAICHAN</span>
+                <span className="text-amber-400">56</span> <span className="text-red-500">TAICHAN</span>
               </span>
               <span className="flex items-center gap-1.5 px-2 py-0.5 rounded-full bg-white/5 border border-white/10 text-[10px] text-slate-300 font-medium whitespace-nowrap flex-shrink-0">
                 <span className={`w-1.5 h-1.5 rounded-full flex-shrink-0 ${isOpenNow ? 'bg-emerald-400 animate-pulse' : 'bg-amber-400'}`} />
@@ -82,7 +82,7 @@ export default function Navbar({ cartCount, onOpenCart }) {
               href={RESTAURANT_INFO.instagramUrl}
               target="_blank"
               rel="noopener noreferrer"
-              className="hidden sm:flex p-2 rounded-xl text-slate-300 hover:text-neonPink hover:bg-white/5 transition-colors"
+              className="hidden sm:flex p-2 rounded-xl text-slate-300 hover:text-rose-400 hover:bg-white/5 transition-colors"
               title="Instagram @taichan56djoeanda"
             >
               <Instagram className="w-5 h-5" />
@@ -91,14 +91,14 @@ export default function Navbar({ cartCount, onOpenCart }) {
             {/* Primary Cart CTA with Floating Badge (Icon Only) */}
             <button
               onClick={onOpenCart}
-              className="relative p-2.5 rounded-xl bg-gradient-to-r from-neonPink to-rose-600 hover:from-neonPink/90 hover:to-rose-500 text-white flex items-center justify-center shadow-[0_0_15px_rgba(255,26,117,0.4)] hover:shadow-[0_0_22px_rgba(255,26,117,0.6)] hover:scale-105 active:scale-95 transition-all flex-shrink-0"
+              className="relative p-2.5 rounded-xl bg-gradient-to-r from-red-600 via-rose-600 to-orange-500 hover:from-red-500 hover:to-orange-400 text-white flex items-center justify-center shadow-[0_0_18px_rgba(225,29,72,0.45)] hover:shadow-[0_0_25px_rgba(225,29,72,0.65)] hover:scale-105 active:scale-95 transition-all flex-shrink-0"
               title="Keranjang Pesanan"
               aria-label="Keranjang Pesanan"
             >
               <div className="relative flex items-center justify-center">
                 <ShoppingBag className="w-5 h-5" />
                 {cartCount > 0 && (
-                  <span className="absolute -top-2.5 -right-2.5 flex h-4 min-w-[16px] px-1 items-center justify-center rounded-full bg-white text-charcoal-950 text-[10px] font-black shadow-md border border-neonPink/30 leading-none">
+                  <span className="absolute -top-2.5 -right-2.5 flex h-4 min-w-[16px] px-1 items-center justify-center rounded-full bg-white text-charcoal-950 text-[10px] font-black shadow-md border border-red-500/30 leading-none">
                     {cartCount}
                   </span>
                 )}
@@ -142,7 +142,7 @@ export default function Navbar({ cartCount, onOpenCart }) {
                 href={RESTAURANT_INFO.instagramUrl}
                 target="_blank"
                 rel="noopener noreferrer"
-                className="flex items-center justify-center gap-1.5 py-2.5 rounded-xl bg-white/5 border border-white/10 text-pink-300 text-xs font-bold"
+                className="flex items-center justify-center gap-1.5 py-2.5 rounded-xl bg-white/5 border border-white/10 text-rose-300 text-xs font-bold"
               >
                 <Instagram className="w-4 h-4" />
                 <span>Instagram</span>
