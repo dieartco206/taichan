@@ -149,32 +149,27 @@ export default function Hero({ onExploreMenu, onOrderDirect }) {
             {/* Ambient Radiant Glow Behind Image */}
             <div className="absolute inset-0 bg-gradient-to-tr from-neonPink/35 via-rose-600/25 to-neonCyan/30 rounded-full blur-3xl -z-10 pointer-events-none" />
 
-            {/* Circular Gourmet Plate Presentation (Enlarged & Pure Dish) */}
-            <div className="relative w-[320px] h-[320px] sm:w-[410px] sm:h-[410px] lg:w-[460px] lg:h-[460px] rounded-full p-3 sm:p-3.5 bg-gradient-to-b from-white/20 via-white/5 to-black/80 border border-white/20 shadow-[0_25px_60px_-15px_rgba(0,0,0,0.95)] group">
-              
-              {/* Inner Plate Bevel & Image Container */}
-              <div className="w-full h-full rounded-full overflow-hidden relative shadow-inner ring-1 ring-white/10">
-                <AnimatePresence mode="wait">
-                  <motion.div
-                    key={currentItem.id}
-                    initial={{ opacity: 0, scale: 1.05 }}
-                    animate={{ opacity: 1, scale: 1.15 }}
-                    exit={{ opacity: 0, scale: 0.98 }}
-                    transition={{ duration: 0.5, ease: "easeOut" }}
-                    className="absolute inset-0 flex items-center justify-center"
-                  >
-                    <img 
-                      src={currentItem.image} 
-                      alt={currentItem.name} 
-                      className="w-full h-full object-cover object-[42%_center] group-hover:scale-120 transition-transform duration-700"
-                    />
-                  </motion.div>
-                </AnimatePresence>
+            {/* Circular Gourmet Plate Presentation (Thin Elegant Border) */}
+            <div className="relative w-[320px] h-[320px] sm:w-[410px] sm:h-[410px] lg:w-[460px] lg:h-[460px] rounded-full overflow-hidden border border-white/20 shadow-[0_25px_60px_-15px_rgba(0,0,0,0.95)] group">
+              <AnimatePresence mode="wait">
+                <motion.div
+                  key={currentItem.id}
+                  initial={{ opacity: 0, scale: 1.05 }}
+                  animate={{ opacity: 1, scale: 1.15 }}
+                  exit={{ opacity: 0, scale: 0.98 }}
+                  transition={{ duration: 0.5, ease: "easeOut" }}
+                  className="absolute inset-0 flex items-center justify-center"
+                >
+                  <img 
+                    src={currentItem.image} 
+                    alt={currentItem.name} 
+                    className="w-full h-full object-cover object-[42%_center] group-hover:scale-120 transition-transform duration-700"
+                  />
+                </motion.div>
+              </AnimatePresence>
 
-                {/* Subtle Soft Vignette Overlay */}
-                <div className="absolute inset-0 rounded-full bg-gradient-to-t from-black/45 via-transparent to-black/15 pointer-events-none" />
-              </div>
-
+              {/* Subtle Soft Vignette Overlay */}
+              <div className="absolute inset-0 rounded-full bg-gradient-to-t from-black/45 via-transparent to-black/15 pointer-events-none" />
             </div>
 
           </motion.div>
