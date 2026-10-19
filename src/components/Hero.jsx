@@ -1,11 +1,74 @@
-import React from 'react';
-import { motion } from 'framer-motion';
+import React, { useState, useEffect } from 'react';
+import { motion, AnimatePresence } from 'framer-motion';
 import { Flame, Star, MapPin, ArrowRight, ExternalLink } from 'lucide-react';
 import Instagram from './InstagramIcon';
 import TaichanLogo from './TaichanLogo';
 import { RESTAURANT_INFO } from '../data/restaurantData';
 
+const SHOWCASE_ITEMS = [
+  {
+    id: "taichan-mix",
+    name: "Sate Taichan Mix (Dada + Kulit)",
+    portion: "10 Tusuk",
+    price: "Rp 35.000",
+    badge: "Signature 56",
+    image: "/menu/sate_taichan_jakarta.jpg",
+    desc: "Daging tebal juicy & kulit garing dengan sambal uleg segar.",
+    tag: "Rawit Uleg Asli"
+  },
+  {
+    id: "taichan-kulit",
+    name: "Sate Taichan Kulit Crispy",
+    portion: "10 Tusuk",
+    price: "Rp 35.000",
+    badge: "Kriuk Nagih",
+    image: "/menu/sate_kulit.jpg",
+    desc: "Kulit ayam renyah garing gurih dengan bumbu marinasi meresap.",
+    tag: "Crispy Renyah"
+  },
+  {
+    id: "paket-sultan",
+    name: "Paket Sultan 30 Tusuk",
+    portion: "30 Tusuk",
+    price: "Rp 100.000",
+    badge: "Super Hemat",
+    image: "/menu/paket_sultan.jpg",
+    desc: "Puas rame-rame bebas mix Dada, Paha & Kulit + 2 Sambal.",
+    tag: "Paling Hemat"
+  },
+  {
+    id: "pisang-bakar",
+    name: "Pisang Bakar Cokelat Keju",
+    portion: "1 Porsi",
+    price: "Rp 18.000",
+    badge: "Penetral Pedas",
+    image: "/menu/pisang_bakar.jpg",
+    desc: "Pisang dibakar harum bertabur keju melimpah, meses & susu manis.",
+    tag: "Dessert Manis"
+  },
+  {
+    id: "es-jeruk",
+    name: "Es Jeruk Peras Murni",
+    portion: "Gelas Jumbo",
+    price: "Rp 10.000",
+    badge: "Best Drink",
+    image: "/menu/es_jeruk.jpg",
+    desc: "Perasan jeruk asli murni dingin langsung mendinginkan lidah.",
+    tag: "Segar Dingin"
+  }
+];
+
 export default function Hero({ onExploreMenu, onOrderDirect }) {
+  const [currentIndex, setCurrentIndex] = useState(0);
+
+  useEffect(() => {
+    const timer = setInterval(() => {
+      setCurrentIndex((prev) => (prev + 1) % SHOWCASE_ITEMS.length);
+    }, 3800);
+    return () => clearInterval(timer);
+  }, []);
+
+  const currentItem = SHOWCASE_ITEMS[currentIndex];
   return (
     <section className="relative min-h-[88vh] flex items-center justify-center pt-24 sm:pt-28 pb-14 sm:pb-16 overflow-hidden">
       
@@ -130,55 +193,79 @@ export default function Hero({ onExploreMenu, onOrderDirect }) {
             {/* Ambient Back Glow */}
             <div className="absolute inset-0 bg-gradient-to-br from-neonPink/25 via-purple-600/15 to-neonCyan/25 rounded-3xl blur-2xl transform rotate-2 scale-95" />
 
-            {/* Main Showcase Card */}
+            {/* Main Showcase Card with Auto-Rotating Slider */}
             <div className="relative glass-panel rounded-3xl p-3.5 sm:p-5 overflow-hidden border border-white/15 shadow-2xl">
               
-              {/* Product Hero Image */}
-              <div className="relative h-64 sm:h-72 md:h-80 w-full rounded-2xl overflow-hidden group bg-charcoal-900">
-                <img 
-                  src="/menu/sate_taichan_jakarta.jpg" 
-                  alt="Sate Taichan 56 Djoeanda Signature" 
-                  className="w-full h-full object-cover object-center group-hover:scale-105 transition-transform duration-700 ease-out"
-                />
-                
-                {/* Subtle vignette gradient */}
-                <div className="absolute inset-0 bg-gradient-to-t from-charcoal-950/90 via-charcoal-950/20 to-transparent" />
+              {/* Product Hero Image Carousel */}
+              <div className="relative h-64 sm:h-72 md:h-80 w-full rounded-2xl overflow-hidden bg-charcoal-900">
+                <AnimatePresence mode="wait">
+                  <motion.div
+                    key={currentItem.id}
+                    initial={{ opacity: 0, scale: 1.04 }}
+                    animate={{ opacity: 1, scale: 1 }}
+                    exit={{ opacity: 0, scale: 0.98 }}
+                    transition={{ duration: 0.45 }}
+                    className="absolute inset-0"
+                  >
+                    <img 
+                      src={currentItem.image} 
+                      alt={currentItem.name} 
+                      className="w-full h-full object-cover object-center"
+                    />
+                    
+                    {/* Subtle vignette gradient */}
+                    <div className="absolute inset-0 bg-gradient-to-t from-charcoal-950/95 via-charcoal-950/20 to-transparent" />
 
-                {/* Floating Badges */}
-                <div className="absolute top-3 left-3 px-3 py-1 rounded-full bg-charcoal-950/80 backdrop-blur-md border border-white/10 text-white text-xs font-bold flex items-center gap-1.5 shadow-lg">
-                  <Flame className="w-3.5 h-3.5 text-neonPink fill-neonPink" />
-                  <span>Signature 56</span>
-                </div>
+                    {/* Floating Badges */}
+                    <div className="absolute top-3 left-3 px-3 py-1 rounded-full bg-charcoal-950/80 backdrop-blur-md border border-white/10 text-white text-xs font-bold flex items-center gap-1.5 shadow-lg">
+                      <Flame className="w-3.5 h-3.5 text-neonPink fill-neonPink" />
+                      <span>{currentItem.badge}</span>
+                    </div>
 
-                <div className="absolute top-3 right-3 px-2.5 py-1 rounded-full bg-neonPink/90 text-white text-xs font-black shadow-lg">
-                  10 Tusuk • Rp 35.000
-                </div>
+                    <div className="absolute top-3 right-3 px-2.5 py-1 rounded-full bg-neonPink/90 text-white text-xs font-black shadow-lg">
+                      {currentItem.portion} • {currentItem.price}
+                    </div>
 
-                {/* Bottom title on image */}
-                <div className="absolute bottom-3 left-3.5 right-3.5 text-left">
-                  <h3 className="font-display font-black text-base sm:text-lg text-white">
-                    Sate Taichan Mix (Dada + Kulit)
-                  </h3>
-                  <p className="text-xs text-slate-300 mt-0.5 line-clamp-1">
-                    Daging tebal juicy & kulit garing dengan sambal uleg segar.
-                  </p>
-                </div>
+                    {/* Bottom title on image */}
+                    <div className="absolute bottom-3 left-3.5 right-3.5 text-left">
+                      <h3 className="font-display font-black text-base sm:text-lg text-white">
+                        {currentItem.name}
+                      </h3>
+                      <p className="text-xs text-slate-300 mt-0.5 line-clamp-1">
+                        {currentItem.desc}
+                      </p>
+                    </div>
+                  </motion.div>
+                </AnimatePresence>
               </div>
 
-              {/* Bottom Quick Bar */}
+              {/* Bottom Quick Bar with Carousel Progress Dots */}
               <div className="mt-3 pt-0.5 flex items-center justify-between gap-2.5">
-                <div className="flex items-center gap-1.5 text-xs text-slate-300 min-w-0">
-                  <span className="px-2.5 py-1 rounded-lg bg-white/5 border border-white/10 text-[11px] font-medium truncate">
-                    Rawit Uleg Asli
-                  </span>
-                  <span className="px-2.5 py-1 rounded-lg bg-white/5 border border-white/10 text-[11px] font-medium hidden xs:inline truncate">
-                    Jeruk Nipis Segar
+                <div className="flex items-center gap-2">
+                  <div className="flex items-center gap-1">
+                    {SHOWCASE_ITEMS.map((item, idx) => (
+                      <button
+                        key={item.id}
+                        onClick={() => setCurrentIndex(idx)}
+                        className={`h-1.5 rounded-full transition-all duration-300 ${
+                          idx === currentIndex 
+                            ? 'w-5 bg-neonPink shadow-[0_0_8px_rgba(255,26,117,0.8)]' 
+                            : 'w-1.5 bg-white/20 hover:bg-white/50'
+                        }`}
+                        title={item.name}
+                        aria-label={item.name}
+                      />
+                    ))}
+                  </div>
+
+                  <span className="px-2 py-0.5 rounded-md bg-white/5 border border-white/10 text-[10px] text-slate-300 font-medium">
+                    {currentItem.tag}
                   </span>
                 </div>
 
                 <button
                   onClick={onOrderDirect}
-                  className="px-4 py-2 rounded-xl bg-gradient-to-r from-neonPink to-rose-600 hover:from-neonPink/90 hover:to-rose-500 text-white font-bold text-xs flex items-center gap-1.5 shadow-md shadow-neonPink/25 transition-all flex-shrink-0"
+                  className="px-4 py-2 rounded-xl bg-gradient-to-r from-neonPink to-rose-600 hover:from-neonPink/90 hover:to-rose-500 text-white font-bold text-xs flex items-center gap-1.5 shadow-md shadow-neonPink/25 transition-all flex-shrink-0 active:scale-95"
                 >
                   <span>Pesan</span>
                   <ArrowRight className="w-3.5 h-3.5" />
