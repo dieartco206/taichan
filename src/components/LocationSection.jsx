@@ -1,110 +1,120 @@
 import React from 'react';
-import { MapPin, Clock, Navigation, ExternalLink, Phone, Bike, Sparkles, Check } from 'lucide-react';
+import { MapPin, Clock, Navigation, ExternalLink, Check } from 'lucide-react';
 import { RESTAURANT_INFO } from '../data/restaurantData';
 
 export default function LocationSection() {
   return (
-    <section id="lokasi" className="py-24 relative overflow-hidden bg-charcoal-950">
+    <section id="lokasi" className="py-20 relative overflow-hidden bg-charcoal-950">
       
       {/* Background glow */}
-      <div className="absolute top-1/2 left-0 w-80 h-80 bg-flame-500/10 rounded-full blur-[140px] pointer-events-none" />
+      <div className="absolute top-1/2 left-0 w-[500px] h-[500px] bg-neonPink/10 rounded-full blur-[160px] pointer-events-none" />
 
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
+      <div className="max-w-[1440px] mx-auto px-4 sm:px-6 lg:px-10 relative z-10">
         
-        {/* Section Header */}
-        <div className="text-center max-w-2xl mx-auto space-y-3 mb-14">
-          <div className="inline-flex items-center gap-1.5 px-3.5 py-1 rounded-full bg-white/5 border border-white/10 text-flame-500 text-xs font-bold uppercase tracking-wider">
+        {/* Section Header (Strict Single-Line on Desktop) */}
+        <div className="text-center space-y-1.5 mb-10">
+          <div className="inline-flex items-center gap-1.5 px-3.5 py-1 rounded-full bg-white/5 border border-white/10 text-neonPink text-xs font-bold uppercase tracking-wider whitespace-nowrap">
             <MapPin className="w-3.5 h-3.5" />
-            <span>Kunjungi Kedai Kami</span>
+            <span>Kunjungi Kedai Taichan 56</span>
           </div>
-          <h2 className="font-display font-extrabold text-3xl sm:text-4xl text-white">
-            Lokasi & Jam Buka <span className="text-gradient-flame">Margonda</span>
+          <h2 className="font-display font-black text-2xl sm:text-3xl md:text-4xl text-white whitespace-normal md:whitespace-nowrap">
+            Lokasi Kedai & Jam Buka <span className="text-gradient-flame">Margonda Depok</span>
           </h2>
-          <p className="text-slate-400 text-xs sm:text-sm">
-            Strategis di jalan utama Margonda Raya, persis di samping KFC Margonda. Parkir motor dan mobil mudah & leluasa.
+          <p className="text-slate-400 text-xs sm:text-sm md:text-base whitespace-normal lg:whitespace-nowrap">
+            Strategis di jalur utama Jl. Margonda Raya, persis samping KFC Margonda. Parkir luas untuk motor dan mobil.
           </p>
         </div>
 
-        <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 items-stretch">
+        <div className="grid grid-cols-1 lg:grid-cols-12 gap-6 items-stretch">
           
           {/* Left Column: Detail Information */}
-          <div className="lg:col-span-5 flex flex-col justify-between space-y-6 p-7 sm:p-8 rounded-3xl glass-panel border border-white/10">
+          <div className="lg:col-span-5 flex flex-col justify-between space-y-5 p-6 sm:p-7 rounded-3xl glass-panel border border-white/10">
             
-            <div className="space-y-6">
+            <div className="space-y-5">
               
               {/* Address card */}
-              <div className="flex items-start gap-4">
-                <div className="w-12 h-12 rounded-2xl bg-flame-500/20 text-flame-400 border border-flame-500/30 flex items-center justify-center flex-shrink-0 shadow-inner">
-                  <MapPin className="w-6 h-6" />
+              <div className="flex items-start gap-3.5">
+                <div className="w-10 h-10 rounded-xl bg-neonPink/15 text-neonPink border border-neonPink/30 flex items-center justify-center flex-shrink-0 shadow-inner">
+                  <MapPin className="w-5 h-5" />
                 </div>
                 <div>
-                  <h4 className="font-display font-bold text-base text-white">Alamat Lengkap</h4>
+                  <h4 className="font-display font-bold text-sm sm:text-base text-white whitespace-nowrap">Alamat Lengkap Kedai</h4>
                   <p className="text-xs sm:text-sm text-slate-300 mt-1 leading-relaxed">
                     {RESTAURANT_INFO.fullAddress}
                   </p>
-                  <span className="inline-block mt-2 text-[11px] font-semibold text-flame-400 bg-flame-500/10 px-2.5 py-1 rounded-md border border-flame-500/20">
+                  <span className="inline-block mt-2 text-[11px] font-bold text-neonPink bg-neonPink/10 px-2.5 py-0.5 rounded-md border border-neonPink/25 whitespace-nowrap">
                     📍 Patokan: Tepat di samping KFC Margonda
                   </span>
                 </div>
               </div>
 
               {/* Hours card */}
-              <div className="flex items-start gap-4">
-                <div className="w-12 h-12 rounded-2xl bg-gold-500/20 text-gold-400 border border-gold-500/30 flex items-center justify-center flex-shrink-0 shadow-inner">
-                  <Clock className="w-6 h-6" />
+              <div className="flex items-start gap-3.5">
+                <div className="w-10 h-10 rounded-xl bg-neonCyan/15 text-neonCyan border border-neonCyan/30 flex items-center justify-center flex-shrink-0 shadow-inner">
+                  <Clock className="w-5 h-5" />
                 </div>
                 <div>
-                  <h4 className="font-display font-bold text-base text-white">Jam Operasional</h4>
-                  <p className="text-xs sm:text-sm text-slate-300 mt-1">
-                    Setiap Hari: <strong className="text-white font-semibold">{RESTAURANT_INFO.operationalHours}</strong>
+                  <h4 className="font-display font-bold text-sm sm:text-base text-white whitespace-nowrap">Jam Operasional Malam</h4>
+                  <p className="text-xs sm:text-sm text-slate-300 mt-1 whitespace-nowrap">
+                    Setiap Hari: <strong className="text-white font-bold">{RESTAURANT_INFO.operationalHours}</strong> (Senin s/d Minggu)
                   </p>
-                  <p className="text-[11px] text-slate-400 mt-0.5">
-                    Senin s/d Minggu tanpa libur (Kuliner Malam)
+                  <p className="text-[11px] text-slate-400 mt-0.5 whitespace-nowrap">
+                    Tersedia Take away & Dine in langsung di lokasi
                   </p>
                 </div>
               </div>
 
-              {/* Features list */}
+              {/* Features list in Single Lines */}
               <div className="pt-2 border-t border-white/10 space-y-2 text-xs text-slate-300">
-                <div className="flex items-center gap-2">
-                  <Check className="w-4 h-4 text-emerald-400" />
-                  <span>Dine-In (Makan di tempat suasana malam seru)</span>
+                <div className="flex items-center gap-2 whitespace-nowrap">
+                  <Check className="w-4 h-4 text-emerald-400 flex-shrink-0" />
+                  <span>Dine-In (Makan di tempat suasana santai malam Depok)</span>
                 </div>
-                <div className="flex items-center gap-2">
-                  <Check className="w-4 h-4 text-emerald-400" />
-                  <span>Take Away (Bungkus rapi aman sambal dipisah)</span>
+                <div className="flex items-center gap-2 whitespace-nowrap">
+                  <Check className="w-4 h-4 text-emerald-400 flex-shrink-0" />
+                  <span>Take Away (Bungkus rapi dengan sambal dipisah)</span>
                 </div>
-                <div className="flex items-center gap-2">
-                  <Check className="w-4 h-4 text-emerald-400" />
-                  <span>Order Online via GoFood, GrabFood & WhatsApp</span>
+                <div className="flex items-center gap-2 whitespace-nowrap">
+                  <Check className="w-4 h-4 text-emerald-400 flex-shrink-0" />
+                  <span>Online Delivery: GoFood • GrabFood • ShopeeFood</span>
                 </div>
               </div>
 
             </div>
 
-            {/* Direction Action Button */}
-            <div className="pt-4 border-t border-white/10">
+            {/* Direction Action Buttons */}
+            <div className="pt-3 border-t border-white/10 flex flex-col sm:flex-row gap-2.5">
               <a
                 href={RESTAURANT_INFO.mapsUrl}
                 target="_blank"
                 rel="noopener noreferrer"
-                className="w-full py-3.5 px-5 rounded-2xl bg-charcoal-800 hover:bg-charcoal-700 text-white font-bold text-xs sm:text-sm border border-white/15 hover:border-flame-500/50 flex items-center justify-center gap-2 transition-all shadow-lg"
+                className="flex-1 py-3 px-4 rounded-xl bg-charcoal-800 hover:bg-charcoal-700 text-white font-bold text-xs sm:text-sm border border-white/15 hover:border-neonPink/50 flex items-center justify-center gap-2 transition-all shadow-lg whitespace-nowrap"
               >
-                <Navigation className="w-4 h-4 text-flame-500" />
-                <span>Buka Rute di Google Maps</span>
+                <Navigation className="w-4 h-4 text-neonPink" />
+                <span>Rute Google Maps</span>
                 <ExternalLink className="w-3.5 h-3.5 text-slate-400" />
+              </a>
+
+              <a
+                href={RESTAURANT_INFO.shopeefoodUrl}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="py-3 px-4 rounded-xl bg-orange-500/15 hover:bg-orange-500/25 text-orange-400 font-bold text-xs sm:text-sm border border-orange-500/30 flex items-center justify-center gap-1.5 transition-all whitespace-nowrap"
+              >
+                <span>ShopeeFood</span>
+                <ExternalLink className="w-3.5 h-3.5" />
               </a>
             </div>
 
           </div>
 
           {/* Right Column: Google Maps Embed Frame */}
-          <div className="lg:col-span-7 rounded-3xl overflow-hidden glass-panel border border-white/10 shadow-2xl relative min-h-[360px]">
+          <div className="lg:col-span-7 rounded-3xl overflow-hidden glass-panel border border-white/10 shadow-2xl relative min-h-[350px]">
             <iframe 
               src={RESTAURANT_INFO.mapsEmbedQuery}
               width="100%" 
               height="100%" 
-              style={{ border: 0, minHeight: '380px' }} 
+              style={{ border: 0, minHeight: '360px' }} 
               allowFullScreen="" 
               loading="lazy" 
               referrerPolicy="no-referrer-when-downgrade"
@@ -113,12 +123,12 @@ export default function LocationSection() {
             />
             
             {/* Map overlay card */}
-            <div className="absolute top-4 left-4 right-4 sm:right-auto bg-charcoal-950/90 backdrop-blur-md p-3.5 rounded-2xl border border-white/15 shadow-xl">
+            <div className="absolute top-3.5 left-3.5 bg-charcoal-950/90 backdrop-blur-md px-3.5 py-2 rounded-xl border border-white/15 shadow-xl whitespace-nowrap">
               <div className="flex items-center gap-2">
-                <span className="w-2.5 h-2.5 rounded-full bg-flame-500 animate-ping" />
+                <span className="w-2 h-2 rounded-full bg-neonPink animate-ping" />
                 <span className="text-xs font-bold text-white">Taichan 56 Margonda</span>
               </div>
-              <p className="text-[11px] text-slate-400 mt-1">Samping KFC Margonda Raya Depok</p>
+              <p className="text-[10px] text-slate-400 mt-0.5">Samping KFC Margonda Raya Depok</p>
             </div>
           </div>
 

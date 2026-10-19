@@ -68,14 +68,14 @@ export default function CartModal({ isOpen, onClose, cartItems, onUpdateQty, onR
       >
         
         {/* Modal Header */}
-        <div className="p-5 border-b border-white/10 flex items-center justify-between bg-charcoal-950/60">
+        <div className="p-5 border-b border-white/10 flex items-center justify-between bg-charcoal-950/80">
           <div className="flex items-center gap-2.5">
-            <div className="w-8 h-8 rounded-xl bg-flame-500/20 text-flame-500 flex items-center justify-center">
+            <div className="w-8 h-8 rounded-xl bg-neonPink/20 text-neonPink flex items-center justify-center">
               <ShoppingBag className="w-4 h-4" />
             </div>
             <div>
-              <h3 className="font-display font-bold text-lg text-white">Keranjang Pesanan</h3>
-              <span className="text-[11px] text-slate-400">{totalQty} item dipilih</span>
+              <h3 className="font-display font-bold text-lg text-white whitespace-nowrap">Keranjang Pesanan Taichan 56</h3>
+              <span className="text-[11px] text-slate-400 whitespace-nowrap">{totalQty} item dipilih</span>
             </div>
           </div>
 

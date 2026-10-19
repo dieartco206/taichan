@@ -1,40 +1,40 @@
 import React from 'react';
-import { Flame, MapPin, Clock, Phone, Heart } from 'lucide-react';
+import { Flame, MapPin, Clock } from 'lucide-react';
 import Instagram from './InstagramIcon';
 import TaichanLogo from './TaichanLogo';
 import { RESTAURANT_INFO } from '../data/restaurantData';
 
 export default function Footer() {
   return (
-    <footer className="bg-charcoal-950 border-t border-neonPink/20 pt-16 pb-12 text-slate-400 text-xs sm:text-sm">
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+    <footer className="bg-charcoal-950 border-t border-neonPink/20 pt-14 pb-10 text-slate-400 text-xs sm:text-sm">
+      <div className="max-w-[1440px] mx-auto px-4 sm:px-6 lg:px-10">
         
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-12 gap-10 pb-12 border-b border-white/10">
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-12 gap-8 pb-10 border-b border-white/10">
           
           {/* Col 1: Brand Info */}
-          <div className="lg:col-span-5 space-y-4">
+          <div className="lg:col-span-5 space-y-3.5">
             <div className="flex items-center gap-3">
               <TaichanLogo size="md" />
               <div>
-                <span className="font-display font-black text-xl tracking-tight text-white block">
+                <span className="font-display font-black text-xl tracking-tight text-white block whitespace-nowrap">
                   <span className="text-neonCyan">56</span> <span className="text-neonPink">TAICHAN</span> DJOEANDA
                 </span>
-                <span className="text-xs text-neonCyan font-semibold">
+                <span className="text-xs text-neonCyan font-semibold whitespace-nowrap">
                   {RESTAURANT_INFO.officialTitle} • {RESTAURANT_INFO.tagline}
                 </span>
               </div>
             </div>
 
-            <p className="text-slate-400 text-xs sm:text-sm leading-relaxed max-w-sm">
-              Sate taichan daging ayam tebal & juicy dibakar bumbu gurih meresap, disajikan bersama sambal uleg cabai rawit merah segar, perasan jeruk nipis asli, dan kelezatan nasi daun jeruk.
+            <p className="text-slate-400 text-xs leading-relaxed max-w-md">
+              Sate taichan daging ayam tebal juicy dibakar gurih, disajikan dengan sambal rawit uleg asli, perasan jeruk nipis segar, dan kelezatan nasi daun jeruk legendaris.
             </p>
 
-            <div className="flex items-center gap-3 pt-2">
+            <div className="flex items-center gap-2.5 pt-1">
               <a
                 href={RESTAURANT_INFO.instagramUrl}
                 target="_blank"
                 rel="noopener noreferrer"
-                className="w-9 h-9 rounded-xl bg-white/5 border border-white/10 hover:border-pink-500 hover:text-pink-400 flex items-center justify-center transition-colors text-slate-300"
+                className="w-8 h-8 rounded-xl bg-white/5 border border-white/10 hover:border-neonPink hover:text-neonPink flex items-center justify-center transition-colors text-slate-300"
                 title="Instagram Resmi"
               >
                 <Instagram className="w-4 h-4" />
@@ -43,7 +43,7 @@ export default function Footer() {
                 href={RESTAURANT_INFO.mapsUrl}
                 target="_blank"
                 rel="noopener noreferrer"
-                className="w-9 h-9 rounded-xl bg-white/5 border border-white/10 hover:border-flame-500 hover:text-flame-400 flex items-center justify-center transition-colors text-slate-300"
+                className="w-8 h-8 rounded-xl bg-white/5 border border-white/10 hover:border-neonCyan hover:text-neonCyan flex items-center justify-center transition-colors text-slate-300"
                 title="Google Maps"
               >
                 <MapPin className="w-4 h-4" />
@@ -51,46 +51,46 @@ export default function Footer() {
             </div>
           </div>
 
-          {/* Col 2: Nav Quick Links */}
-          <div className="lg:col-span-3 space-y-3">
-            <h4 className="font-display font-bold text-white text-sm uppercase tracking-wider">
-              Navigasi Cepat
+          {/* Col 2: Nav Quick Links (Single Lines) */}
+          <div className="lg:col-span-3 space-y-2.5">
+            <h4 className="font-display font-bold text-white text-xs uppercase tracking-wider whitespace-nowrap">
+              Navigasi Halaman
             </h4>
-            <ul className="space-y-2 text-xs">
-              <li>
-                <a href="#menu" className="hover:text-flame-400 transition-colors">Menu Sate & Paket Hemat</a>
+            <ul className="space-y-1.5 text-xs">
+              <li className="whitespace-nowrap">
+                <a href="#menu" className="hover:text-neonPink transition-colors">Menu Sate & Paket Hemat</a>
               </li>
-              <li>
-                <a href="#spicy-meter" className="hover:text-flame-400 transition-colors">Level Pedas Rawit Merah</a>
+              <li className="whitespace-nowrap">
+                <a href="#spicy-meter" className="hover:text-neonPink transition-colors">Level Pedas Rawit Merah</a>
               </li>
-              <li>
-                <a href="#why-us" className="hover:text-flame-400 transition-colors">Kualitas & Keunggulan</a>
+              <li className="whitespace-nowrap">
+                <a href="#why-us" className="hover:text-neonPink transition-colors">Kualitas & Keunggulan</a>
               </li>
-              <li>
-                <a href="#instagram" className="hover:text-flame-400 transition-colors">Feed Instagram @taichan56djoeanda</a>
+              <li className="whitespace-nowrap">
+                <a href="#instagram" className="hover:text-neonPink transition-colors">Galeri Feed Instagram Asli</a>
               </li>
-              <li>
-                <a href="#lokasi" className="hover:text-flame-400 transition-colors">Lokasi Samping KFC Margonda</a>
+              <li className="whitespace-nowrap">
+                <a href="#lokasi" className="hover:text-neonPink transition-colors">Lokasi Samping KFC Margonda</a>
               </li>
             </ul>
           </div>
 
-          {/* Col 3: Outlet & Hours */}
-          <div className="lg:col-span-4 space-y-3">
-            <h4 className="font-display font-bold text-white text-sm uppercase tracking-wider">
+          {/* Col 3: Outlet & Hours (Single Lines) */}
+          <div className="lg:col-span-4 space-y-2.5">
+            <h4 className="font-display font-bold text-white text-xs uppercase tracking-wider whitespace-nowrap">
               Kedai Margonda Depok
             </h4>
-            <div className="space-y-2.5 text-xs text-slate-300">
-              <div className="flex items-start gap-2.5">
-                <MapPin className="w-4 h-4 text-chili-500 flex-shrink-0 mt-0.5" />
-                <span>{RESTAURANT_INFO.fullAddress}</span>
+            <div className="space-y-2 text-xs text-slate-300">
+              <div className="flex items-start gap-2">
+                <MapPin className="w-4 h-4 text-neonPink flex-shrink-0 mt-0.5" />
+                <span className="leading-snug">{RESTAURANT_INFO.fullAddress}</span>
               </div>
-              <div className="flex items-center gap-2.5">
-                <Clock className="w-4 h-4 text-gold-400 flex-shrink-0" />
+              <div className="flex items-center gap-2 whitespace-nowrap">
+                <Clock className="w-4 h-4 text-neonCyan flex-shrink-0" />
                 <span>Buka Setiap Hari: 18:00 - 02:00 WIB</span>
               </div>
-              <div className="flex items-center gap-2.5">
-                <Instagram className="w-4 h-4 text-pink-400 flex-shrink-0" />
+              <div className="flex items-center gap-2 whitespace-nowrap">
+                <Instagram className="w-4 h-4 text-neonPink flex-shrink-0" />
                 <a 
                   href={RESTAURANT_INFO.instagramUrl} 
                   target="_blank" 
@@ -105,14 +105,14 @@ export default function Footer() {
 
         </div>
 
-        {/* Bottom copyright */}
-        <div className="pt-8 flex flex-col sm:flex-row items-center justify-between gap-4 text-xs text-slate-500">
+        {/* Bottom copyright in Single Line */}
+        <div className="pt-6 flex flex-col sm:flex-row items-center justify-between gap-3 text-xs text-slate-500 whitespace-nowrap">
           <div>
             © {new Date().getFullYear()} Sate Taichan 56 Djoeanda. Seluruh hak cipta dilindungi.
           </div>
-          <div className="flex items-center gap-1">
+          <div className="flex items-center gap-1.5">
             <span>Dibuat dengan</span>
-            <Flame className="w-3.5 h-3.5 text-flame-500 fill-flame-500" />
+            <Flame className="w-3.5 h-3.5 text-neonPink fill-neonPink" />
             <span>untuk pecinta kuliner malam sejati.</span>
           </div>
         </div>
