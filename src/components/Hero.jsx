@@ -139,34 +139,51 @@ export default function Hero({ onExploreMenu, onOrderDirect }) {
 
           </motion.div>
 
-          {/* Right Column: Pure Floating Food Photo (100% Authentic Sate Taichan) */}
+          {/* Right Column: Gourmet Circular Platter Showcase */}
           <motion.div 
             initial={{ opacity: 0, scale: 0.95 }}
             animate={{ opacity: 1, scale: 1 }}
             transition={{ duration: 0.7, delay: 0.15 }}
-            className="lg:col-span-5 relative flex items-center justify-center"
+            className="lg:col-span-5 relative flex items-center justify-center py-2"
           >
             {/* Ambient Radiant Glow Behind Image */}
-            <div className="absolute -inset-2 sm:-inset-4 bg-gradient-to-tr from-neonPink/35 via-rose-600/20 to-neonCyan/30 rounded-[2.5rem] blur-2xl -z-10 pointer-events-none" />
+            <div className="absolute inset-0 bg-gradient-to-tr from-neonPink/35 via-rose-600/25 to-neonCyan/30 rounded-full blur-3xl -z-10 pointer-events-none" />
 
-            {/* Pure Floating Dish Container (No Clunky Badges, No Cards, No Dots) */}
-            <div className="relative w-full max-w-[480px] aspect-[4/3] sm:aspect-[16/11] rounded-[2rem] overflow-hidden shadow-[0_20px_50px_rgba(0,0,0,0.85)] border border-white/10 group">
-              <AnimatePresence mode="wait">
-                <motion.div
-                  key={currentItem.id}
-                  initial={{ opacity: 0, scale: 1.04 }}
-                  animate={{ opacity: 1, scale: 1 }}
-                  exit={{ opacity: 0, scale: 0.96 }}
-                  transition={{ duration: 0.5, ease: "easeOut" }}
-                  className="absolute inset-0"
-                >
-                  <img 
-                    src={currentItem.image} 
-                    alt={currentItem.name} 
-                    className="w-full h-full object-cover object-center group-hover:scale-105 transition-transform duration-700"
-                  />
-                </motion.div>
-              </AnimatePresence>
+            {/* Circular Gourmet Plate Presentation */}
+            <div className="relative w-[280px] h-[280px] sm:w-[350px] sm:h-[350px] lg:w-[390px] lg:h-[390px] rounded-full p-2.5 sm:p-3 bg-gradient-to-b from-white/20 via-white/5 to-black/80 border border-white/20 shadow-[0_25px_60px_-15px_rgba(0,0,0,0.95)] group">
+              
+              {/* Inner Plate Bevel & Image Container */}
+              <div className="w-full h-full rounded-full overflow-hidden relative shadow-inner ring-1 ring-white/10">
+                <AnimatePresence mode="wait">
+                  <motion.div
+                    key={currentItem.id}
+                    initial={{ opacity: 0, scale: 1.05 }}
+                    animate={{ opacity: 1, scale: 1.15 }}
+                    exit={{ opacity: 0, scale: 0.98 }}
+                    transition={{ duration: 0.5, ease: "easeOut" }}
+                    className="absolute inset-0 flex items-center justify-center"
+                  >
+                    <img 
+                      src={currentItem.image} 
+                      alt={currentItem.name} 
+                      className="w-full h-full object-cover object-[42%_center] group-hover:scale-120 transition-transform duration-700"
+                    />
+                  </motion.div>
+                </AnimatePresence>
+
+                {/* Subtle Soft Vignette Overlay */}
+                <div className="absolute inset-0 rounded-full bg-gradient-to-t from-black/45 via-transparent to-black/15 pointer-events-none" />
+              </div>
+
+              {/* Minimalist Floating Badge on Plate Rim */}
+              <div className="absolute -bottom-1 -left-1 sm:bottom-2 sm:left-2 px-3 py-1.5 rounded-full bg-black/85 backdrop-blur-md border border-neonPink/40 text-white text-[11px] sm:text-xs font-bold shadow-xl flex items-center gap-2 pointer-events-none">
+                <span className="flex h-2 w-2 relative flex-shrink-0">
+                  <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-neonPink opacity-75"></span>
+                  <span className="relative inline-flex rounded-full h-2 w-2 bg-neonPink"></span>
+                </span>
+                <span>{currentItem.name}</span>
+              </div>
+
             </div>
 
           </motion.div>
