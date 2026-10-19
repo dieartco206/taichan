@@ -31,17 +31,6 @@ export default function Hero({ onExploreMenu, onOrderDirect }) {
           transition={{ duration: 0.6 }}
           className="w-full flex flex-col items-center"
         >
-          
-          {/* Top Tagline Pill */}
-          <div className="inline-flex items-center gap-2 px-4 py-1.5 rounded-full bg-white/5 border border-neonPink/30 backdrop-blur-md shadow-[0_0_20px_rgba(255,26,117,0.25)] mb-5 max-w-full">
-            <span className="flex h-2 w-2 relative flex-shrink-0">
-              <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-neonPink opacity-75"></span>
-              <span className="relative inline-flex rounded-full h-2 w-2 bg-neonPink"></span>
-            </span>
-            <span className="text-[11px] sm:text-xs md:text-sm font-bold text-slate-200 tracking-wide truncate">
-              <span className="text-neonCyan">SATE TAICHAN DEPOK</span> • {RESTAURANT_INFO.tagline}
-            </span>
-          </div>
 
           {/* Main Brand Headline (Full Width, Grand, Clean & Symmetrical) */}
           <h1 className="font-display font-black text-4xl sm:text-6xl md:text-7xl lg:text-8xl text-white tracking-tight leading-none mb-5">
@@ -73,19 +62,19 @@ export default function Hero({ onExploreMenu, onOrderDirect }) {
             </div>
           </div>
 
-          {/* Call To Action Buttons (Side-by-side) */}
-          <div className="flex flex-col sm:flex-row items-center justify-center gap-3 w-full max-w-xs sm:max-w-md mx-auto mb-6">
+          {/* Call To Action Buttons (1 Baris di Mobile & Desktop) */}
+          <div className="grid grid-cols-2 gap-2.5 sm:gap-3.5 w-full max-w-sm sm:max-w-md mx-auto mb-6">
             <button
               onClick={onOrderDirect}
-              className="w-full sm:w-auto px-6 sm:px-8 py-3.5 rounded-xl bg-gradient-to-r from-neonPink via-rose-600 to-neonCyan text-white font-bold text-xs sm:text-sm tracking-wide shadow-[0_0_24px_rgba(255,26,117,0.4)] hover:shadow-[0_0_32px_rgba(255,26,117,0.6)] transition-all flex items-center justify-center gap-2 group active:scale-95"
+              className="w-full px-3 sm:px-6 py-3 sm:py-3.5 rounded-xl bg-gradient-to-r from-neonPink via-rose-600 to-neonCyan text-white font-bold text-xs sm:text-sm tracking-wide shadow-[0_0_20px_rgba(255,26,117,0.35)] hover:shadow-[0_0_28px_rgba(255,26,117,0.55)] transition-all flex items-center justify-center gap-1.5 group active:scale-95 whitespace-nowrap"
             >
               <span>Pesan Sekarang</span>
-              <ArrowRight className="w-4 h-4 group-hover:translate-x-1 transition-transform" />
+              <ArrowRight className="w-3.5 h-3.5 flex-shrink-0 group-hover:translate-x-0.5 transition-transform" />
             </button>
 
             <button
               onClick={onExploreMenu}
-              className="w-full sm:w-auto px-6 sm:px-8 py-3.5 rounded-xl bg-charcoal-900/90 hover:bg-charcoal-800 text-slate-200 hover:text-white font-bold text-xs sm:text-sm border border-neonCyan/30 hover:border-neonCyan transition-all flex items-center justify-center gap-2 active:scale-95"
+              className="w-full px-3 sm:px-6 py-3 sm:py-3.5 rounded-xl bg-charcoal-900/90 hover:bg-charcoal-800 text-slate-200 hover:text-white font-bold text-xs sm:text-sm border border-neonCyan/30 hover:border-neonCyan transition-all flex items-center justify-center gap-1.5 active:scale-95 whitespace-nowrap"
             >
               <span>Lihat Menu</span>
             </button>
