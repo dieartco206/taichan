@@ -77,20 +77,20 @@ export default function App() {
   const totalCartCount = cartItems.reduce((acc, item) => acc + item.qty, 0);
 
   return (
-    <div className="min-h-screen bg-[#0b090d] text-slate-100 flex flex-col selection:bg-red-600 selection:text-white relative overflow-x-hidden">
-      {/* Global Ambient Charcoal Dot Texture */}
+    <div className="min-h-screen bg-[#fbf8f3] text-stone-900 flex flex-col selection:bg-red-600 selection:text-white relative overflow-x-hidden">
+      {/* Global Ambient Warm Dot Texture */}
       <div 
-        className="fixed inset-0 pointer-events-none opacity-[0.04] z-0" 
+        className="fixed inset-0 pointer-events-none opacity-[0.25] z-0" 
         style={{
-          backgroundImage: `radial-gradient(rgba(255, 255, 255, 0.6) 1px, transparent 1px)`,
+          backgroundImage: `radial-gradient(rgba(168, 162, 158, 0.25) 1px, transparent 1px)`,
           backgroundSize: '24px 24px'
         }}
       />
 
-      {/* Global Ambient Radiant Hearth Glow Orbs */}
-      <div className="fixed top-0 left-1/4 w-[700px] h-[700px] bg-red-600/[0.08] rounded-full blur-[180px] pointer-events-none z-0" />
-      <div className="fixed bottom-1/4 right-10 w-[600px] h-[600px] bg-orange-500/[0.07] rounded-full blur-[170px] pointer-events-none z-0" />
-      <div className="fixed top-1/2 left-0 w-[500px] h-[500px] bg-amber-500/[0.06] rounded-full blur-[160px] pointer-events-none z-0" />
+      {/* Global Ambient Soft Hearth Glows */}
+      <div className="fixed top-0 left-1/4 w-[700px] h-[700px] bg-amber-400/[0.08] rounded-full blur-[180px] pointer-events-none z-0" />
+      <div className="fixed bottom-1/4 right-10 w-[600px] h-[600px] bg-orange-400/[0.06] rounded-full blur-[170px] pointer-events-none z-0" />
+      <div className="fixed top-1/2 left-0 w-[500px] h-[500px] bg-red-400/[0.05] rounded-full blur-[160px] pointer-events-none z-0" />
 
       {/* Top Navbar */}
       <Navbar 
@@ -140,23 +140,23 @@ export default function App() {
 
       {/* Floating Sticky Mobile Order Bar */}
       <div className="fixed bottom-4 left-4 right-4 sm:hidden z-40">
-        <div className="p-3 rounded-2xl bg-charcoal-900/95 border border-flame-500/40 backdrop-blur-xl shadow-2xl flex items-center justify-between gap-3">
+        <div className="p-3 rounded-2xl bg-white/95 border border-stone-200/90 backdrop-blur-xl shadow-[0_12px_36px_rgba(28,25,23,0.12)] flex items-center justify-between gap-3">
           <div className="flex items-center gap-2.5">
             <TaichanLogo size="sm" />
             <div>
-              <span className="text-xs font-bold text-white block">56 Taichan Djoeanda</span>
-              <span className="text-[10px] text-amber-400 font-medium">Buka 18:00 - 02:00 WIB</span>
+              <span className="text-xs font-bold text-stone-900 block">56 Taichan Djoeanda</span>
+              <span className="text-[10px] text-amber-700 font-semibold">Buka 18:00 - 02:00 WIB</span>
             </div>
           </div>
 
           <button
             onClick={() => setIsCartOpen(true)}
-            className="px-4 py-2.5 rounded-xl bg-gradient-to-r from-red-600 via-rose-600 to-orange-500 hover:from-red-500 hover:to-orange-400 text-white font-bold text-xs flex items-center gap-2 shadow-lg shadow-red-600/35 active:scale-95 transition-all"
+            className="px-4 py-2.5 rounded-xl bg-gradient-to-r from-red-600 via-rose-600 to-orange-500 hover:from-red-500 hover:to-orange-400 text-white font-bold text-xs flex items-center gap-2 shadow-lg shadow-red-600/30 active:scale-95 transition-all"
           >
             <div className="relative flex items-center justify-center">
               <ShoppingBag className="w-4 h-4" />
               {totalCartCount > 0 && (
-                <span className="absolute -top-2 -right-2 flex h-3.5 min-w-[14px] px-0.5 items-center justify-center rounded-full bg-white text-charcoal-950 text-[9px] font-black shadow-sm leading-none">
+                <span className="absolute -top-2 -right-2 flex h-3.5 min-w-[14px] px-0.5 items-center justify-center rounded-full bg-stone-900 text-white text-[9px] font-black shadow-sm leading-none">
                   {totalCartCount}
                 </span>
               )}

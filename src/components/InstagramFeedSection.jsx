@@ -7,48 +7,48 @@ import { INSTAGRAM_POSTS, RESTAURANT_INFO } from '../data/restaurantData';
 
 export default function InstagramFeedSection() {
   return (
-    <section id="instagram" className="py-20 relative overflow-hidden bg-charcoal-950">
+    <section id="instagram" className="py-20 relative overflow-hidden bg-[#faf6ee]/50 border-b border-stone-200/60">
       
       {/* Background radial glow */}
-      <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[800px] h-[500px] bg-gradient-to-r from-red-600/15 via-orange-500/10 to-amber-500/15 rounded-full blur-[180px] pointer-events-none" />
+      <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[800px] h-[500px] bg-gradient-to-r from-red-100/40 via-orange-100/30 to-amber-100/40 rounded-full blur-[180px] pointer-events-none" />
 
       <div className="max-w-[1440px] mx-auto px-4 sm:px-6 lg:px-10 relative z-10">
         
         {/* Instagram Profile Header Showcase matching official profile screenshot */}
-        <div className="p-6 sm:p-7 rounded-3xl glass-panel border border-red-500/30 mb-10 shadow-[0_0_35px_rgba(225,29,72,0.18)]">
+        <div className="p-6 sm:p-7 rounded-3xl bg-white border border-stone-200 mb-10 shadow-sm">
           <div className="flex flex-col lg:flex-row items-center justify-between gap-6">
             
             {/* Left: Avatar & Bio (Horizontal Single-Line on Desktop) */}
             <div className="flex flex-col sm:flex-row items-center sm:items-start text-center sm:text-left gap-5">
               
               {/* Official Profile Avatar with Warm Flame Ring */}
-              <div className="relative p-1 rounded-full bg-gradient-to-tr from-amber-400 via-rose-500 to-red-600 shadow-xl flex-shrink-0">
-                <TaichanLogo size="lg" className="border-2 border-charcoal-950" />
+              <div className="relative p-1 rounded-full bg-gradient-to-tr from-amber-400 via-rose-500 to-red-600 shadow-sm flex-shrink-0">
+                <TaichanLogo size="lg" className="border-2 border-white" />
               </div>
 
               {/* Bio & Details matching screenshot */}
               <div className="space-y-1.5">
                 <div className="flex flex-wrap items-center justify-center sm:justify-start gap-2.5">
-                  <h3 className="font-display font-black text-xl sm:text-2xl text-white whitespace-nowrap">
+                  <h3 className="font-display font-black text-xl sm:text-2xl text-stone-900 whitespace-nowrap">
                     @{RESTAURANT_INFO.instagramHandle}
                   </h3>
-                  <span className="px-2.5 py-0.5 rounded-full bg-red-950/40 text-rose-400 border border-red-500/30 text-[11px] font-bold whitespace-nowrap">
+                  <span className="px-2.5 py-0.5 rounded-full bg-red-50 text-red-600 border border-red-200 text-[11px] font-bold whitespace-nowrap">
                     {RESTAURANT_INFO.officialTitle}
                   </span>
                 </div>
 
-                <div className="flex items-center justify-center sm:justify-start gap-4 text-xs text-slate-300 font-medium whitespace-nowrap">
-                  <span><strong>3</strong> posts</span>
-                  <span><strong>90</strong> followers</span>
-                  <span><strong>1</strong> following</span>
+                <div className="flex items-center justify-center sm:justify-start gap-4 text-xs text-stone-600 font-medium whitespace-nowrap">
+                  <span><strong className="text-stone-900">3</strong> posts</span>
+                  <span><strong className="text-stone-900">90</strong> followers</span>
+                  <span><strong className="text-stone-900">1</strong> following</span>
                 </div>
 
-                <div className="text-xs text-slate-300 flex flex-wrap items-center justify-center sm:justify-start gap-2 pt-1.5 leading-relaxed">
-                  <span className="font-bold text-amber-400">{RESTAURANT_INFO.tagline}</span>
-                  <span className="text-slate-500">•</span>
-                  <span className="text-slate-400">Available on : GoFood • GrabFood • ShopeeFood</span>
-                  <span className="text-slate-500">•</span>
-                  <span className="text-slate-400">Take away & Dine in</span>
+                <div className="text-xs text-stone-600 flex flex-wrap items-center justify-center sm:justify-start gap-2 pt-1.5 leading-relaxed">
+                  <span className="font-bold text-amber-700">{RESTAURANT_INFO.tagline}</span>
+                  <span className="text-stone-300">•</span>
+                  <span className="text-stone-500">Available on : GoFood • GrabFood • ShopeeFood</span>
+                  <span className="text-stone-300">•</span>
+                  <span className="text-stone-500">Take away & Dine in</span>
                 </div>
               </div>
             </div>
@@ -59,7 +59,7 @@ export default function InstagramFeedSection() {
                 href={RESTAURANT_INFO.instagramUrl}
                 target="_blank"
                 rel="noopener noreferrer"
-                className="inline-flex items-center justify-center gap-1.5 px-4 py-2.5 rounded-xl bg-gradient-to-r from-red-600 via-rose-600 to-orange-500 hover:from-red-500 hover:to-orange-400 text-white font-bold text-xs sm:text-sm shadow-xl shadow-red-600/25 transition-all duration-300 hover:scale-105"
+                className="inline-flex items-center justify-center gap-1.5 px-4 py-2.5 rounded-xl bg-gradient-to-r from-red-600 via-rose-600 to-orange-500 hover:from-red-500 hover:to-orange-400 text-white font-bold text-xs sm:text-sm shadow-md shadow-red-600/25 transition-all duration-300 hover:scale-105"
               >
                 <Instagram className="w-4 h-4" />
                 <span>Instagram</span>
@@ -70,7 +70,7 @@ export default function InstagramFeedSection() {
                 href={RESTAURANT_INFO.shopeefoodUrl}
                 target="_blank"
                 rel="noopener noreferrer"
-                className="inline-flex items-center justify-center gap-2 px-5 py-3 rounded-xl bg-orange-500/15 hover:bg-orange-500/25 text-orange-400 border border-orange-500/40 font-bold text-xs sm:text-sm transition-all duration-300 whitespace-nowrap"
+                className="inline-flex items-center justify-center gap-2 px-5 py-3 rounded-xl bg-orange-50 hover:bg-orange-100 text-orange-700 border border-orange-200 font-bold text-xs sm:text-sm transition-all duration-300 whitespace-nowrap"
               >
                 <span>ShopeeFood</span>
                 <ExternalLink className="w-3.5 h-3.5" />
@@ -82,10 +82,10 @@ export default function InstagramFeedSection() {
 
         {/* Section Title (Strict Single-Line on Desktop) */}
         <div className="text-center space-y-1.5 mb-8">
-          <h2 className="font-display font-black text-2xl sm:text-3xl text-white whitespace-normal md:whitespace-nowrap">
+          <h2 className="font-display font-black text-2xl sm:text-3xl text-stone-900 whitespace-normal md:whitespace-nowrap">
             Galeri Feed Asli <span className="text-gradient-flame">@{RESTAURANT_INFO.instagramHandle}</span>
           </h2>
-          <p className="text-slate-400 text-xs sm:text-sm whitespace-normal lg:whitespace-nowrap">
+          <p className="text-stone-600 text-xs sm:text-sm whitespace-normal lg:whitespace-nowrap">
             Foto autentik dari sajian sate taichan panggangan, lelehan keju mozarella, dan sambal rawit jeruk nipis.
           </p>
         </div>
@@ -99,10 +99,10 @@ export default function InstagramFeedSection() {
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
               transition={{ duration: 0.35 }}
-              className="group relative rounded-2xl overflow-hidden glass-panel border border-white/10 hover:border-red-500/40 card-hover-effect flex flex-col justify-between"
+              className="group relative rounded-2xl overflow-hidden bg-white border border-stone-200 hover:border-red-400/50 shadow-sm hover:shadow-lg transition-all card-hover-effect flex flex-col justify-between"
             >
               {/* Media Image */}
-              <div className="relative h-64 sm:h-72 w-full overflow-hidden bg-charcoal-900">
+              <div className="relative h-64 sm:h-72 w-full overflow-hidden bg-stone-100">
                 <img 
                   src={post.imageUrl} 
                   alt={post.title} 
@@ -111,13 +111,13 @@ export default function InstagramFeedSection() {
                 />
 
                 {/* Hover overlay with IG stats */}
-                <div className="absolute inset-0 bg-charcoal-950/75 opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-center justify-center gap-6 text-white backdrop-blur-xs">
+                <div className="absolute inset-0 bg-stone-900/60 opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-center justify-center gap-6 text-white backdrop-blur-xs">
                   <div className="flex items-center gap-1.5 font-bold text-sm">
                     <Heart className="w-5 h-5 text-red-500 fill-red-500" />
                     <span>{post.likes}</span>
                   </div>
                   <div className="flex items-center gap-1.5 font-bold text-sm">
-                    <MessageCircle className="w-5 h-5 text-slate-200 fill-slate-200" />
+                    <MessageCircle className="w-5 h-5 text-white fill-white" />
                     <span>{post.comments}</span>
                   </div>
                 </div>
@@ -125,16 +125,16 @@ export default function InstagramFeedSection() {
 
               {/* Caption & Post link */}
               <div className="p-4 space-y-2">
-                <h4 className="font-display font-bold text-sm text-white line-clamp-1" title={post.title}>
+                <h4 className="font-display font-bold text-sm text-stone-900 line-clamp-1" title={post.title}>
                   {post.title}
                 </h4>
 
-                <p className="text-xs text-slate-400 line-clamp-2 leading-relaxed" title={post.caption}>
+                <p className="text-xs text-stone-600 line-clamp-2 leading-relaxed" title={post.caption}>
                   {post.caption}
                 </p>
 
-                <div className="pt-2 flex items-center justify-between text-[11px] text-slate-400 whitespace-nowrap">
-                  <span className="flex items-center gap-1 font-medium text-rose-400">
+                <div className="pt-2 flex items-center justify-between text-[11px] text-stone-500 whitespace-nowrap border-t border-stone-100">
+                  <span className="flex items-center gap-1 font-semibold text-rose-600">
                     <Instagram className="w-3.5 h-3.5" />
                     taichan56djoeanda
                   </span>
@@ -143,7 +143,7 @@ export default function InstagramFeedSection() {
                     href={RESTAURANT_INFO.instagramUrl}
                     target="_blank"
                     rel="noopener noreferrer"
-                    className="text-slate-300 hover:text-white flex items-center gap-1 font-semibold group-hover:text-amber-400 transition-colors"
+                    className="text-stone-700 hover:text-stone-950 flex items-center gap-1 font-semibold group-hover:text-amber-700 transition-colors"
                   >
                     <span>Lihat di IG</span>
                     <ExternalLink className="w-3 h-3" />

@@ -59,28 +59,28 @@ export default function CartModal({ isOpen, onClose, cartItems, onUpdateQty, onR
   };
 
   return (
-    <div className="fixed inset-0 z-50 flex items-center justify-center p-4 bg-black/80 backdrop-blur-md animate-in fade-in duration-200">
+    <div className="fixed inset-0 z-50 flex items-center justify-center p-4 bg-stone-900/60 backdrop-blur-sm animate-in fade-in duration-200">
       
       <div 
-        className="relative w-full max-w-lg max-h-[90vh] bg-charcoal-900 border border-white/15 rounded-3xl shadow-2xl flex flex-col overflow-hidden text-slate-100"
+        className="relative w-full max-w-lg max-h-[90vh] bg-white border border-stone-200 rounded-3xl shadow-2xl flex flex-col overflow-hidden text-stone-900"
         onClick={(e) => e.stopPropagation()}
       >
         
         {/* Modal Header */}
-        <div className="p-5 border-b border-white/[0.04] flex items-center justify-between bg-charcoal-950/80">
+        <div className="p-5 border-b border-stone-100 flex items-center justify-between bg-stone-50/80">
           <div className="flex items-center gap-2.5">
-            <div className="w-8 h-8 rounded-xl bg-red-950/40 text-rose-400 border border-red-500/30 flex items-center justify-center">
+            <div className="w-8 h-8 rounded-xl bg-red-50 text-red-600 border border-red-200 flex items-center justify-center">
               <ShoppingBag className="w-4 h-4" />
             </div>
             <div>
-              <h3 className="font-display font-bold text-base sm:text-lg text-white">Keranjang</h3>
-              <span className="text-[11px] text-slate-400">{totalQty} item</span>
+              <h3 className="font-display font-bold text-base sm:text-lg text-stone-900">Keranjang</h3>
+              <span className="text-[11px] text-stone-500 font-medium">{totalQty} item</span>
             </div>
           </div>
 
           <button
             onClick={onClose}
-            className="p-2 rounded-xl bg-charcoal-800 hover:bg-charcoal-700 text-slate-400 hover:text-white transition-colors"
+            className="p-2 rounded-xl bg-stone-100 hover:bg-stone-200 text-stone-500 hover:text-stone-900 transition-colors"
           >
             <X className="w-5 h-5" />
           </button>
@@ -92,12 +92,12 @@ export default function CartModal({ isOpen, onClose, cartItems, onUpdateQty, onR
           {/* Cart Empty State */}
           {cartItems.length === 0 ? (
             <div className="py-12 text-center space-y-3">
-              <div className="w-16 h-16 rounded-full bg-white/5 border border-white/10 flex items-center justify-center mx-auto text-slate-500">
+              <div className="w-16 h-16 rounded-full bg-stone-100 border border-stone-200 flex items-center justify-center mx-auto text-stone-400">
                 <ShoppingBag className="w-8 h-8" />
               </div>
-              <h4 className="font-display font-bold text-base text-white">Keranjang Kosong</h4>
-              <p className="text-xs text-slate-400 max-w-xs mx-auto">
-                Pilih menu untuk mulai pesan.
+              <h4 className="font-display font-bold text-base text-stone-900">Keranjang Kosong</h4>
+              <p className="text-xs text-stone-500 max-w-xs mx-auto">
+                Pilih menu sate lezat untuk mulai pesan.
               </p>
             </div>
           ) : (
@@ -107,32 +107,32 @@ export default function CartModal({ isOpen, onClose, cartItems, onUpdateQty, onR
                 {cartItems.map((item) => (
                   <div 
                     key={item.id} 
-                    className="p-3 rounded-2xl bg-white/[0.04] border border-white/10 flex items-center justify-between gap-3"
+                    className="p-3 rounded-2xl bg-stone-50/80 border border-stone-200/90 flex items-center justify-between gap-3 hover:bg-stone-50 transition-colors"
                   >
                     <div className="flex-1 min-w-0">
-                      <h4 className="font-display font-bold text-xs sm:text-sm text-white leading-snug line-clamp-2">{item.name}</h4>
-                      <div className="flex items-center gap-1.5 text-[11px] text-slate-400 mt-0.5">
+                      <h4 className="font-display font-bold text-xs sm:text-sm text-stone-900 leading-snug line-clamp-2">{item.name}</h4>
+                      <div className="flex items-center gap-1.5 text-[11px] text-stone-500 mt-0.5">
                         <span>{item.portion}</span>
                         <span>•</span>
-                        <span className="text-rose-400 font-semibold">{formatPrice(item.price)}</span>
+                        <span className="text-red-600 font-bold">{formatPrice(item.price)}</span>
                       </div>
                     </div>
 
                     {/* Qty controls */}
                     <div className="flex items-center gap-2 flex-shrink-0">
-                      <div className="flex items-center bg-charcoal-950 border border-white/10 rounded-xl overflow-hidden">
+                      <div className="flex items-center bg-white border border-stone-200 rounded-xl overflow-hidden shadow-sm">
                         <button
                           onClick={() => onUpdateQty(item.id, item.qty - 1)}
-                          className="p-1.5 hover:bg-white/10 text-slate-400 hover:text-white transition-colors"
+                          className="p-1.5 hover:bg-stone-100 text-stone-600 hover:text-stone-950 transition-colors"
                         >
                           <Minus className="w-3.5 h-3.5" />
                         </button>
-                        <span className="px-2 text-xs font-bold text-white min-w-[20px] text-center">
+                        <span className="px-2 text-xs font-bold text-stone-900 min-w-[20px] text-center">
                           {item.qty}
                         </span>
                         <button
                           onClick={() => onUpdateQty(item.id, item.qty + 1)}
-                          className="p-1.5 hover:bg-white/10 text-slate-400 hover:text-white transition-colors"
+                          className="p-1.5 hover:bg-stone-100 text-stone-600 hover:text-stone-950 transition-colors"
                         >
                           <Plus className="w-3.5 h-3.5" />
                         </button>
@@ -140,7 +140,7 @@ export default function CartModal({ isOpen, onClose, cartItems, onUpdateQty, onR
 
                       <button
                         onClick={() => onRemoveItem(item.id)}
-                        className="p-1.5 text-slate-500 hover:text-rose-400 transition-colors"
+                        className="p-1.5 text-stone-400 hover:text-red-600 transition-colors"
                         title="Hapus"
                       >
                         <Trash2 className="w-4 h-4" />
@@ -155,7 +155,7 @@ export default function CartModal({ isOpen, onClose, cartItems, onUpdateQty, onR
                 
                 {/* Tipe Pesanan */}
                 <div>
-                  <label className="block text-[11px] font-bold text-slate-300 uppercase tracking-wider mb-1.5">
+                  <label className="block text-[11px] font-bold text-stone-700 uppercase tracking-wider mb-1.5">
                     Tipe Pesanan
                   </label>
                   <div className="grid grid-cols-3 gap-2">
@@ -170,8 +170,8 @@ export default function CartModal({ isOpen, onClose, cartItems, onUpdateQty, onR
                         onClick={() => setOrderType(type.id)}
                         className={`py-2 px-2 rounded-xl text-xs font-semibold border transition-all text-center ${
                           orderType === type.id 
-                            ? 'bg-gradient-to-r from-red-600 to-orange-500 text-white border-red-500 shadow-md' 
-                            : 'bg-white/5 border-white/10 text-slate-400 hover:bg-white/10'
+                            ? 'bg-gradient-to-r from-red-600 to-orange-500 text-white border-red-500 shadow-sm font-bold' 
+                            : 'bg-stone-50 border-stone-200 text-stone-600 hover:bg-stone-100'
                         }`}
                       >
                         {type.label}
@@ -182,7 +182,7 @@ export default function CartModal({ isOpen, onClose, cartItems, onUpdateQty, onR
 
                 {/* Pilihan Sambal */}
                 <div>
-                  <label className="block text-[11px] font-bold text-slate-300 uppercase tracking-wider mb-1.5">
+                  <label className="block text-[11px] font-bold text-stone-700 uppercase tracking-wider mb-1.5">
                     Sambal
                   </label>
                   <div className="grid grid-cols-2 gap-2">
@@ -191,8 +191,8 @@ export default function CartModal({ isOpen, onClose, cartItems, onUpdateQty, onR
                       onClick={() => setSambalOption('pisah')}
                       className={`py-2 px-3 rounded-xl text-xs font-semibold border transition-all text-center ${
                         sambalOption === 'pisah' 
-                          ? 'bg-red-950/40 text-rose-400 border-red-500/50 font-bold' 
-                          : 'bg-white/5 border-white/10 text-slate-400'
+                          ? 'bg-red-50 text-red-600 border-red-300 font-bold' 
+                          : 'bg-stone-50 border-stone-200 text-stone-600 hover:bg-stone-100'
                       }`}
                     >
                       Dipisah
@@ -202,8 +202,8 @@ export default function CartModal({ isOpen, onClose, cartItems, onUpdateQty, onR
                       onClick={() => setSambalOption('campur')}
                       className={`py-2 px-3 rounded-xl text-xs font-semibold border transition-all text-center ${
                         sambalOption === 'campur' 
-                          ? 'bg-red-950/40 text-rose-400 border-red-500/50 font-bold' 
-                          : 'bg-white/5 border-white/10 text-slate-400'
+                          ? 'bg-red-50 text-red-600 border-red-300 font-bold' 
+                          : 'bg-stone-50 border-stone-200 text-stone-600 hover:bg-stone-100'
                       }`}
                     >
                       Dicampur
@@ -214,37 +214,37 @@ export default function CartModal({ isOpen, onClose, cartItems, onUpdateQty, onR
                 {/* Nama & Alamat Input */}
                 <div className="space-y-2.5">
                   <div>
-                    <label className="block text-xs font-medium text-slate-400 mb-1">Nama</label>
+                    <label className="block text-xs font-medium text-stone-700 mb-1">Nama</label>
                     <input
                       type="text"
                       placeholder="Nama Anda"
                       value={customerName}
                       onChange={(e) => setCustomerName(e.target.value)}
-                      className="w-full px-3.5 py-2.5 rounded-xl bg-charcoal-950 border border-white/10 text-xs sm:text-sm text-white focus:outline-none focus:border-red-500"
+                      className="w-full px-3.5 py-2.5 rounded-xl bg-stone-50 border border-stone-300 text-xs sm:text-sm text-stone-900 placeholder:text-stone-400 focus:outline-none focus:border-red-500 focus:bg-white focus:ring-1 focus:ring-red-500 transition-all"
                     />
                   </div>
 
                   {orderType === 'delivery' && (
                     <div>
-                      <label className="block text-xs font-medium text-slate-400 mb-1">Alamat</label>
+                      <label className="block text-xs font-medium text-stone-700 mb-1">Alamat</label>
                       <input
                         type="text"
                         placeholder="Alamat lengkap / patokan"
                         value={customerAddress}
                         onChange={(e) => setCustomerAddress(e.target.value)}
-                        className="w-full px-3.5 py-2.5 rounded-xl bg-charcoal-950 border border-white/10 text-xs sm:text-sm text-white focus:outline-none focus:border-red-500"
+                        className="w-full px-3.5 py-2.5 rounded-xl bg-stone-50 border border-stone-300 text-xs sm:text-sm text-stone-900 placeholder:text-stone-400 focus:outline-none focus:border-red-500 focus:bg-white focus:ring-1 focus:ring-red-500 transition-all"
                       />
                     </div>
                   )}
 
                   <div>
-                    <label className="block text-xs font-medium text-slate-400 mb-1">Catatan (Opsional)</label>
+                    <label className="block text-xs font-medium text-stone-700 mb-1">Catatan (Opsional)</label>
                     <input
                       type="text"
-                      placeholder="Misal: bakar kering, jeruk nipis lebih"
+                      placeholder="Misal: bakar agak garing, jeruk nipis lebih"
                       value={specialNotes}
                       onChange={(e) => setSpecialNotes(e.target.value)}
-                      className="w-full px-3.5 py-2.5 rounded-xl bg-charcoal-950 border border-white/10 text-xs sm:text-sm text-white focus:outline-none focus:border-red-500"
+                      className="w-full px-3.5 py-2.5 rounded-xl bg-stone-50 border border-stone-300 text-xs sm:text-sm text-stone-900 placeholder:text-stone-400 focus:outline-none focus:border-red-500 focus:bg-white focus:ring-1 focus:ring-red-500 transition-all"
                     />
                   </div>
                 </div>
@@ -257,18 +257,18 @@ export default function CartModal({ isOpen, onClose, cartItems, onUpdateQty, onR
 
         {/* Modal Footer: Total & WA Button */}
         {cartItems.length > 0 && (
-          <div className="p-5 border-t border-white/[0.04] bg-charcoal-950 space-y-3">
+          <div className="p-5 border-t border-stone-100 bg-stone-50/90 space-y-3">
             <div className="flex items-center justify-between">
               <div>
-                <span className="text-[11px] text-slate-400 uppercase tracking-wider block">Total</span>
-                <span className="font-display font-extrabold text-xl text-white">
+                <span className="text-[11px] text-stone-500 uppercase tracking-wider block font-semibold">Total</span>
+                <span className="font-display font-extrabold text-xl text-stone-900">
                   {formatPrice(totalAmount)}
                 </span>
               </div>
               
               <button
                 onClick={onClearCart}
-                className="text-xs text-slate-500 hover:text-slate-300 underline"
+                className="text-xs text-stone-500 hover:text-red-600 underline"
               >
                 Kosongkan
               </button>
@@ -276,13 +276,13 @@ export default function CartModal({ isOpen, onClose, cartItems, onUpdateQty, onR
 
             <button
               onClick={handleSendToWhatsApp}
-              className="w-full py-3.5 rounded-2xl bg-gradient-to-r from-emerald-500 to-green-600 hover:from-emerald-600 hover:to-green-700 text-white font-bold text-sm flex items-center justify-center gap-2 shadow-xl shadow-emerald-600/30 transition-all hover:scale-[1.01]"
+              className="w-full py-3.5 rounded-2xl bg-gradient-to-r from-emerald-600 to-green-600 hover:from-emerald-700 hover:to-green-700 text-white font-bold text-sm flex items-center justify-center gap-2 shadow-lg shadow-emerald-600/25 transition-all hover:scale-[1.01]"
             >
               <Send className="w-4 h-4" />
               <span>Pesan via WhatsApp</span>
             </button>
             
-            <p className="text-[11px] text-center text-slate-500">
+            <p className="text-[11px] text-center text-stone-500">
               Otomatis terhubung ke WhatsApp resmi Taichan 56
             </p>
           </div>

@@ -7,6 +7,18 @@ export default {
   theme: {
     extend: {
       colors: {
+        cream: {
+          50: '#fdfbf7',
+          100: '#faf6ee',
+          200: '#f5eedd',
+          300: '#ebdcc2',
+          400: '#ded0b6',
+        },
+        espresso: {
+          DEFAULT: '#1c1917',
+          light: '#292524',
+          dark: '#0c0a09',
+        },
         charcoal: {
           950: '#09080b',
           900: '#120f14',
@@ -15,14 +27,14 @@ export default {
           600: '#362e3e',
         },
         flame: {
-          500: '#ff3d00',
-          600: '#ea3a00',
-          700: '#c92e00',
+          500: '#ea580c',
+          600: '#c2410c',
+          700: '#9a3412',
         },
         chili: {
-          500: '#f43f5e',
-          600: '#e11d48',
-          700: '#be123c',
+          500: '#ef4444',
+          600: '#dc2626',
+          700: '#b91c1c',
         },
         gold: {
           400: '#fbbf24',
@@ -33,14 +45,14 @@ export default {
           500: '#84cc16',
         },
         neonPink: {
-          DEFAULT: '#e11d48',
-          glow: 'rgba(225, 29, 72, 0.65)',
-          light: '#fb7185',
+          DEFAULT: '#dc2626',
+          glow: 'rgba(220, 38, 38, 0.4)',
+          light: '#f87171',
         },
         neonCyan: {
-          DEFAULT: '#f59e0b',
-          glow: 'rgba(245, 158, 11, 0.65)',
-          light: '#fde68a',
+          DEFAULT: '#ea580c',
+          glow: 'rgba(234, 88, 12, 0.4)',
+          light: '#fdba74',
         }
       },
       fontFamily: {

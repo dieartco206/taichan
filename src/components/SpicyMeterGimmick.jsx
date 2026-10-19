@@ -36,12 +36,12 @@ export default function SpicyMeterGimmick() {
   };
 
   return (
-    <section id="spicy-meter" className="py-20 relative overflow-hidden bg-charcoal-900/40">
+    <section id="spicy-meter" className="py-20 relative overflow-hidden bg-[#faf6ee]/70 border-y border-stone-200/80">
       
       {/* Background glow dynamic */}
       <div className="absolute inset-0 pointer-events-none">
         <div 
-          className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[600px] h-[600px] rounded-full blur-[160px] transition-all duration-700 opacity-20"
+          className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[600px] h-[600px] rounded-full blur-[160px] transition-all duration-700 opacity-15"
           style={{
             backgroundColor: selectedLevelIndex === 3 ? '#e11d48' : selectedLevelIndex === 2 ? '#ea580c' : '#f59e0b'
           }}
@@ -52,14 +52,14 @@ export default function SpicyMeterGimmick() {
         
         {/* Section Header (Strict Single-Line on Desktop) */}
         <div className="text-center space-y-2 mb-10">
-          <div className="inline-flex items-center gap-2 px-3.5 py-1 rounded-full bg-red-950/40 border border-red-500/30 text-rose-400 text-xs font-bold uppercase tracking-wider whitespace-nowrap">
-            <Flame className="w-3.5 h-3.5 fill-rose-500 text-rose-500" />
+          <div className="inline-flex items-center gap-2 px-3.5 py-1 rounded-full bg-red-50 border border-red-200 text-red-600 text-xs font-bold uppercase tracking-wider whitespace-nowrap shadow-sm">
+            <Flame className="w-3.5 h-3.5 fill-red-600 text-red-600" />
             <span>Spiciness Simulator Taichan 56</span>
           </div>
-          <h2 className="font-display font-extrabold text-2xl sm:text-3xl md:text-4xl text-white whitespace-normal md:whitespace-nowrap">
+          <h2 className="font-display font-extrabold text-2xl sm:text-3xl md:text-4xl text-stone-900 whitespace-normal md:whitespace-nowrap">
             Seberapa Kuat Lidahmu di <span className="text-gradient-flame">Taichan 56 Djoeanda?</span>
           </h2>
-          <p className="text-slate-400 text-xs sm:text-sm md:text-base whitespace-normal lg:whitespace-nowrap">
+          <p className="text-stone-600 text-xs sm:text-sm md:text-base whitespace-normal lg:whitespace-nowrap">
             Racikan cabai rawit merah segar diuleg mendadak berpadu perasan jeruk nipis murni. Tentukan level kepedasan favoritmu!
           </p>
         </div>
@@ -74,13 +74,13 @@ export default function SpicyMeterGimmick() {
                 onClick={() => handleSelectLevel(index)}
                 className={`relative p-4 rounded-2xl border transition-all duration-300 text-left flex flex-col justify-between ${
                   isSelected 
-                    ? 'bg-charcoal-800 border-red-500/60 shadow-[0_0_20px_rgba(225,29,72,0.3)] ring-1 ring-red-500/40' 
-                    : 'bg-charcoal-900/80 border-white/10 hover:border-white/20 hover:bg-charcoal-800/60'
+                    ? 'bg-white border-red-500 shadow-md ring-2 ring-red-500/20' 
+                    : 'bg-white/80 border-stone-200 hover:border-stone-300 hover:bg-white shadow-sm'
                 }`}
               >
                 <div>
                   <div className="flex items-center justify-between mb-2">
-                    <span className="text-[11px] font-bold tracking-wider text-slate-400 uppercase whitespace-nowrap">
+                    <span className={`text-[11px] font-bold tracking-wider uppercase whitespace-nowrap ${isSelected ? 'text-red-600' : 'text-stone-500'}`}>
                       Level {lvl.level}
                     </span>
                     <div className="flex items-center gap-0.5">
@@ -88,20 +88,20 @@ export default function SpicyMeterGimmick() {
                         <Flame 
                           key={i} 
                           className={`w-3.5 h-3.5 ${
-                            isSelected ? 'text-red-500 fill-red-500 animate-pulse' : 'text-slate-500'
+                            isSelected ? 'text-red-600 fill-red-600 animate-pulse' : 'text-stone-300'
                           }`} 
                         />
                       ))}
                     </div>
                   </div>
-                  <h4 className={`font-display font-bold text-sm sm:text-base whitespace-nowrap truncate ${isSelected ? 'text-white' : 'text-slate-300'}`}>
+                  <h4 className={`font-display font-bold text-sm sm:text-base whitespace-nowrap truncate ${isSelected ? 'text-stone-900' : 'text-stone-700'}`}>
                     {lvl.name.split(':')[1]?.trim() || lvl.name}
                   </h4>
                 </div>
 
-                <div className="mt-3 pt-1 flex items-center justify-between text-[11px] whitespace-nowrap">
-                  <span className="text-slate-400 font-mono">{lvl.scoville}</span>
-                  <span className={`font-semibold ${isSelected ? 'text-rose-400' : 'text-slate-500'}`}>
+                <div className="mt-3 pt-1 flex items-center justify-between text-[11px] whitespace-nowrap border-t border-stone-100">
+                  <span className="text-stone-500 font-mono">{lvl.scoville}</span>
+                  <span className={`font-bold ${isSelected ? 'text-red-600' : 'text-stone-400'}`}>
                     {lvl.heatPercentage}% Heat
                   </span>
                 </div>
@@ -118,18 +118,18 @@ export default function SpicyMeterGimmick() {
             animate={{ opacity: 1, y: 0 }}
             exit={{ opacity: 0, y: -12 }}
             transition={{ duration: 0.25 }}
-            className="glass-panel rounded-3xl p-6 sm:p-7 border border-red-500/30 relative overflow-hidden shadow-2xl"
+            className="bg-white rounded-3xl p-6 sm:p-7 border border-stone-200 relative overflow-hidden shadow-xl shadow-stone-200/50"
           >
             {/* Heat Meter Progress Bar */}
             <div className="mb-5">
               <div className="flex items-center justify-between text-xs font-semibold mb-2 whitespace-nowrap">
-                <span className="text-slate-400 uppercase tracking-wider flex items-center gap-1.5">
-                  <Flame className="w-4 h-4 text-rose-500 fill-rose-500" />
+                <span className="text-stone-600 uppercase tracking-wider flex items-center gap-1.5 font-bold">
+                  <Flame className="w-4 h-4 text-red-600 fill-red-600" />
                   Tingkat Kepedasan Cabai Rawit Merah
                 </span>
-                <span className="text-white font-mono">{currentLevel.heatPercentage}% - {currentLevel.scoville}</span>
+                <span className="text-stone-900 font-mono font-bold">{currentLevel.heatPercentage}% - {currentLevel.scoville}</span>
               </div>
-              <div className="h-2.5 w-full bg-charcoal-950 rounded-full overflow-hidden p-0.5 border border-white/10">
+              <div className="h-2.5 w-full bg-stone-100 rounded-full overflow-hidden p-0.5 border border-stone-200">
                 <motion.div 
                   initial={{ width: 0 }}
                   animate={{ width: `${currentLevel.heatPercentage}%` }}
@@ -144,27 +144,27 @@ export default function SpicyMeterGimmick() {
               {/* Left description */}
               <div className="lg:col-span-8 space-y-3">
                 <div className="flex flex-wrap items-center gap-2 sm:gap-3">
-                  <span className="text-xs font-bold text-rose-400 uppercase tracking-wider">
+                  <span className="text-xs font-bold text-red-600 uppercase tracking-wider">
                     {currentLevel.tagline}
                   </span>
-                  <span className="text-slate-600 hidden sm:inline">•</span>
-                  <h3 className="font-display font-black text-lg sm:text-2xl text-white">
+                  <span className="text-stone-300 hidden sm:inline">•</span>
+                  <h3 className="font-display font-black text-lg sm:text-2xl text-stone-900">
                     {currentLevel.name}
                   </h3>
                 </div>
 
-                <p className="text-slate-300 text-xs sm:text-sm leading-relaxed">
+                <p className="text-stone-600 text-xs sm:text-sm leading-relaxed">
                   {currentLevel.description}
                 </p>
 
                 {/* Recommendation Pill */}
-                <div className="p-3 rounded-2xl bg-white/[0.04] border border-white/10 flex items-start sm:items-center gap-2.5 sm:gap-3 text-xs">
-                  <div className="w-7 h-7 rounded-lg bg-amber-500/15 text-amber-400 flex items-center justify-center flex-shrink-0 mt-0.5 sm:mt-0">
+                <div className="p-3 rounded-2xl bg-amber-50/70 border border-amber-200/60 flex items-start sm:items-center gap-2.5 sm:gap-3 text-xs">
+                  <div className="w-7 h-7 rounded-lg bg-amber-100 text-amber-700 flex items-center justify-center flex-shrink-0 mt-0.5 sm:mt-0 font-bold">
                     <UtensilsCrossed className="w-3.5 h-3.5" />
                   </div>
                   <div className="leading-relaxed">
-                    <span className="font-bold text-slate-200 mr-1.5">Saran Pendamping:</span>
-                    <span className="text-slate-400">{currentLevel.recommendation}</span>
+                    <span className="font-bold text-stone-900 mr-1.5">Saran Pendamping:</span>
+                    <span className="text-stone-600">{currentLevel.recommendation}</span>
                   </div>
                 </div>
               </div>
@@ -173,22 +173,22 @@ export default function SpicyMeterGimmick() {
               <div className="lg:col-span-4 flex flex-col gap-2 justify-center">
                 <button
                   onClick={handleChallengeFriend}
-                  className="w-full py-3 px-4 rounded-xl bg-charcoal-800 hover:bg-charcoal-700 border border-red-500/40 hover:border-red-500/70 text-white font-bold text-xs flex items-center justify-center gap-2 transition-all hover:scale-[1.01] shadow-lg"
+                  className="w-full py-3.5 px-4 rounded-xl bg-gradient-to-r from-red-600 to-orange-500 hover:from-red-700 hover:to-orange-600 text-white font-bold text-xs flex items-center justify-center gap-2 transition-all hover:scale-[1.01] shadow-lg shadow-red-600/20"
                 >
                   {copied ? (
                     <>
-                      <Check className="w-4 h-4 text-emerald-400 flex-shrink-0" />
-                      <span className="text-emerald-300">Teks Tantangan Disalin!</span>
+                      <Check className="w-4 h-4 text-white flex-shrink-0" />
+                      <span className="text-white font-bold">Teks Tantangan Disalin!</span>
                     </>
                   ) : (
                     <>
-                      <Share2 className="w-4 h-4 text-rose-400 flex-shrink-0" />
+                      <Share2 className="w-4 h-4 text-white flex-shrink-0" />
                       <span>Tantang Teman ({currentLevel.name.split(':')[0]})</span>
                     </>
                   )}
                 </button>
 
-                <p className="text-[11px] text-center text-slate-500">
+                <p className="text-[11px] text-center text-stone-500">
                   Pesan langsung via GoFood, GrabFood, ShopeeFood & Dine-in.
                 </p>
               </div>
