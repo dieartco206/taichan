@@ -1,38 +1,10 @@
-import React, { useState, useEffect } from 'react';
-import { motion, AnimatePresence } from 'framer-motion';
+import React from 'react';
+import { motion } from 'framer-motion';
 import { Star, MapPin, ArrowRight, ExternalLink } from 'lucide-react';
+import TaichanGrillAnimation from './TaichanGrillAnimation';
 import { RESTAURANT_INFO } from '../data/restaurantData';
 
-const SHOWCASE_ITEMS = [
-  {
-    id: "taichan-mix",
-    name: "Sate Taichan Mix (Dada + Kulit)",
-    image: "/menu/sate_taichan_jakarta.jpg",
-  },
-  {
-    id: "taichan-paha",
-    name: "Sate Taichan Daging Paha",
-    image: "/menu/sate_taichan_semarang.jpg",
-  },
-  {
-    id: "paket-sultan",
-    name: "Paket Sultan 30 Tusuk",
-    image: "/menu/paket_sultan.jpg",
-  }
-];
-
 export default function Hero({ onExploreMenu, onOrderDirect }) {
-  const [currentIndex, setCurrentIndex] = useState(0);
-
-  useEffect(() => {
-    const timer = setInterval(() => {
-      setCurrentIndex((prev) => (prev + 1) % SHOWCASE_ITEMS.length);
-    }, 4000);
-    return () => clearInterval(timer);
-  }, []);
-
-  const currentItem = SHOWCASE_ITEMS[currentIndex];
-
   return (
     <section className="relative min-h-[86vh] flex items-center justify-center pt-24 sm:pt-28 pb-14 sm:pb-16 overflow-hidden">
       
@@ -56,7 +28,7 @@ export default function Hero({ onExploreMenu, onOrderDirect }) {
       <div className="max-w-[1440px] mx-auto px-4 sm:px-6 lg:px-10 relative z-10 w-full">
         <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 lg:gap-12 items-center">
           
-          {/* Left Column: Headlines & Action Buttons (Aligned, Balanced, No Awkward Misplaced Logos) */}
+          {/* Left Column: Headlines & Action Buttons */}
           <motion.div 
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
@@ -75,7 +47,7 @@ export default function Hero({ onExploreMenu, onOrderDirect }) {
               </span>
             </div>
 
-            {/* Main Brand Headline (Crisp, High-Impact Typography) */}
+            {/* Main Brand Headline */}
             <h1 className="font-display font-black text-3xl sm:text-4xl md:text-5xl xl:text-6xl text-white tracking-tight leading-tight sm:leading-none">
               <span className="neon-text-cyan">56</span> <span className="neon-text-pink">TAICHAN</span> <span className="text-white">DJOEANDA</span>
             </h1>
@@ -150,36 +122,14 @@ export default function Hero({ onExploreMenu, onOrderDirect }) {
 
           </motion.div>
 
-          {/* Right Column: Floating Culinary Showcase (Clean, Frameless, Pure Appetizing Food) */}
+          {/* Right Column: Interactive Animated Charcoal Taichan Grill */}
           <motion.div 
             initial={{ opacity: 0, scale: 0.95 }}
             animate={{ opacity: 1, scale: 1 }}
             transition={{ duration: 0.7, delay: 0.15 }}
-            className="lg:col-span-5 relative flex items-center justify-center"
+            className="lg:col-span-5 relative flex items-center justify-center w-full"
           >
-            {/* Ambient Radiant Glow Behind Image */}
-            <div className="absolute -inset-2 sm:-inset-4 bg-gradient-to-tr from-neonPink/35 via-rose-600/20 to-neonCyan/30 rounded-[2.5rem] blur-2xl -z-10 pointer-events-none" />
-
-            {/* Pure Organic Floating Dish Container (No Clunky Badges, No Cards, No Dots) */}
-            <div className="relative w-full max-w-[480px] aspect-[4/3] sm:aspect-[16/11] rounded-[2rem] overflow-hidden shadow-[0_20px_50px_rgba(0,0,0,0.85)] border border-white/10 group">
-              <AnimatePresence mode="wait">
-                <motion.div
-                  key={currentItem.id}
-                  initial={{ opacity: 0, scale: 1.04 }}
-                  animate={{ opacity: 1, scale: 1 }}
-                  exit={{ opacity: 0, scale: 0.96 }}
-                  transition={{ duration: 0.5, ease: "easeOut" }}
-                  className="absolute inset-0"
-                >
-                  <img 
-                    src={currentItem.image} 
-                    alt={currentItem.name} 
-                    className="w-full h-full object-cover object-center group-hover:scale-105 transition-transform duration-700"
-                  />
-                </motion.div>
-              </AnimatePresence>
-            </div>
-
+            <TaichanGrillAnimation />
           </motion.div>
 
         </div>
