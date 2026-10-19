@@ -50,15 +50,9 @@ export default function Navbar({ cartCount, onOpenCart }) {
           {/* Left: Clean Brand Logo (Strict Single-Line on Mobile & Desktop) */}
           <a href="#" className="flex items-center gap-2 sm:gap-3 group flex-shrink-0">
             <TaichanLogo size="sm" className="w-8 h-8 sm:w-10 sm:h-10 flex-shrink-0" />
-            <div className="flex items-center gap-1.5 sm:gap-2 whitespace-nowrap flex-shrink-0">
-              <span className="font-display font-black text-lg sm:text-xl text-stone-900 tracking-tight whitespace-nowrap">
-                <span className="text-amber-500">56</span> <span className="text-red-600">TAICHAN</span>
-              </span>
-              <span className="flex items-center gap-1.5 px-2.5 py-0.5 rounded-full bg-stone-100/90 border border-stone-200 text-[10px] text-stone-600 font-medium whitespace-nowrap flex-shrink-0 shadow-2xs">
-                <span className={`w-1.5 h-1.5 rounded-full flex-shrink-0 ${isOpenNow ? 'bg-emerald-500 animate-pulse' : 'bg-amber-500'}`} />
-                <span className="whitespace-nowrap">{isOpenNow ? 'Buka Sekarang' : '18.00-02.00'}</span>
-              </span>
-            </div>
+            <span className="font-display font-black text-lg sm:text-xl text-stone-900 tracking-tight whitespace-nowrap">
+              <span className="text-amber-500">56</span> <span className="text-red-600">TAICHAN</span>
+            </span>
           </a>
 
           {/* Center: Clean & Airy Nav Links (Desktop) */}
