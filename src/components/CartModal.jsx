@@ -23,29 +23,28 @@ export default function CartModal({ isOpen, onClose, cartItems, onUpdateQty, onR
   const handleSendToWhatsApp = () => {
     if (cartItems.length === 0) return;
 
-    // Build WhatsApp message format
-    let message = `*HALO TAICHAN 56 DJOEANDA MARGONDA* 🍢🔥\n`;
-    message += `Saya mau pesan sate taichan dengan detail berikut:\n\n`;
-    message += `👤 *Nama:* ${customerName.trim() || 'Pelanggan Margonda'}\n`;
-    message += `📋 *Tipe Pesanan:* ${orderType === 'dinein' ? 'Dine-In (Makan di Tempat)' : orderType === 'delivery' ? 'Delivery / Antar' : 'Take Away (Bungkus)'}\n`;
-    message += `🌶️ *Sambal:* ${sambalOption === 'pisah' ? 'Dipisah (Rekomendasi)' : 'Dicampur Langsung'}\n`;
+    // Build WhatsApp message format (clean markdown, zero encoding artifacts)
+    let message = `*ORDER SATE TAICHAN 56 MARGONDA*\n\n`;
+    message += `*Nama:* ${customerName.trim() || 'Pelanggan'}\n`;
+    message += `*Tipe Pesanan:* ${orderType === 'dinein' ? 'Dine In' : orderType === 'delivery' ? 'Delivery' : 'Bungkus'}\n`;
+    message += `*Pilihan Sambal:* ${sambalOption === 'pisah' ? 'Dipisah' : 'Dicampur'}\n`;
 
     if (orderType === 'delivery' && customerAddress.trim()) {
-      message += `📍 *Alamat Pengiriman:* ${customerAddress.trim()}\n`;
+      message += `*Alamat:* ${customerAddress.trim()}\n`;
     }
 
     message += `\n*DAFTAR PESANAN:*\n`;
     cartItems.forEach((item, index) => {
-      message += `${index + 1}. ${item.name} (${item.portion}) x ${item.qty} = ${formatPrice(item.price * item.qty)}\n`;
+      message += `${index + 1}. ${item.name} (${item.portion}) x${item.qty} = ${formatPrice(item.price * item.qty)}\n`;
     });
 
-    message += `\n💰 *TOTAL ESTIMASI:* ${formatPrice(totalAmount)}\n`;
+    message += `\n*TOTAL:* ${formatPrice(totalAmount)}\n`;
 
     if (specialNotes.trim()) {
-      message += `📝 *Catatan Khusus:* ${specialNotes.trim()}\n`;
+      message += `*Catatan:* ${specialNotes.trim()}\n`;
     }
 
-    message += `\nMohon konfirmasi ketersediaan & totalnya ya. Terima kasih! 🙏`;
+    message += `\nMohon konfirmasi pesanan ya. Terima kasih!`;
 
     // Confetti effect
     confetti({

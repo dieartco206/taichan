@@ -183,123 +183,64 @@ export default function Hero({ onExploreMenu, onOrderDirect }) {
 
           </motion.div>
 
-          {/* Right Column: Hero Visual Card */}
+          {/* Right Column: Hero Visual - Gambar Doang (No Card Enclosure) */}
           <motion.div 
             initial={{ opacity: 0, scale: 0.95 }}
             animate={{ opacity: 1, scale: 1 }}
             transition={{ duration: 0.7, delay: 0.15 }}
-            className="lg:col-span-5 relative"
+            className="lg:col-span-5 relative flex flex-col items-center justify-center"
           >
-            {/* Ambient Back Glow */}
-            <div className="absolute inset-0 bg-gradient-to-br from-neonPink/25 via-purple-600/15 to-neonCyan/25 rounded-3xl blur-2xl transform rotate-2 scale-95" />
+            {/* Ambient Radiant Glow Behind Image */}
+            <div className="absolute inset-2 sm:inset-4 bg-gradient-to-br from-neonPink/35 via-rose-600/20 to-neonCyan/30 rounded-3xl blur-3xl -z-10 pointer-events-none" />
 
-            {/* Main Showcase Card with Clean Luxury Layout */}
-            <div className="relative glass-panel rounded-3xl overflow-hidden border border-white/15 shadow-2xl">
-              
-              {/* Product Hero Image Carousel (Clean & Unobstructed) */}
-              <div className="relative h-60 sm:h-72 w-full overflow-hidden bg-charcoal-900">
-                <AnimatePresence mode="wait">
-                  <motion.div
-                    key={currentItem.id}
-                    initial={{ opacity: 0, scale: 1.03 }}
-                    animate={{ opacity: 1, scale: 1 }}
-                    exit={{ opacity: 0, scale: 0.98 }}
-                    transition={{ duration: 0.4 }}
-                    className="absolute inset-0"
-                  >
-                    <img 
-                      src={currentItem.image} 
-                      alt={currentItem.name} 
-                      className="w-full h-full object-cover object-center"
-                    />
-                    
-                    {/* Subtle bottom fade */}
-                    <div className="absolute inset-0 bg-gradient-to-t from-charcoal-950/80 via-transparent to-transparent" />
+            {/* Pure Floating Image Container */}
+            <div className="relative w-full max-w-[480px] aspect-[4/3] sm:aspect-[16/11] rounded-3xl overflow-hidden shadow-2xl shadow-black/90 border border-white/15 group">
+              <AnimatePresence mode="wait">
+                <motion.div
+                  key={currentItem.id}
+                  initial={{ opacity: 0, scale: 1.05 }}
+                  animate={{ opacity: 1, scale: 1 }}
+                  exit={{ opacity: 0, scale: 0.96 }}
+                  transition={{ duration: 0.5, ease: "easeOut" }}
+                  className="absolute inset-0"
+                >
+                  <img 
+                    src={currentItem.image} 
+                    alt={currentItem.name} 
+                    className="w-full h-full object-cover object-center group-hover:scale-105 transition-transform duration-700"
+                  />
+                  
+                  {/* Subtle soft vignette */}
+                  <div className="absolute inset-0 bg-gradient-to-t from-black/40 via-transparent to-transparent pointer-events-none" />
 
-                    {/* Top Floating Badges */}
-                    <div className="absolute top-3 left-3 px-3 py-1 rounded-full bg-black/60 backdrop-blur-md border border-white/15 text-white text-xs font-bold flex items-center gap-1.5 shadow-lg">
-                      <Flame className="w-3.5 h-3.5 text-neonPink fill-neonPink" />
-                      <span>{currentItem.badge}</span>
-                    </div>
-
-                    <div className="absolute top-3 right-3 px-2.5 py-1 rounded-full bg-black/60 backdrop-blur-md border border-white/15 text-slate-200 text-xs font-semibold shadow-lg">
-                      {currentItem.portion}
-                    </div>
-                  </motion.div>
-                </AnimatePresence>
-              </div>
-
-              {/* Dedicated Card Body Below Photo */}
-              <div className="p-4 sm:p-5 space-y-3 bg-charcoal-900/90">
-                {/* Title & Description with smooth transition */}
-                <AnimatePresence mode="wait">
-                  <motion.div
-                    key={currentItem.id}
-                    initial={{ opacity: 0, y: 6 }}
-                    animate={{ opacity: 1, y: 0 }}
-                    exit={{ opacity: 0, y: -6 }}
-                    transition={{ duration: 0.25 }}
-                    className="space-y-1"
-                  >
-                    <h3 className="font-display font-black text-base sm:text-lg text-white">
+                  {/* Minimal Floating Name & Price Overlay */}
+                  <div className="absolute bottom-3 left-3 right-3 flex items-center justify-between pointer-events-none">
+                    <span className="px-3 py-1 rounded-full bg-black/65 backdrop-blur-md border border-white/15 text-white text-xs font-bold shadow-lg">
                       {currentItem.name}
-                    </h3>
-                    <p className="text-xs text-slate-400 leading-relaxed line-clamp-2">
-                      {currentItem.desc}
-                    </p>
-                  </motion.div>
-                </AnimatePresence>
-
-                {/* Feature Tags */}
-                <div className="flex items-center gap-2 pt-0.5">
-                  <span className="px-2.5 py-0.5 rounded-lg bg-white/[0.05] border border-white/10 text-[11px] text-slate-300 font-medium">
-                    {currentItem.tag}
-                  </span>
-                  <span className="px-2.5 py-0.5 rounded-lg bg-neonPink/10 border border-neonPink/25 text-[11px] text-neonPink font-semibold">
-                    100% Halal
-                  </span>
-                </div>
-
-                {/* Bottom Row: Price + Carousel Dots + Order CTA */}
-                <div className="pt-2 border-t border-white/[0.08] flex items-center justify-between gap-3">
-                  <div>
-                    <span className="text-[10px] text-slate-500 uppercase tracking-wider block font-semibold">Harga Porsi</span>
-                    <span className="font-display font-black text-xl sm:text-2xl text-white">
+                    </span>
+                    <span className="px-2.5 py-1 rounded-full bg-neonPink/90 text-white text-xs font-black shadow-lg">
                       {currentItem.price}
                     </span>
                   </div>
+                </motion.div>
+              </AnimatePresence>
+            </div>
 
-                  <div className="flex items-center gap-3">
-                    {/* Carousel Dots */}
-                    <div className="flex items-center gap-1">
-                      {SHOWCASE_ITEMS.map((item, idx) => (
-                        <button
-                          key={item.id}
-                          onClick={() => setCurrentIndex(idx)}
-                          className={`h-1.5 rounded-full transition-all duration-300 ${
-                            idx === currentIndex 
-                              ? 'w-4 bg-neonPink shadow-[0_0_8px_rgba(255,26,117,0.8)]' 
-                              : 'w-1.5 bg-white/20 hover:bg-white/40'
-                          }`}
-                          title={item.name}
-                          aria-label={item.name}
-                        />
-                      ))}
-                    </div>
-
-                    {/* Order Button */}
-                    <button
-                      onClick={onOrderDirect}
-                      className="px-4 py-2 sm:px-5 sm:py-2.5 rounded-xl bg-gradient-to-r from-neonPink to-rose-600 hover:from-neonPink/90 hover:to-rose-500 text-white font-bold text-xs sm:text-sm flex items-center gap-1.5 shadow-lg shadow-neonPink/25 hover:shadow-neonPink/40 transition-all hover:scale-[1.02] active:scale-95 flex-shrink-0"
-                    >
-                      <span>Pesan</span>
-                      <ArrowRight className="w-3.5 h-3.5 sm:w-4 sm:h-4" />
-                    </button>
-                  </div>
-                </div>
-
-              </div>
-
+            {/* Minimal Dots Carousel Indicator */}
+            <div className="flex items-center gap-1.5 mt-3.5">
+              {SHOWCASE_ITEMS.map((item, idx) => (
+                <button
+                  key={item.id}
+                  onClick={() => setCurrentIndex(idx)}
+                  className={`h-1.5 rounded-full transition-all duration-300 ${
+                    idx === currentIndex 
+                      ? 'w-6 bg-neonPink shadow-[0_0_10px_rgba(255,26,117,0.9)]' 
+                      : 'w-1.5 bg-white/20 hover:bg-white/50'
+                  }`}
+                  title={item.name}
+                  aria-label={item.name}
+                />
+              ))}
             </div>
 
           </motion.div>
