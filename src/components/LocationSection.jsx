@@ -5,7 +5,7 @@ import { DoodleSate, DoodleLime, DoodleCobek, DoodleChili } from './FoodDoodles'
 
 export default function LocationSection() {
   return (
-    <section id="lokasi" className="py-16 sm:py-20 relative overflow-hidden bg-[#fbf8f3] border-t border-stone-200/60">
+    <section id="lokasi" className="py-16 sm:py-20 relative overflow-hidden bg-[#f4efe6] border-t border-stone-200/80">
       
       {/* Warm Ambient Radiance with Food Doodles */}
       <div className="absolute inset-0 pointer-events-none overflow-hidden">

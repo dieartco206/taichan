@@ -16,7 +16,7 @@ export default function WhyTaichanSection() {
   };
 
   return (
-    <section id="why-us" className="py-20 relative overflow-hidden bg-[#fbf8f3]">
+    <section id="why-us" className="py-20 relative overflow-hidden bg-[#fdfbf7] border-b border-stone-200/60">
       
       {/* Warm ambient radiance with Culinary Food Doodles */}
       <div className="absolute inset-0 pointer-events-none overflow-hidden">

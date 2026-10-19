@@ -37,7 +37,7 @@ export default function SpicyMeterGimmick() {
   };
 
   return (
-    <section id="spicy-meter" className="py-20 relative overflow-hidden bg-[#faf6ee]/70 border-y border-stone-200/80">
+    <section id="spicy-meter" className="py-20 relative overflow-hidden bg-[#fff2ee] border-b border-red-200/70">
       
       {/* Background glow dynamic with Spicy Food Doodles */}
       <div className="absolute inset-0 pointer-events-none overflow-hidden">

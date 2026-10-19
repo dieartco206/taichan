@@ -6,7 +6,7 @@ import { DoodleSate, DoodleLime, DoodleChili } from './FoodDoodles';
 
 export default function TestimonialSection() {
   return (
-    <section className="py-20 relative overflow-hidden bg-[#fbf8f3]">
+    <section className="py-20 relative overflow-hidden bg-[#f8f4ec] border-b border-stone-200/60">
       
       {/* Warm Ambient Radiance with Food Doodles */}
       <div className="absolute inset-0 pointer-events-none overflow-hidden">

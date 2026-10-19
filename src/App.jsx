@@ -2,6 +2,7 @@ import React, { useState } from 'react';
 import Navbar from './components/Navbar';
 import Hero from './components/Hero';
 import MenuSection from './components/MenuSection';
+import SpicyMeterGimmick from './components/SpicyMeterGimmick';
 import WhyTaichanSection from './components/WhyTaichanSection';
 import InstagramFeedSection from './components/InstagramFeedSection';
 import TestimonialSection from './components/TestimonialSection';
@@ -111,6 +112,9 @@ export default function App() {
           onAddToCart={handleAddToCart} 
           cartItems={cartItems} 
         />
+
+        {/* Interactive Spiciness Simulator */}
+        <SpicyMeterGimmick />
 
         {/* Quality Features & Milestones */}
         <WhyTaichanSection />

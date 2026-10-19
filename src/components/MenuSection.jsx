@@ -23,7 +23,7 @@ export default function MenuSection({ onAddToCart, cartItems }) {
   };
 
   return (
-    <section id="menu" className="py-16 sm:py-20 relative overflow-hidden bg-[#faf6ee]/70 border-y border-stone-200/70">
+    <section id="menu" className="py-16 sm:py-20 relative overflow-hidden bg-[#f5efe6] border-y border-stone-200/80">
       
       {/* Warm Ambient Radiance with Food Doodles */}
       <div className="absolute inset-0 pointer-events-none overflow-hidden">

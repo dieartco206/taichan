@@ -8,7 +8,7 @@ import { DoodleSate, DoodleLime, DoodleChili } from './FoodDoodles';
 
 export default function InstagramFeedSection() {
   return (
-    <section id="instagram" className="py-20 relative overflow-hidden bg-[#faf6ee]/50 border-b border-stone-200/60">
+    <section id="instagram" className="py-20 relative overflow-hidden bg-[#fef8ed] border-b border-amber-200/60">
       
       {/* Background with Food Doodles & Fluid Shapes */}
       <div className="absolute inset-0 pointer-events-none overflow-hidden">
