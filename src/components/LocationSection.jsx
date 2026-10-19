@@ -65,29 +65,29 @@ export default function LocationSection() {
                   <Clock className="w-5 h-5" />
                 </div>
                 <div>
-                  <h4 className="font-display font-bold text-sm sm:text-base text-white whitespace-nowrap">Jam Operasional Malam</h4>
-                  <p className="text-xs sm:text-sm text-slate-300 mt-1 whitespace-nowrap">
-                    Setiap Hari: <strong className="text-white font-bold">{RESTAURANT_INFO.operationalHours}</strong> (Senin s/d Minggu)
+                  <h4 className="font-display font-bold text-sm sm:text-base text-white">Jam Buka</h4>
+                  <p className="text-xs sm:text-sm text-slate-300 mt-1">
+                    Setiap Hari: <strong className="text-white font-bold">{RESTAURANT_INFO.operationalHours}</strong>
                   </p>
-                  <p className="text-[11px] text-slate-400 mt-0.5 whitespace-nowrap">
-                    Tersedia Take away & Dine in langsung di lokasi
+                  <p className="text-[11px] text-slate-400 mt-0.5">
+                    Dine in & Take away di tempat
                   </p>
                 </div>
               </div>
 
-              {/* Features list in Single Lines */}
+              {/* Features list */}
               <div className="pt-2 space-y-2 text-xs text-slate-300">
-                <div className="flex items-center gap-2 whitespace-nowrap">
+                <div className="flex items-center gap-2">
                   <Check className="w-4 h-4 text-emerald-400 flex-shrink-0" />
-                  <span>Dine-In (Makan di tempat suasana santai malam Depok)</span>
+                  <span>Dine-In (Makan di tempat)</span>
                 </div>
-                <div className="flex items-center gap-2 whitespace-nowrap">
+                <div className="flex items-center gap-2">
                   <Check className="w-4 h-4 text-emerald-400 flex-shrink-0" />
-                  <span>Take Away (Bungkus rapi dengan sambal dipisah)</span>
+                  <span>Bungkus (Take Away)</span>
                 </div>
-                <div className="flex items-center gap-2 whitespace-nowrap">
+                <div className="flex items-center gap-2">
                   <Check className="w-4 h-4 text-emerald-400 flex-shrink-0" />
-                  <span>Online Delivery: GoFood • GrabFood • ShopeeFood</span>
+                  <span>Online: GoFood • Grab • Shopee</span>
                 </div>
               </div>
 
@@ -99,18 +99,17 @@ export default function LocationSection() {
                 href={RESTAURANT_INFO.mapsUrl}
                 target="_blank"
                 rel="noopener noreferrer"
-                className="flex-1 py-3 px-4 rounded-xl bg-charcoal-800 hover:bg-charcoal-700 text-white font-bold text-xs sm:text-sm border border-white/15 hover:border-neonPink/50 flex items-center justify-center gap-2 transition-all shadow-lg whitespace-nowrap"
+                className="flex-1 py-3 px-4 rounded-xl bg-charcoal-800 hover:bg-charcoal-700 text-white font-bold text-xs sm:text-sm border border-white/15 hover:border-neonPink/50 flex items-center justify-center gap-2 transition-all shadow-lg"
               >
                 <Navigation className="w-4 h-4 text-neonPink" />
-                <span>Rute Google Maps</span>
-                <ExternalLink className="w-3.5 h-3.5 text-slate-400" />
+                <span>Google Maps</span>
               </a>
 
               <a
                 href={RESTAURANT_INFO.shopeefoodUrl}
                 target="_blank"
                 rel="noopener noreferrer"
-                className="py-3 px-4 rounded-xl bg-orange-500/15 hover:bg-orange-500/25 text-orange-400 font-bold text-xs sm:text-sm border border-orange-500/30 flex items-center justify-center gap-1.5 transition-all whitespace-nowrap"
+                className="py-3 px-4 rounded-xl bg-orange-500/15 hover:bg-orange-500/25 text-orange-400 font-bold text-xs sm:text-sm border border-orange-500/30 flex items-center justify-center gap-1.5 transition-all"
               >
                 <span>ShopeeFood</span>
                 <ExternalLink className="w-3.5 h-3.5" />

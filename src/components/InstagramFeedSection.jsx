@@ -59,10 +59,10 @@ export default function InstagramFeedSection() {
                 href={RESTAURANT_INFO.instagramUrl}
                 target="_blank"
                 rel="noopener noreferrer"
-                className="inline-flex items-center justify-center gap-2 px-5 py-3 rounded-xl bg-gradient-to-r from-purple-600 via-neonPink to-rose-600 hover:from-purple-500 hover:to-neonPink text-white font-bold text-xs sm:text-sm shadow-xl shadow-neonPink/25 transition-all duration-300 hover:scale-105 whitespace-nowrap"
+                className="inline-flex items-center justify-center gap-1.5 px-4 py-2.5 rounded-xl bg-gradient-to-r from-purple-600 via-neonPink to-rose-600 hover:from-purple-500 hover:to-neonPink text-white font-bold text-xs sm:text-sm shadow-xl shadow-neonPink/25 transition-all duration-300 hover:scale-105"
               >
                 <Instagram className="w-4 h-4" />
-                <span>Buka Instagram Resmi</span>
+                <span>Instagram</span>
                 <ExternalLink className="w-3.5 h-3.5" />
               </a>
 

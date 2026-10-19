@@ -57,20 +57,17 @@ export default function Footer() {
               Navigasi Halaman
             </h4>
             <ul className="space-y-1.5 text-xs">
-              <li className="whitespace-nowrap">
-                <a href="#menu" className="hover:text-neonPink transition-colors">Menu Sate & Paket Hemat</a>
+              <li>
+                <a href="#menu" className="hover:text-neonPink transition-colors">Menu Sate & Paket</a>
               </li>
-              <li className="whitespace-nowrap">
-                <a href="#spicy-meter" className="hover:text-neonPink transition-colors">Level Pedas Rawit Merah</a>
-              </li>
-              <li className="whitespace-nowrap">
+              <li>
                 <a href="#why-us" className="hover:text-neonPink transition-colors">Kualitas & Keunggulan</a>
               </li>
-              <li className="whitespace-nowrap">
-                <a href="#instagram" className="hover:text-neonPink transition-colors">Galeri Feed Instagram Asli</a>
+              <li>
+                <a href="#instagram" className="hover:text-neonPink transition-colors">Instagram</a>
               </li>
-              <li className="whitespace-nowrap">
-                <a href="#lokasi" className="hover:text-neonPink transition-colors">Lokasi Samping KFC Margonda</a>
+              <li>
+                <a href="#lokasi" className="hover:text-neonPink transition-colors">Lokasi Margonda</a>
               </li>
             </ul>
           </div>

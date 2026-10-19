@@ -1,7 +1,6 @@
 import React, { useState } from 'react';
 import Navbar from './components/Navbar';
 import Hero from './components/Hero';
-import SpicyMeterGimmick from './components/SpicyMeterGimmick';
 import MenuSection from './components/MenuSection';
 import WhyTaichanSection from './components/WhyTaichanSection';
 import InstagramFeedSection from './components/InstagramFeedSection';
@@ -106,9 +105,6 @@ export default function App() {
           onExploreMenu={handleExploreMenu} 
           onOrderDirect={handleOrderDirect} 
         />
-
-        {/* Interactive Spiciness Meter Simulator */}
-        <SpicyMeterGimmick />
 
         {/* Menu & Pricing Catalog */}
         <MenuSection 

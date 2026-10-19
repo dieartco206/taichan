@@ -88,35 +88,35 @@ export default function WhyTaichanSection() {
           ))}
         </div>
 
-        {/* Milestone Counter Banner (Full 4-column single-line stats) */}
-        <div className="p-5 sm:p-6 rounded-2xl bg-charcoal-900 border border-white/10 shadow-2xl">
-          <div className="grid grid-cols-2 lg:grid-cols-4 gap-4 text-center divide-y sm:divide-y-0 sm:divide-x divide-white/10">
-            <div className="pt-2 sm:pt-0 whitespace-nowrap">
-              <span className="font-display font-black text-2xl sm:text-3xl text-gradient-flame block">
+        {/* Milestone Counter Banner */}
+        <div className="p-4 sm:p-6 rounded-2xl bg-charcoal-900 border border-white/10 shadow-2xl">
+          <div className="grid grid-cols-2 lg:grid-cols-4 gap-2.5 sm:gap-4 text-center">
+            <div className="p-3 sm:p-4 rounded-xl bg-white/[0.03] border border-white/5 sm:border-transparent sm:bg-transparent">
+              <span className="font-display font-black text-xl sm:text-2xl md:text-3xl text-gradient-flame block">
                 {RESTAURANT_INFO.skewersSoldThisMonth}
               </span>
-              <span className="text-xs text-slate-400 mt-0.5 block">Tusuk Terbakar / Bulan</span>
+              <span className="text-[11px] sm:text-xs text-slate-400 mt-1 block">Tusuk / Bulan</span>
             </div>
             
-            <div className="pt-3 sm:pt-0 whitespace-nowrap">
-              <span className="font-display font-black text-2xl sm:text-3xl text-white block">
+            <div className="p-3 sm:p-4 rounded-xl bg-white/[0.03] border border-white/5 sm:border-transparent sm:bg-transparent">
+              <span className="font-display font-black text-xl sm:text-2xl md:text-3xl text-white block">
                 {RESTAURANT_INFO.rating} ⭐
               </span>
-              <span className="text-xs text-slate-400 mt-0.5 block">Rating GoFood, Grab & Shopee</span>
+              <span className="text-[11px] sm:text-xs text-slate-400 mt-1 block">Rating Resto</span>
             </div>
 
-            <div className="pt-3 sm:pt-0 whitespace-nowrap">
-              <span className="font-display font-black text-2xl sm:text-3xl text-neonCyan block">
+            <div className="p-3 sm:p-4 rounded-xl bg-white/[0.03] border border-white/5 sm:border-transparent sm:bg-transparent">
+              <span className="font-display font-black text-xl sm:text-2xl md:text-3xl text-neonCyan block">
                 18:00 - 02:00
               </span>
-              <span className="text-xs text-slate-400 mt-0.5 block">Jam Operasional Kuliner Malam</span>
+              <span className="text-[11px] sm:text-xs text-slate-400 mt-1 block">Buka Malam</span>
             </div>
 
-            <div className="pt-3 sm:pt-0 whitespace-nowrap">
-              <span className="font-display font-black text-2xl sm:text-3xl text-neonPink block">
+            <div className="p-3 sm:p-4 rounded-xl bg-white/[0.03] border border-white/5 sm:border-transparent sm:bg-transparent">
+              <span className="font-display font-black text-xl sm:text-2xl md:text-3xl text-neonPink block">
                 100% Halal
               </span>
-              <span className="text-xs text-slate-400 mt-0.5 block">Ayam Segar Pilihan Setiap Hari</span>
+              <span className="text-[11px] sm:text-xs text-slate-400 mt-1 block">Ayam Segar</span>
             </div>
           </div>
         </div>

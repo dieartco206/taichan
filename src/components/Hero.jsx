@@ -131,58 +131,58 @@ export default function Hero({ onExploreMenu, onOrderDirect }) {
             <div className="absolute inset-0 bg-gradient-to-br from-neonPink/25 via-purple-600/15 to-neonCyan/25 rounded-3xl blur-2xl transform rotate-2 scale-95" />
 
             {/* Main Showcase Card */}
-            <div className="relative glass-panel rounded-3xl p-4 sm:p-5 overflow-hidden border border-neonPink/30 shadow-[0_0_30px_rgba(255,26,117,0.2)]">
+            <div className="relative glass-panel rounded-3xl p-3.5 sm:p-5 overflow-hidden border border-white/15 shadow-2xl">
               
               {/* Product Hero Image */}
-              <div className="relative h-72 sm:h-84 md:h-96 w-full rounded-2xl overflow-hidden group bg-charcoal-900">
+              <div className="relative h-64 sm:h-72 md:h-80 w-full rounded-2xl overflow-hidden group bg-charcoal-900">
                 <img 
-                  src="/brand/post_mozzarella.png" 
-                  alt="Sate Taichan 56 Djoeanda Mozarella Melt" 
+                  src="/menu/sate_taichan_jakarta.jpg" 
+                  alt="Sate Taichan 56 Djoeanda Signature" 
                   className="w-full h-full object-cover object-center group-hover:scale-105 transition-transform duration-700 ease-out"
                 />
                 
-                {/* Overlay gradient */}
-                <div className="absolute inset-0 bg-gradient-to-t from-charcoal-950 via-charcoal-950/20 to-transparent opacity-90" />
+                {/* Subtle vignette gradient */}
+                <div className="absolute inset-0 bg-gradient-to-t from-charcoal-950/90 via-charcoal-950/20 to-transparent" />
 
-                {/* Sizzle Hot Badge */}
-                <div className="absolute top-3 left-3 px-3 py-1.5 rounded-full bg-charcoal-950/85 backdrop-blur-md border border-neonPink/40 text-neonPink text-xs font-bold flex items-center gap-1.5 shadow-lg whitespace-nowrap">
-                  <Flame className="w-3.5 h-3.5 fill-neonPink animate-bounce" />
-                  <span>The Grill Taichan 🔥</span>
+                {/* Floating Badges */}
+                <div className="absolute top-3 left-3 px-3 py-1 rounded-full bg-charcoal-950/80 backdrop-blur-md border border-white/10 text-white text-xs font-bold flex items-center gap-1.5 shadow-lg">
+                  <Flame className="w-3.5 h-3.5 text-neonPink fill-neonPink" />
+                  <span>Signature 56</span>
                 </div>
 
-                {/* Instagram Tag Badge */}
-                <a 
-                  href={RESTAURANT_INFO.instagramUrl} 
-                  target="_blank" 
-                  rel="noopener noreferrer"
-                  className="absolute top-3 right-3 px-3 py-1.5 rounded-full bg-charcoal-950/85 backdrop-blur-md border border-neonCyan/40 text-neonCyan text-xs font-semibold flex items-center gap-1.5 hover:bg-charcoal-900 transition-colors whitespace-nowrap"
-                >
-                  <Instagram className="w-3.5 h-3.5 text-neonPink" />
-                  <span>@taichan56djoeanda</span>
-                </a>
+                <div className="absolute top-3 right-3 px-2.5 py-1 rounded-full bg-neonPink/90 text-white text-xs font-black shadow-lg">
+                  10 Tusuk • Rp 35.000
+                </div>
 
-                {/* Bottom Image Caption in Single Line */}
-                <div className="absolute bottom-3 left-4 right-4 text-left">
-                  <span className="text-[11px] font-bold tracking-wider uppercase text-neonCyan block">Menu Resmi Instagram</span>
-                  <h3 className="font-display font-black text-xl text-white whitespace-nowrap truncate">Sate Taichan Mozarella Melt</h3>
-                  <p className="text-xs text-slate-300 whitespace-nowrap truncate">Daging tebal dibalut keju mozarella meleleh + sambal rawit uleg & jeruk nipis segar</p>
+                {/* Bottom title on image */}
+                <div className="absolute bottom-3 left-3.5 right-3.5 text-left">
+                  <h3 className="font-display font-black text-base sm:text-lg text-white">
+                    Sate Taichan Mix (Dada + Kulit)
+                  </h3>
+                  <p className="text-xs text-slate-300 mt-0.5 line-clamp-1">
+                    Daging tebal juicy & kulit garing dengan sambal uleg segar.
+                  </p>
                 </div>
               </div>
 
-              {/* 3 Quick Specs in Single Line */}
-              <div className="grid grid-cols-3 gap-2 mt-3 pt-1 text-center text-xs">
-                <div className="p-2 rounded-xl bg-white/[0.03] border border-white/5 whitespace-nowrap">
-                  <span className="block text-[10px] text-slate-400 font-semibold uppercase">Pilihan Daging</span>
-                  <span className="font-bold text-white">Dada, Paha & Kulit</span>
+              {/* Bottom Quick Bar */}
+              <div className="mt-3 pt-0.5 flex items-center justify-between gap-2.5">
+                <div className="flex items-center gap-1.5 text-xs text-slate-300 min-w-0">
+                  <span className="px-2.5 py-1 rounded-lg bg-white/5 border border-white/10 text-[11px] font-medium truncate">
+                    Rawit Uleg Asli
+                  </span>
+                  <span className="px-2.5 py-1 rounded-lg bg-white/5 border border-white/10 text-[11px] font-medium hidden xs:inline truncate">
+                    Jeruk Nipis Segar
+                  </span>
                 </div>
-                <div className="p-2 rounded-xl bg-white/[0.03] border border-white/5 whitespace-nowrap">
-                  <span className="block text-[10px] text-slate-400 font-semibold uppercase">Sambal Khas</span>
-                  <span className="font-bold text-neonPink">Rawit Merah Uleg</span>
-                </div>
-                <div className="p-2 rounded-xl bg-white/[0.03] border border-white/5 whitespace-nowrap">
-                  <span className="block text-[10px] text-slate-400 font-semibold uppercase">Nasi Harum</span>
-                  <span className="font-bold text-neonCyan">Daun Jeruk Segar</span>
-                </div>
+
+                <button
+                  onClick={onOrderDirect}
+                  className="px-4 py-2 rounded-xl bg-gradient-to-r from-neonPink to-rose-600 hover:from-neonPink/90 hover:to-rose-500 text-white font-bold text-xs flex items-center gap-1.5 shadow-md shadow-neonPink/25 transition-all flex-shrink-0"
+                >
+                  <span>Pesan</span>
+                  <ArrowRight className="w-3.5 h-3.5" />
+                </button>
               </div>
 
             </div>

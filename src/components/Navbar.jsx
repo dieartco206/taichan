@@ -33,7 +33,6 @@ export default function Navbar({ cartCount, onOpenCart }) {
 
   const navLinks = [
     { label: "Menu", href: "#menu" },
-    { label: "Level Pedas", href: "#spicy-meter" },
     { label: "Keunggulan", href: "#why-us" },
     { label: "Instagram", href: "#instagram" },
     { label: "Lokasi", href: "#lokasi" },
