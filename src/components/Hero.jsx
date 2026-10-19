@@ -1,47 +1,32 @@
 import React, { useState, useEffect } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
-import { Star, MapPin, ArrowRight, ExternalLink, Flame } from 'lucide-react';
+import { Star, MapPin, ArrowRight, ExternalLink } from 'lucide-react';
 import { RESTAURANT_INFO } from '../data/restaurantData';
 
 const SHOWCASE_ITEMS = [
   {
     id: "taichan-mix",
-    name: "Sate Taichan Mix (Dada + Kulit)",
-    portion: "10 Tusuk",
-    price: "Rp 35.000",
-    badge: "Signature 56",
+    name: "Sate Taichan Mix",
     image: "/menu/sate_taichan_jakarta.jpg",
   },
   {
     id: "taichan-kulit",
     name: "Sate Taichan Kulit Crispy",
-    portion: "10 Tusuk",
-    price: "Rp 35.000",
-    badge: "Kriuk Nagih",
     image: "/menu/sate_kulit.jpg",
   },
   {
     id: "paket-sultan",
-    name: "Paket Sultan 30 Tusuk",
-    portion: "30 Tusuk",
-    price: "Rp 100.000",
-    badge: "Super Hemat",
+    name: "Paket Sultan",
     image: "/menu/paket_sultan.jpg",
   },
   {
     id: "pisang-bakar",
     name: "Pisang Bakar Cokelat Keju",
-    portion: "1 Porsi",
-    price: "Rp 18.000",
-    badge: "Penetral Pedas",
     image: "/menu/pisang_bakar.jpg",
   },
   {
     id: "es-jeruk",
     name: "Es Jeruk Peras Murni",
-    portion: "Gelas Jumbo",
-    price: "Rp 10.000",
-    badge: "Best Drink",
     image: "/menu/es_jeruk.jpg",
   }
 ];
@@ -100,7 +85,7 @@ export default function Hero({ onExploreMenu, onOrderDirect }) {
               </span>
             </div>
 
-            {/* Main Brand Headline (Clean, Bold, No Awkward Beside-Logo) */}
+            {/* Main Brand Headline */}
             <h1 className="font-display font-black text-3xl sm:text-4xl md:text-5xl xl:text-6xl text-white tracking-tight leading-tight sm:leading-none">
               <span className="neon-text-cyan">56</span> <span className="neon-text-pink">TAICHAN</span> <span className="text-white">DJOEANDA</span>
             </h1>
@@ -170,22 +155,22 @@ export default function Hero({ onExploreMenu, onOrderDirect }) {
 
           </motion.div>
 
-          {/* Right Column: Pure Floating Food Image (Gambar Doang, No Card Clutter) */}
+          {/* Right Column: 100% GAMBAR DOANG (No Badge, No Text, No Price, No Dots) */}
           <motion.div 
             initial={{ opacity: 0, scale: 0.95 }}
             animate={{ opacity: 1, scale: 1 }}
             transition={{ duration: 0.7, delay: 0.15 }}
-            className="lg:col-span-5 relative flex flex-col items-center justify-center"
+            className="lg:col-span-5 relative flex items-center justify-center"
           >
             {/* Ambient Radiant Glow Behind Image */}
             <div className="absolute inset-2 sm:inset-4 bg-gradient-to-br from-neonPink/40 via-rose-600/25 to-neonCyan/35 rounded-3xl blur-3xl -z-10 pointer-events-none" />
 
-            {/* Pure Floating Image Container */}
-            <div className="relative w-full max-w-[460px] aspect-[4/3] sm:aspect-[16/11] rounded-3xl overflow-hidden shadow-2xl shadow-black/90 border border-white/20 group">
+            {/* Murni Wadah Gambar Sate Doang */}
+            <div className="relative w-full max-w-[460px] aspect-[4/3] sm:aspect-[16/11] rounded-3xl overflow-hidden shadow-2xl shadow-black/90">
               <AnimatePresence mode="wait">
                 <motion.div
                   key={currentItem.id}
-                  initial={{ opacity: 0, scale: 1.05 }}
+                  initial={{ opacity: 0, scale: 1.04 }}
                   animate={{ opacity: 1, scale: 1 }}
                   exit={{ opacity: 0, scale: 0.96 }}
                   transition={{ duration: 0.5, ease: "easeOut" }}
@@ -194,46 +179,10 @@ export default function Hero({ onExploreMenu, onOrderDirect }) {
                   <img 
                     src={currentItem.image} 
                     alt={currentItem.name} 
-                    className="w-full h-full object-cover object-center group-hover:scale-105 transition-transform duration-700"
+                    className="w-full h-full object-cover object-center"
                   />
-                  
-                  {/* Subtle soft vignette */}
-                  <div className="absolute inset-0 bg-gradient-to-t from-black/60 via-transparent to-transparent pointer-events-none" />
-
-                  {/* Top Floating Badge */}
-                  <div className="absolute top-3 left-3 px-3 py-1 rounded-full bg-black/70 backdrop-blur-md border border-white/15 text-white text-[11px] font-bold flex items-center gap-1.5 shadow-lg">
-                    <Flame className="w-3.5 h-3.5 text-neonPink fill-neonPink" />
-                    <span>{currentItem.badge}</span>
-                  </div>
-
-                  {/* Bottom Minimal Info Pill */}
-                  <div className="absolute bottom-3 left-3 right-3 flex items-center justify-between pointer-events-none">
-                    <span className="px-3 py-1 rounded-full bg-black/70 backdrop-blur-md border border-white/15 text-white text-xs font-bold shadow-lg">
-                      {currentItem.name}
-                    </span>
-                    <span className="px-2.5 py-1 rounded-full bg-neonPink text-white text-xs font-black shadow-lg">
-                      {currentItem.price}
-                    </span>
-                  </div>
                 </motion.div>
               </AnimatePresence>
-            </div>
-
-            {/* Minimal Dots Carousel Indicator */}
-            <div className="flex items-center gap-1.5 mt-3.5">
-              {SHOWCASE_ITEMS.map((item, idx) => (
-                <button
-                  key={item.id}
-                  onClick={() => setCurrentIndex(idx)}
-                  className={`h-1.5 rounded-full transition-all duration-300 ${
-                    idx === currentIndex 
-                      ? 'w-6 bg-neonPink shadow-[0_0_10px_rgba(255,26,117,0.9)]' 
-                      : 'w-1.5 bg-white/20 hover:bg-white/50'
-                  }`}
-                  title={item.name}
-                  aria-label={item.name}
-                />
-              ))}
             </div>
 
           </motion.div>
