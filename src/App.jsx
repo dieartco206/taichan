@@ -104,6 +104,7 @@ export default function App() {
         <Hero 
           onExploreMenu={handleExploreMenu} 
           onOrderDirect={handleOrderDirect} 
+          onAddToCart={handleAddToCart}
         />
 
         {/* Menu & Pricing Catalog */}

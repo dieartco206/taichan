@@ -1,258 +1,312 @@
 import React, { useState, useEffect } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
-import { Star, Clock, ArrowRight, Flame, Sparkles } from 'lucide-react';
-import { DoodleChili, DoodleLime, DoodleFlame, DoodleSate } from './FoodDoodles';
+import { Star, ArrowUpRight, Flame, Plus, Check } from 'lucide-react';
 
-const SHOWCASE_ITEMS = [
+const HERO_DISHES = [
   {
     id: "taichan-mix",
-    name: "Sate Taichan Mix",
-    portion: "10 Tusuk (Daging + Kulit)",
-    price: "Rp 35.000",
+    name: "Sate Taichan Mix (Dada + Kulit)",
+    portion: "10 Tusuk + Sambal Rawit",
+    price: 35000,
+    priceFormatted: "Rp 35.000",
     image: "/menu/sate_taichan_jakarta.jpg",
-    tag: "Paling Laris"
+    badge: "Best Seller"
   },
   {
     id: "taichan-paha",
-    name: "Sate Taichan Paha",
-    portion: "10 Tusuk Daging Paha",
-    price: "Rp 35.000",
+    name: "Sate Taichan Daging Paha",
+    portion: "10 Tusuk Full Paha Empuk",
+    price: 35000,
+    priceFormatted: "Rp 35.000",
     image: "/menu/sate_taichan_semarang.jpg",
-    tag: "Super Juicy"
+    badge: "Super Juicy"
+  },
+  {
+    id: "sate-kulit",
+    name: "Sate Kulit Ayam Crispy",
+    portion: "10 Tusuk Kulit Renyah",
+    price: 32000,
+    priceFormatted: "Rp 32.000",
+    image: "/menu/sate_kulit.jpg",
+    badge: "Garing Gurih"
   },
   {
     id: "paket-sultan",
     name: "Paket Sultan 30 Tusuk",
-    portion: "Porsi Ramean + Lontong",
-    price: "Rp 115.000",
+    portion: "Porsi Rombongan + Lontong",
+    price: 115000,
+    priceFormatted: "Rp 115.000",
     image: "/menu/paket_sultan.jpg",
-    tag: "Spesial Rombongan"
+    badge: "Paling Hemat"
   }
 ];
 
-export default function Hero({ onExploreMenu, onOrderDirect }) {
-  const [currentIndex, setCurrentIndex] = useState(0);
+export default function Hero({ onExploreMenu, onOrderDirect, onAddToCart }) {
+  const [currentHeroIdx, setCurrentHeroIdx] = useState(0);
+  const [addedId, setAddedId] = useState(null);
 
-  // Auto carousel rotation for dish showcase
+  // Auto-switch main hero dish
   useEffect(() => {
     const timer = setInterval(() => {
-      setCurrentIndex((prev) => (prev + 1) % SHOWCASE_ITEMS.length);
-    }, 4500);
+      setCurrentHeroIdx((prev) => (prev + 1) % HERO_DISHES.length);
+    }, 5000);
     return () => clearInterval(timer);
   }, []);
 
-  const currentItem = SHOWCASE_ITEMS[currentIndex];
+  const currentDish = HERO_DISHES[currentHeroIdx];
+
+  const handleCardAdd = (dish) => {
+    if (onAddToCart) {
+      onAddToCart({
+        id: dish.id,
+        name: dish.name,
+        portion: dish.portion,
+        price: dish.price,
+        qty: 1
+      });
+      setAddedId(dish.id);
+      setTimeout(() => setAddedId(null), 1200);
+    }
+  };
 
   return (
-    <section className="relative min-h-[92vh] flex items-center pt-28 sm:pt-32 pb-16 sm:pb-20 overflow-hidden bg-[#fdfbf7]">
+    <div className="relative w-full overflow-hidden">
       
       {/* ==========================================================
-          TWO-TONE SPLIT BACKGROUND (SIGNATURE DRIBBBLE ARCHITECTURE)
+          TOP HALF: WARM CREAM LINEN BACKGROUND (#f4efe6)
           ========================================================== */}
-      
-      {/* Tone 1: Base Warm Ivory Linen (Full Section) */}
-      <div className="absolute inset-0 bg-[#fdfbf7]" />
-
-      {/* Tone 2: Warm Spiced Terracotta Peach Block (Behind Food Showcase) */}
-      {/* Mobile: Bottom half with rounded top | Desktop: Right 48% with signature Dribbble curve */}
-      <div className="absolute inset-x-0 bottom-0 top-[52%] lg:top-0 lg:left-auto lg:right-0 lg:w-[48%] xl:w-[46%] bg-[#fde5da] border-t lg:border-t-0 lg:border-l border-orange-200/80 rounded-t-[40px] lg:rounded-t-none lg:rounded-l-[120px] xl:rounded-l-[140px] pointer-events-none overflow-hidden shadow-[-16px_0_40px_rgba(28,25,23,0.04)]">
-        {/* Soft Warm Radial Hearth Radiance inside Tone 2 */}
-        <div className="absolute top-1/4 -right-10 w-[480px] h-[480px] bg-gradient-to-br from-orange-300/40 via-amber-200/35 to-transparent rounded-full blur-3xl" />
-        <div className="absolute -bottom-16 left-6 w-[400px] h-[400px] bg-gradient-to-tr from-rose-200/35 to-transparent rounded-full blur-2xl" />
+      <section className="relative bg-[#f4efe6] pt-28 sm:pt-36 pb-20 sm:pb-28 overflow-hidden">
         
-        {/* Tone 2 Culinary Doodles */}
-        <div className="absolute top-20 right-10 opacity-25 select-none">
-          <DoodleChili className="w-22 h-22 text-red-600" rotate={-20} />
+        {/* Subtle decorative curved ambient lines */}
+        <div className="absolute inset-0 pointer-events-none overflow-hidden opacity-35">
+          <svg className="w-full h-full" viewBox="0 0 1440 600" fill="none">
+            <path d="M-100,200 C300,50 800,350 1540,120" stroke="#f26922" strokeWidth="1.5" strokeOpacity="0.3" strokeDasharray="6 6" />
+            <path d="M-50,380 C400,250 900,450 1500,280" stroke="#d97706" strokeWidth="1.2" strokeOpacity="0.25" />
+          </svg>
         </div>
-        <div className="absolute bottom-16 left-12 opacity-25 select-none hidden lg:block">
-          <DoodleFlame className="w-18 h-18 text-orange-600" rotate={15} />
-        </div>
-      </div>
 
-      {/* Tone 1 Ambient Glows & Doodles (Left Side) */}
-      <div className="absolute inset-0 pointer-events-none overflow-hidden">
-        <div className="absolute -bottom-24 -left-20 w-[550px] h-[550px] bg-gradient-to-tr from-rose-200/30 via-orange-100/30 to-transparent rounded-full blur-3xl" />
-        <div className="absolute top-28 left-8 opacity-20 select-none">
-          <DoodleLime className="w-20 h-20 text-emerald-700" rotate={20} />
-        </div>
-        <div className="absolute bottom-16 left-12 opacity-20 select-none hidden sm:block">
-          <DoodleSate className="w-24 h-24 text-amber-800" rotate={45} />
-        </div>
-      </div>
-
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10 w-full">
-        <div className="grid lg:grid-cols-12 gap-10 lg:gap-14 items-center">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
           
-          {/* ==========================================================
-              LEFT COLUMN: HERO COPY & CALL-TO-ACTIONS (DRIBBBLE STYLE)
-              ========================================================== */}
-          <motion.div 
-            initial={{ opacity: 0, x: -25 }}
-            animate={{ opacity: 1, x: 0 }}
-            transition={{ duration: 0.6 }}
-            className="lg:col-span-7 space-y-5 sm:space-y-6 text-center lg:text-left flex flex-col items-center lg:items-start"
-          >
+          {/* Top Hero Layout: Left Typography vs Right Description & CTA */}
+          <div className="grid lg:grid-cols-12 gap-6 lg:gap-12 items-start mb-8 sm:mb-12">
             
-            {/* Pill Eyebrow Badge */}
-            <div className="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-red-50 border border-red-200/80 shadow-2xs">
-              <span className="flex h-2 w-2 rounded-full bg-red-500 animate-pulse" />
-              <span className="text-xs font-bold text-red-600 tracking-wide uppercase">
-                Sate Taichan Paling Dicari di Margonda
-              </span>
+            {/* Left: Signature Dribbble Split-Colored Headline */}
+            <div className="lg:col-span-8 text-center lg:text-left">
+              <h1 className="font-display font-extrabold text-4xl sm:text-6xl lg:text-7xl tracking-tight leading-[1.08] text-stone-900">
+                <span>Daging </span>
+                <span className="text-[#f26922]">Paha</span> <br />
+                <span className="text-[#f26922]">Ayam</span>
+                <span> Tebal &</span> <br />
+                <span className="text-stone-400">Juicy</span>
+              </h1>
             </div>
 
-            {/* Bold Confident Headline */}
-            <h1 className="font-display font-black text-3xl sm:text-5xl lg:text-6xl text-stone-900 tracking-tight leading-[1.12]">
-              Daging Ayam Tebal. <br />
-              <span className="text-gradient-flame">Sambal Rawit Segar.</span>
-            </h1>
+            {/* Right: Subtitle & Reserve / Order Button */}
+            <div className="lg:col-span-4 flex flex-col items-center lg:items-start space-y-4 pt-2 text-center lg:text-left">
+              <p className="text-xs sm:text-sm md:text-base text-stone-600 font-medium leading-relaxed max-w-sm">
+                100% daging ayam paha empuk, kulit crispy gurih & siraman sambal rawit merah uleg jeruk nipis asli khas Taichan 56 Margonda.
+              </p>
 
-            {/* Appetizing Subtitle */}
-            <p className="text-sm sm:text-base md:text-lg text-stone-600 font-medium leading-relaxed max-w-xl">
-              Sate taichan daging ayam paha empuk juicy, kulit crispy gurih & siraman sambal rawit merah uleg jeruk nipis asli khas Taichan 56 Margonda. Dipanggang segar di atas arang batok kelapa asli.
-            </p>
-
-            {/* Action Buttons (Strictly 1 Row) */}
-            <div className="pt-1 flex flex-row items-center gap-3 w-full max-w-sm sm:max-w-md justify-center lg:justify-start">
               <button
                 onClick={onOrderDirect}
-                className="flex-1 px-5 sm:px-7 py-3.5 rounded-xl bg-gradient-to-r from-red-600 via-rose-600 to-orange-500 hover:from-red-500 hover:to-orange-400 text-white font-bold text-xs sm:text-sm tracking-wide shadow-xl shadow-red-600/30 hover:shadow-red-600/40 active:scale-95 transition-all flex items-center justify-center gap-2 group whitespace-nowrap"
+                className="px-6 py-3 rounded-xl bg-[#f26922] hover:bg-[#e05914] text-white font-bold text-xs sm:text-sm shadow-lg shadow-orange-500/30 hover:shadow-orange-500/40 active:scale-95 transition-all flex items-center gap-2 group"
               >
                 <span>Pesan Sekarang</span>
-                <ArrowRight className="w-4 h-4 group-hover:translate-x-1 transition-transform" />
-              </button>
-
-              <button
-                onClick={onExploreMenu}
-                className="flex-1 px-5 sm:px-6 py-3.5 rounded-xl bg-white hover:bg-stone-50 text-stone-800 font-bold text-xs sm:text-sm border border-stone-300 hover:border-stone-400 shadow-sm transition-all active:scale-95 flex items-center justify-center whitespace-nowrap"
-              >
-                <span>Lihat Menu</span>
+                <ArrowUpRight className="w-4 h-4 group-hover:translate-x-0.5 group-hover:-translate-y-0.5 transition-transform" />
               </button>
             </div>
 
-            {/* Social Proof & Operating Hours */}
-            <div className="pt-4 flex flex-wrap items-center justify-center lg:justify-start gap-3 sm:gap-4 text-xs text-stone-600 border-t border-stone-200/80 w-full max-w-lg">
-              <div className="flex items-center gap-1.5 font-bold text-stone-900">
-                <Star className="w-4 h-4 text-amber-500 fill-amber-500" />
-                <span>4.8 / 5.0</span>
-                <span className="text-stone-400 font-normal hidden xs:inline">(1.200+ Ulasan)</span>
-              </div>
-              <span className="text-stone-300">•</span>
-              <div className="flex items-center gap-1.5 font-semibold text-stone-700">
-                <Clock className="w-4 h-4 text-orange-500" />
-                <span>Buka 18.00 - 02.00 WIB</span>
-              </div>
-            </div>
-
-          </motion.div>
+          </div>
 
           {/* ==========================================================
-              RIGHT COLUMN: SIGNATURE DRIBBBLE FOOD SHOWCASE WITH FLOATING CARDS
+              CENTERPIECE: GIANT CIRCULAR DISH OVERLAPPING THE DIVIDER
               ========================================================== */}
-          <motion.div 
-            initial={{ opacity: 0, scale: 0.92 }}
-            animate={{ opacity: 1, scale: 1 }}
-            transition={{ duration: 0.7, delay: 0.1 }}
-            className="lg:col-span-5 relative flex items-center justify-center py-6 sm:py-8"
-          >
+          <div className="relative flex flex-col items-center justify-center -mb-36 sm:-mb-48 md:-mb-56 z-30">
             
-            {/* Center Dish Presentation with Multi-Layer Glow */}
-            <div className="relative">
-              
-              {/* Warm Ambient Backlight Glow Ring */}
-              <div className="absolute inset-0 bg-gradient-to-tr from-orange-500/25 via-amber-400/20 to-red-500/20 rounded-full blur-2xl transform scale-105" />
+            {/* The Main Round Dish Presentation */}
+            <div className="relative w-64 sm:w-80 md:w-96 lg:w-[440px] aspect-square rounded-full p-2.5 sm:p-3 bg-white shadow-[0_24px_70px_rgba(20,41,35,0.28)] border-4 sm:border-8 border-white flex items-center justify-center overflow-hidden">
+              <AnimatePresence mode="wait">
+                <motion.img 
+                  key={currentDish.id}
+                  src={currentDish.image} 
+                  alt={currentDish.name}
+                  initial={{ opacity: 0, scale: 1.08 }}
+                  animate={{ opacity: 1, scale: 1 }}
+                  exit={{ opacity: 0, scale: 0.95 }}
+                  transition={{ duration: 0.55 }}
+                  className="w-full h-full object-cover rounded-full"
+                />
+              </AnimatePresence>
 
-              {/* Main Circular Plate Presentation */}
-              <div className="relative w-64 sm:w-80 md:w-96 lg:w-[410px] aspect-square rounded-full p-2.5 sm:p-3 bg-white shadow-[0_24px_60px_rgba(234,88,12,0.18)] border-4 sm:border-8 border-white flex items-center justify-center overflow-hidden">
-                <AnimatePresence mode="wait">
-                  <motion.img 
-                    key={currentItem.id}
-                    src={currentItem.image} 
-                    alt={currentItem.name}
-                    initial={{ opacity: 0, scale: 1.08 }}
-                    animate={{ opacity: 1, scale: 1 }}
-                    exit={{ opacity: 0, scale: 0.95 }}
-                    transition={{ duration: 0.5 }}
-                    className="w-full h-full object-cover rounded-full"
-                  />
-                </AnimatePresence>
-
-                {/* Subtle Food Gloss Reflection */}
-                <div className="absolute inset-0 rounded-full bg-gradient-to-tr from-black/15 via-transparent to-white/20 pointer-events-none" />
-              </div>
-
-              {/* FLOATING CARD 1 (Top-Right): Signature Menu Favorit */}
-              <motion.div 
-                animate={{ y: [0, -6, 0] }}
-                transition={{ duration: 3.5, repeat: Infinity, ease: "easeInOut" }}
-                className="absolute -top-3 -right-2 sm:-top-5 sm:-right-4 bg-white/95 backdrop-blur-md p-2.5 sm:p-3 rounded-2xl shadow-xl border border-stone-200/90 flex items-center gap-2.5 z-20"
-              >
-                <div className="w-9 h-9 sm:w-10 sm:h-10 rounded-xl bg-amber-100 flex items-center justify-center text-amber-600 font-bold flex-shrink-0">
-                  <Sparkles className="w-5 h-5 text-amber-500" />
-                </div>
-                <div className="text-left">
-                  <span className="text-[10px] sm:text-[11px] text-stone-500 font-semibold block leading-tight">
-                    {currentItem.tag}
-                  </span>
-                  <span className="text-xs sm:text-sm font-bold text-stone-900 block leading-tight">
-                    {currentItem.name}
-                  </span>
-                  <span className="text-xs font-black text-red-600 leading-tight">
-                    {currentItem.price}
-                  </span>
-                </div>
-              </motion.div>
-
-              {/* FLOATING CARD 2 (Bottom-Left): 100% Arang Batok */}
-              <motion.div 
-                animate={{ y: [0, 6, 0] }}
-                transition={{ duration: 4, repeat: Infinity, ease: "easeInOut", delay: 0.5 }}
-                className="absolute -bottom-3 -left-2 sm:-bottom-5 sm:-left-4 bg-white/95 backdrop-blur-md p-2.5 sm:p-3 rounded-2xl shadow-xl border border-stone-200/90 flex items-center gap-2.5 z-20"
-              >
-                <div className="w-9 h-9 sm:w-10 sm:h-10 rounded-xl bg-orange-100 flex items-center justify-center text-orange-600 font-bold flex-shrink-0">
-                  <Flame className="w-5 h-5 text-orange-600" />
-                </div>
-                <div className="text-left">
-                  <span className="text-[10px] sm:text-[11px] text-orange-600 font-bold block leading-tight">
-                    100% Arang Batok
-                  </span>
-                  <span className="text-xs sm:text-sm font-bold text-stone-900 block leading-tight">
-                    Daging Paha Empuk
-                  </span>
-                  <span className="text-[10px] text-stone-500 font-medium leading-tight">
-                    Aroma Smokey Gurih
-                  </span>
-                </div>
-              </motion.div>
-
-              {/* FLOATING BADGE 3 (Bottom-Right): Sambal Rawit Segar */}
-              <div className="hidden sm:flex absolute bottom-8 -right-4 bg-white/95 backdrop-blur-md px-3 py-1.5 rounded-xl shadow-lg border border-stone-200/90 items-center gap-2 z-20">
-                <span className="w-2.5 h-2.5 rounded-full bg-emerald-500 animate-pulse"></span>
-                <span className="text-xs font-bold text-stone-800">Sambal Rawit Uleg Asli</span>
-              </div>
-
+              {/* Glistening Light Reflection Overlay */}
+              <div className="absolute inset-0 rounded-full bg-gradient-to-tr from-black/15 via-transparent to-white/20 pointer-events-none" />
             </div>
 
-            {/* Carousel Switcher Dots */}
-            <div className="absolute -bottom-4 inset-x-0 flex items-center justify-center gap-2 z-20">
-              {SHOWCASE_ITEMS.map((item, idx) => (
+            {/* FLOATING PILL 1 (LEFT): 10,000+ Happy Guests / Customers */}
+            <motion.div 
+              animate={{ y: [0, -6, 0] }}
+              transition={{ duration: 3.5, repeat: Infinity, ease: "easeInOut" }}
+              className="absolute left-2 sm:left-10 lg:left-24 top-1/2 -translate-y-1/2 bg-black/60 hover:bg-black/75 backdrop-blur-md px-3 sm:px-4 py-2 sm:py-2.5 rounded-full border border-white/20 shadow-xl flex items-center gap-2.5 text-white z-40 transition-colors"
+            >
+              <div className="flex -space-x-1.5 overflow-hidden">
+                <img className="inline-block h-6 w-6 rounded-full ring-1 ring-white object-cover" src="/brand/post_1.png" alt="Customer" />
+                <img className="inline-block h-6 w-6 rounded-full ring-1 ring-white object-cover" src="/brand/post_2.png" alt="Customer" />
+                <img className="inline-block h-6 w-6 rounded-full ring-1 ring-white object-cover" src="/brand/post_3.png" alt="Customer" />
+              </div>
+              <span className="text-[10px] sm:text-xs font-bold whitespace-nowrap">
+                10,000+ Pelanggan Puas
+              </span>
+            </motion.div>
+
+            {/* FLOATING PILL 2 (RIGHT): 4.8 Rating */}
+            <motion.div 
+              animate={{ y: [0, 6, 0] }}
+              transition={{ duration: 4, repeat: Infinity, ease: "easeInOut", delay: 0.5 }}
+              className="absolute right-2 sm:right-10 lg:right-24 top-1/2 -translate-y-1/2 bg-black/60 hover:bg-black/75 backdrop-blur-md px-3.5 sm:px-4 py-2 sm:py-2.5 rounded-full border border-white/20 shadow-xl flex items-center gap-2 text-white z-40 transition-colors"
+            >
+              <span className="text-xs sm:text-sm font-black text-amber-400">4.8 / 5.0</span>
+              <div className="flex items-center text-amber-400">
+                <Star className="w-3.5 h-3.5 fill-amber-400" />
+              </div>
+              <span className="text-[10px] sm:text-xs text-stone-300 font-medium hidden xs:inline">
+                GoFood & Grab
+              </span>
+            </motion.div>
+
+            {/* Carousel Dots Under Dish */}
+            <div className="mt-4 flex items-center justify-center gap-2 z-40">
+              {HERO_DISHES.map((dish, idx) => (
                 <button
-                  key={item.id}
-                  onClick={() => setCurrentIndex(idx)}
+                  key={dish.id}
+                  onClick={() => setCurrentHeroIdx(idx)}
                   className={`h-2 rounded-full transition-all duration-300 ${
-                    currentIndex === idx 
-                      ? 'w-7 bg-red-600 shadow-sm' 
-                      : 'w-2 bg-stone-300 hover:bg-stone-400'
+                    currentHeroIdx === idx 
+                      ? 'w-7 bg-[#f26922] shadow-sm' 
+                      : 'w-2 bg-stone-400/80 hover:bg-stone-500'
                   }`}
-                  aria-label={`Lihat ${item.name}`}
+                  aria-label={`Pilih ${dish.name}`}
                 />
               ))}
             </div>
 
-          </motion.div>
+          </div>
 
         </div>
+
+      </section>
+
+      {/* ==========================================================
+          THE ORGANIC BRUSH / RAGGED EDGE DIVIDER
+          ========================================================== */}
+      <div className="relative w-full bg-[#f4efe6] overflow-hidden leading-none -mb-1 z-20 pointer-events-none">
+        <svg 
+          viewBox="0 0 1440 100" 
+          preserveAspectRatio="none" 
+          className="w-full h-12 sm:h-16 md:h-20 text-[#142923] fill-current"
+        >
+          {/* Authentic Ragged Splatter Brush Edge Path */}
+          <path d="M0,0 Q30,55 70,30 Q110,65 150,38 Q190,75 230,42 Q270,80 310,35 Q350,68 390,40 Q430,78 470,32 Q510,65 550,44 Q590,82 630,36 Q670,72 710,40 Q750,85 790,34 Q830,76 870,42 Q910,80 950,36 Q990,70 1030,45 Q1070,85 1110,38 Q1150,75 1190,44 Q1230,80 1270,35 Q1310,68 1350,40 Q1390,75 1440,30 L1440,100 L0,100 Z" />
+        </svg>
       </div>
-    </section>
+
+      {/* ==========================================================
+          BOTTOM HALF: DEEP FOREST EMERALD (#142923) POPULAR MENU
+          ========================================================== */}
+      <section className="relative bg-[#142923] pt-36 sm:pt-48 md:pt-56 pb-20 sm:pb-24 overflow-hidden text-white z-10">
+        
+        {/* Subtle Ambient Decorative Wavy Lines */}
+        <div className="absolute inset-0 pointer-events-none overflow-hidden opacity-20">
+          <svg className="w-full h-full" viewBox="0 0 1440 800" fill="none">
+            <path d="M-100,500 C400,300 800,650 1540,400" stroke="#f26922" strokeWidth="1.5" strokeOpacity="0.4" />
+            <path d="M-50,650 C500,450 900,750 1500,520" stroke="#10b981" strokeWidth="1.2" strokeOpacity="0.3" />
+          </svg>
+        </div>
+
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
+          
+          {/* Section Header */}
+          <div className="text-center space-y-3 mb-10 sm:mb-12">
+            <div className="inline-flex items-center gap-1.5 px-3.5 py-1 rounded-full border border-white/20 bg-white/5 text-stone-300 text-xs font-semibold tracking-wide backdrop-blur-md">
+              <Flame className="w-3.5 h-3.5 text-[#f26922]" />
+              <span>Popular Menu</span>
+            </div>
+
+            <h2 className="font-display font-black text-2xl sm:text-4xl text-white tracking-tight max-w-xl mx-auto">
+              Discover our chef's most loved and trending dishes.
+            </h2>
+          </div>
+
+          {/* 4 Popular Dishes Grid (Cards Inspired by Dribbble) */}
+          <div className="grid grid-cols-2 lg:grid-cols-4 gap-3 sm:gap-5 mb-10">
+            {HERO_DISHES.map((dish) => {
+              const isAdded = addedId === dish.id;
+
+              return (
+                <div 
+                  key={dish.id}
+                  className="group relative bg-[#1b342d] hover:bg-[#203e36] border border-white/10 hover:border-[#f26922]/60 rounded-2xl p-3 sm:p-4.5 transition-all duration-300 flex flex-col justify-between hover:-translate-y-1.5 shadow-lg"
+                >
+                  {/* Dish Circular Food Photo */}
+                  <div className="relative aspect-square w-full rounded-xl overflow-hidden bg-black/20 mb-3 flex items-center justify-center p-2">
+                    <img 
+                      src={dish.image} 
+                      alt={dish.name} 
+                      className="w-full h-full object-cover rounded-full group-hover:scale-105 transition-transform duration-500"
+                    />
+
+                    {/* Quick Add Button Hover Overlay */}
+                    <button
+                      onClick={() => handleCardAdd(dish)}
+                      className="absolute inset-0 bg-black/40 backdrop-blur-[2px] opacity-0 group-hover:opacity-100 transition-opacity flex items-center justify-center rounded-xl"
+                      title="Tambah ke Keranjang"
+                    >
+                      <div className="w-10 h-10 rounded-full bg-white text-[#142923] flex items-center justify-center shadow-lg transform scale-90 group-hover:scale-100 transition-transform">
+                        {isAdded ? <Check className="w-5 h-5 text-emerald-600" /> : <Plus className="w-5 h-5 text-[#f26922]" />}
+                      </div>
+                    </button>
+                  </div>
+
+                  {/* Dish Title & Price */}
+                  <div className="text-center space-y-1">
+                    <h3 className="font-display font-bold text-xs sm:text-sm text-white line-clamp-1 group-hover:text-[#f26922] transition-colors" title={dish.name}>
+                      {dish.name}
+                    </h3>
+                    <div className="text-xs sm:text-sm font-black text-[#f26922]">
+                      {dish.priceFormatted}
+                    </div>
+                  </div>
+
+                  {/* Add to Cart Mobile Helper */}
+                  <div className="pt-2 sm:hidden">
+                    <button
+                      onClick={() => handleCardAdd(dish)}
+                      className="w-full py-1 rounded-lg bg-white/10 hover:bg-[#f26922] text-[10px] font-bold text-white transition-colors flex items-center justify-center gap-1"
+                    >
+                      {isAdded ? <Check className="w-3 h-3 text-emerald-400" /> : <Plus className="w-3 h-3" />}
+                      <span>{isAdded ? "Ditambah" : "Tambah"}</span>
+                    </button>
+                  </div>
+
+                </div>
+              );
+            })}
+          </div>
+
+          {/* Bottom Action: Explore All Menu Button */}
+          <div className="flex items-center justify-center">
+            <button
+              onClick={onExploreMenu}
+              className="px-6 py-3 rounded-xl bg-[#f26922] hover:bg-[#e05914] text-white font-bold text-xs sm:text-sm shadow-xl shadow-orange-500/20 active:scale-95 transition-all flex items-center gap-2 group"
+            >
+              <span>Explore all Menu</span>
+              <ArrowUpRight className="w-4 h-4 group-hover:translate-x-0.5 group-hover:-translate-y-0.5 transition-transform" />
+            </button>
+          </div>
+
+        </div>
+
+      </section>
+
+    </div>
   );
 }
