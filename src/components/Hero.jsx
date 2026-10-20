@@ -59,18 +59,18 @@ export default function Hero({ onExploreMenu, onOrderDirect }) {
         <div className="absolute inset-0 bg-stone-950/55 backdrop-blur-[0.5px]" />
       </div>
 
-      <div className="max-w-4xl mx-auto px-4 sm:px-6 relative z-10 w-full text-center">
+      <div className="max-w-5xl mx-auto px-4 sm:px-6 relative z-10 w-full text-center">
         <motion.div 
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.6 }}
-          className="space-y-4 sm:space-y-6 flex flex-col items-center justify-center max-w-2xl mx-auto"
+          className="space-y-4 sm:space-y-6 flex flex-col items-center justify-center max-w-4xl mx-auto"
         >
           
-          {/* Main Appetite Headline */}
-          <h1 className="font-display font-black text-4xl sm:text-6xl md:text-7xl text-white tracking-tight leading-[1.1] drop-shadow-2xl">
-            <span className="text-gradient-flame">Daging Tebal.</span> <br />
-            <span className="text-white">Sambal Rawit Segar.</span>
+          {/* Main Appetite Headline (Strictly 2 Lines) */}
+          <h1 className="font-display font-black text-3xl sm:text-5xl md:text-6xl lg:text-7xl text-white tracking-tight leading-[1.12] drop-shadow-2xl">
+            <span className="text-gradient-flame block whitespace-nowrap">Daging Tebal.</span>
+            <span className="text-white block whitespace-nowrap">Sambal Rawit Segar.</span>
           </h1>
 
           {/* Clean 1-Sentence Tagline */}
