@@ -46,21 +46,34 @@ export default function Hero({ onExploreMenu, onOrderDirect }) {
   return (
     <section className="relative min-h-[92vh] flex items-center pt-28 sm:pt-32 pb-16 sm:pb-20 overflow-hidden bg-[#fdfbf7]">
       
-      {/* Background Ambient Glows & Culinary Doodles (Warm Dribbble Palette) */}
-      <div className="absolute inset-0 pointer-events-none overflow-hidden">
-        {/* Soft Warm Radial Hearth Radiance */}
-        <div className="absolute -top-20 -right-20 w-[620px] h-[620px] bg-gradient-to-bl from-orange-200/40 via-amber-200/30 to-transparent rounded-full blur-3xl" />
-        <div className="absolute -bottom-24 -left-20 w-[550px] h-[550px] bg-gradient-to-tr from-rose-200/35 via-orange-100/30 to-transparent rounded-full blur-3xl" />
+      {/* ==========================================================
+          TWO-TONE SPLIT BACKGROUND (SIGNATURE DRIBBBLE ARCHITECTURE)
+          ========================================================== */}
+      
+      {/* Tone 1: Base Warm Ivory Linen (Full Section) */}
+      <div className="absolute inset-0 bg-[#fdfbf7]" />
+
+      {/* Tone 2: Warm Spiced Terracotta Peach Block (Behind Food Showcase) */}
+      {/* Mobile: Bottom half with rounded top | Desktop: Right 48% with signature Dribbble curve */}
+      <div className="absolute inset-x-0 bottom-0 top-[52%] lg:top-0 lg:left-auto lg:right-0 lg:w-[48%] xl:w-[46%] bg-[#fde5da] border-t lg:border-t-0 lg:border-l border-orange-200/80 rounded-t-[40px] lg:rounded-t-none lg:rounded-l-[120px] xl:rounded-l-[140px] pointer-events-none overflow-hidden shadow-[-16px_0_40px_rgba(28,25,23,0.04)]">
+        {/* Soft Warm Radial Hearth Radiance inside Tone 2 */}
+        <div className="absolute top-1/4 -right-10 w-[480px] h-[480px] bg-gradient-to-br from-orange-300/40 via-amber-200/35 to-transparent rounded-full blur-3xl" />
+        <div className="absolute -bottom-16 left-6 w-[400px] h-[400px] bg-gradient-to-tr from-rose-200/35 to-transparent rounded-full blur-2xl" />
         
-        {/* Food Doodles Scattered Artfully */}
-        <div className="absolute top-20 right-10 opacity-20 select-none">
-          <DoodleChili className="w-24 h-24 text-red-600" rotate={-25} />
+        {/* Tone 2 Culinary Doodles */}
+        <div className="absolute top-20 right-10 opacity-25 select-none">
+          <DoodleChili className="w-22 h-22 text-red-600" rotate={-20} />
         </div>
+        <div className="absolute bottom-16 left-12 opacity-25 select-none hidden lg:block">
+          <DoodleFlame className="w-18 h-18 text-orange-600" rotate={15} />
+        </div>
+      </div>
+
+      {/* Tone 1 Ambient Glows & Doodles (Left Side) */}
+      <div className="absolute inset-0 pointer-events-none overflow-hidden">
+        <div className="absolute -bottom-24 -left-20 w-[550px] h-[550px] bg-gradient-to-tr from-rose-200/30 via-orange-100/30 to-transparent rounded-full blur-3xl" />
         <div className="absolute top-28 left-8 opacity-20 select-none">
           <DoodleLime className="w-20 h-20 text-emerald-700" rotate={20} />
-        </div>
-        <div className="absolute bottom-20 right-1/3 opacity-20 select-none hidden lg:block">
-          <DoodleFlame className="w-20 h-20 text-orange-600" rotate={15} />
         </div>
         <div className="absolute bottom-16 left-12 opacity-20 select-none hidden sm:block">
           <DoodleSate className="w-24 h-24 text-amber-800" rotate={45} />
