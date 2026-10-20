@@ -64,7 +64,7 @@ export default function Footer() {
                 <a href="#why-us" className="hover:text-red-400 transition-colors">Kualitas & Keunggulan</a>
               </li>
               <li>
-                <a href="#spicy-meter" className="hover:text-red-400 transition-colors">Spicy Simulator</a>
+                <a href="#cinematic-sate" className="hover:text-red-400 transition-colors">Sensasi Sate Meluncur</a>
               </li>
               <li>
                 <a href="#instagram" className="hover:text-red-400 transition-colors">Instagram</a>
