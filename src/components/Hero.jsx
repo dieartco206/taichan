@@ -73,26 +73,27 @@ export default function Hero({ onExploreMenu, onOrderDirect, onAddToCart }) {
     <div className="relative w-full overflow-hidden">
       
       {/* ==========================================================
-          TOP HALF: WARM CREAM LINEN BACKGROUND (#f4efe6)
+          TOP HALF: WARM CREAM LINEN BACKGROUND (#f5efe6)
+          Compact & Tight Spacing matching Dribbble Reference
           ========================================================== */}
-      <section className="relative bg-[#f4efe6] pt-24 sm:pt-28 pb-4 sm:pb-6 overflow-hidden">
+      <section className="relative bg-[#f5efe6] pt-24 sm:pt-28 pb-0 overflow-visible">
         
         {/* Subtle decorative curved ambient lines */}
-        <div className="absolute inset-0 pointer-events-none overflow-hidden opacity-35">
-          <svg className="w-full h-full" viewBox="0 0 1440 600" fill="none">
-            <path d="M-100,200 C300,50 800,350 1540,120" stroke="#f26922" strokeWidth="1.5" strokeOpacity="0.3" strokeDasharray="6 6" />
-            <path d="M-50,380 C400,250 900,450 1500,280" stroke="#dc2626" strokeWidth="1.2" strokeOpacity="0.25" />
+        <div className="absolute inset-0 pointer-events-none overflow-hidden opacity-30">
+          <svg className="w-full h-full" viewBox="0 0 1440 500" fill="none">
+            <path d="M-100,160 C300,40 800,280 1540,100" stroke="#f26922" strokeWidth="1.5" strokeOpacity="0.3" strokeDasharray="6 6" />
+            <path d="M-50,300 C400,180 900,380 1500,220" stroke="#dc2626" strokeWidth="1.2" strokeOpacity="0.25" />
           </svg>
         </div>
 
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
           
           {/* Top Hero Layout: Left Typography vs Right Description & CTA */}
-          <div className="grid lg:grid-cols-12 gap-6 lg:gap-12 items-start mb-6 sm:mb-8">
+          <div className="grid lg:grid-cols-12 gap-6 items-center mb-4 sm:mb-6">
             
             {/* Left: Signature Dribbble Split-Colored Headline */}
-            <div className="lg:col-span-8 text-center lg:text-left">
-              <h1 className="font-display font-extrabold text-3xl sm:text-5xl lg:text-6xl tracking-tight leading-[1.1] text-stone-900">
+            <div className="lg:col-span-7 text-center lg:text-left">
+              <h1 className="font-display font-black text-3xl sm:text-5xl lg:text-6xl tracking-tight leading-[1.08] text-stone-900">
                 <span>Daging </span>
                 <span className="text-[#f26922]">Paha</span> <br />
                 <span className="text-[#f26922]">Ayam</span>
@@ -102,14 +103,14 @@ export default function Hero({ onExploreMenu, onOrderDirect, onAddToCart }) {
             </div>
 
             {/* Right: Subtitle & Order Button */}
-            <div className="lg:col-span-4 flex flex-col items-center lg:items-start space-y-3.5 pt-1 text-center lg:text-left">
-              <p className="text-xs sm:text-sm md:text-base text-stone-600 font-medium leading-relaxed max-w-sm">
+            <div className="lg:col-span-5 flex flex-col items-center lg:items-start space-y-3 pt-1 text-center lg:text-left">
+              <p className="text-xs sm:text-sm text-stone-600 font-medium leading-relaxed max-w-sm">
                 100% daging ayam paha empuk, kulit crispy gurih & siraman sambal rawit merah uleg jeruk nipis asli khas Taichan 56 Margonda.
               </p>
 
               <button
                 onClick={onOrderDirect}
-                className="px-6 py-2.5 sm:py-3 rounded-xl bg-[#f26922] hover:bg-[#e05914] text-white font-bold text-xs sm:text-sm shadow-lg shadow-orange-500/30 hover:shadow-orange-500/40 active:scale-95 transition-all flex items-center gap-2 group"
+                className="px-6 py-2.5 sm:py-3 rounded-xl bg-[#f26922] hover:bg-[#e05914] text-white font-bold text-xs sm:text-sm shadow-lg shadow-orange-500/25 active:scale-95 transition-all flex items-center gap-2 group whitespace-nowrap"
               >
                 <span>Pesan Sekarang</span>
                 <ArrowUpRight className="w-4 h-4 group-hover:translate-x-0.5 group-hover:-translate-y-0.5 transition-transform" />
@@ -120,21 +121,21 @@ export default function Hero({ onExploreMenu, onOrderDirect, onAddToCart }) {
 
           {/* ==========================================================
               CENTERPIECE: GIANT CIRCULAR DISH OVERLAPPING THE DIVIDER
-              Positioned right on the boundary between cream & deep red!
+              Exactly 50% on Cream & 50% on Dark Red (#2d080b)
               ========================================================== */}
-          <div className="relative flex flex-col items-center justify-center -mb-36 sm:-mb-44 md:-mb-52 z-30">
+          <div className="relative flex flex-col items-center justify-center -mb-32 sm:-mb-44 lg:-mb-52 z-30">
             
             {/* The Main Round Dish Presentation */}
-            <div className="relative w-64 sm:w-80 md:w-96 lg:w-[420px] aspect-square rounded-full p-2.5 sm:p-3 bg-white shadow-[0_25px_70px_rgba(54,12,16,0.35)] border-4 sm:border-8 border-white flex items-center justify-center overflow-hidden">
+            <div className="relative w-64 sm:w-80 md:w-96 lg:w-[410px] aspect-square rounded-full p-2.5 sm:p-3 bg-white shadow-[0_20px_60px_rgba(45,8,11,0.28)] border-4 sm:border-8 border-white flex items-center justify-center overflow-hidden">
               <AnimatePresence mode="wait">
                 <motion.img 
                   key={currentDish.id}
                   src={currentDish.image} 
                   alt={currentDish.name}
-                  initial={{ opacity: 0, scale: 1.08 }}
+                  initial={{ opacity: 0, scale: 1.06 }}
                   animate={{ opacity: 1, scale: 1 }}
                   exit={{ opacity: 0, scale: 0.95 }}
-                  transition={{ duration: 0.55 }}
+                  transition={{ duration: 0.5 }}
                   className="w-full h-full object-cover object-center rounded-full"
                 />
               </AnimatePresence>
@@ -145,9 +146,9 @@ export default function Hero({ onExploreMenu, onOrderDirect, onAddToCart }) {
 
             {/* FLOATING PILL 1 (LEFT): 10,000+ Pelanggan Puas */}
             <motion.div 
-              animate={{ y: [0, -6, 0] }}
+              animate={{ y: [0, -5, 0] }}
               transition={{ duration: 3.5, repeat: Infinity, ease: "easeInOut" }}
-              className="absolute left-2 sm:left-8 lg:left-20 top-1/2 -translate-y-1/2 bg-black/70 hover:bg-black/85 backdrop-blur-md px-3 sm:px-4 py-2 sm:py-2.5 rounded-full border border-white/20 shadow-xl flex items-center gap-2.5 text-white z-40 transition-colors"
+              className="absolute left-2 sm:left-6 lg:left-14 top-1/2 -translate-y-1/2 bg-black/75 backdrop-blur-md px-3 sm:px-4 py-2 sm:py-2.5 rounded-full border border-white/20 shadow-xl flex items-center gap-2.5 text-white z-40 transition-colors"
             >
               <div className="flex -space-x-1.5 overflow-hidden">
                 <img className="inline-block h-6 w-6 rounded-full ring-1 ring-white object-cover" src="/brand/post_1.png" alt="Customer" />
@@ -161,9 +162,9 @@ export default function Hero({ onExploreMenu, onOrderDirect, onAddToCart }) {
 
             {/* FLOATING PILL 2 (RIGHT): 4.8 Rating */}
             <motion.div 
-              animate={{ y: [0, 6, 0] }}
+              animate={{ y: [0, 5, 0] }}
               transition={{ duration: 4, repeat: Infinity, ease: "easeInOut", delay: 0.5 }}
-              className="absolute right-2 sm:right-8 lg:right-20 top-1/2 -translate-y-1/2 bg-black/70 hover:bg-black/85 backdrop-blur-md px-3.5 sm:px-4 py-2 sm:py-2.5 rounded-full border border-white/20 shadow-xl flex items-center gap-2 text-white z-40 transition-colors"
+              className="absolute right-2 sm:right-6 lg:right-14 top-1/2 -translate-y-1/2 bg-black/75 backdrop-blur-md px-3.5 sm:px-4 py-2 sm:py-2.5 rounded-full border border-white/20 shadow-xl flex items-center gap-2 text-white z-40 transition-colors"
             >
               <span className="text-xs sm:text-sm font-black text-amber-400">4.8 / 5.0</span>
               <div className="flex items-center text-amber-400">
@@ -175,7 +176,7 @@ export default function Hero({ onExploreMenu, onOrderDirect, onAddToCart }) {
             </motion.div>
 
             {/* Carousel Dots Under Dish */}
-            <div className="mt-4 flex items-center justify-center gap-2 z-40">
+            <div className="mt-3 flex items-center justify-center gap-2 z-40">
               {HERO_DISHES.map((dish, idx) => (
                 <button
                   key={dish.id}
@@ -197,39 +198,27 @@ export default function Hero({ onExploreMenu, onOrderDirect, onAddToCart }) {
       </section>
 
       {/* ==========================================================
-          THE AUTHENTIC DRY-BRUSH SPLATTER DIVIDER (#360c10)
-          Zero rounded waves! Real jagged dry-brush bristle path.
+          SMOOTH ORGANIC CURVE TRANSITION (NO JAGGED TEETH!)
+          Clean, elegant wave dividing Cream & Deep Chili Red
           ========================================================== */}
-      <div className="relative w-full bg-[#f4efe6] overflow-hidden leading-none -mb-1 z-20 pointer-events-none">
+      <div className="relative w-full bg-[#f5efe6] overflow-hidden leading-none -mt-0.5 z-20 pointer-events-none">
         <svg 
-          viewBox="0 0 1440 70" 
+          viewBox="0 0 1440 60" 
           preserveAspectRatio="none" 
-          className="w-full h-12 sm:h-16 md:h-20 text-[#360c10] fill-current"
+          className="w-full h-10 sm:h-14 md:h-16 text-[#2d080b] fill-current"
         >
-          {/* Jagged dry-brush paint splatter path */}
-          <path d="M0,70 L0,38 L14,42 L28,26 L42,44 L56,34 L70,48 L84,30 L98,46 L112,27 L128,45 L144,36 L160,50 L176,31 L192,47 L208,33 L224,49 L240,30 L256,46 L272,35 L288,52 L304,32 L320,48 L336,29 L352,46 L368,36 L384,52 L400,33 L416,48 L432,31 L448,47 L464,35 L480,51 L496,32 L512,48 L528,29 L544,47 L560,35 L576,52 L592,33 L608,49 L624,30 L640,47 L656,35 L672,52 L688,32 L704,48 L720,29 L736,47 L752,35 L768,52 L784,32 L800,48 L816,30 L832,47 L848,35 L864,52 L880,32 L896,48 L912,30 L928,47 L944,35 L960,52 L976,33 L992,49 L1008,30 L1024,47 L1040,35 L1056,52 L1072,32 L1088,48 L1104,29 L1120,47 L1136,35 L1152,52 L1168,32 L1184,48 L1200,30 L1216,47 L1232,35 L1248,52 L1264,32 L1280,48 L1296,29 L1312,47 L1328,35 L1344,52 L1360,32 L1376,48 L1392,31 L1408,46 L1424,35 L1440,50 L1440,70 Z" />
-          {/* Paint splatter flecks along the edge */}
-          <circle cx="95" cy="22" r="3" />
-          <circle cx="210" cy="24" r="2.5" />
-          <circle cx="340" cy="19" r="3" />
-          <circle cx="470" cy="23" r="2.5" />
-          <circle cx="610" cy="20" r="3.5" />
-          <circle cx="750" cy="18" r="2.5" />
-          <circle cx="890" cy="22" r="3" />
-          <circle cx="1030" cy="19" r="2.5" />
-          <circle cx="1180" cy="21" r="3" />
-          <circle cx="1320" cy="20" r="2.5" />
+          <path d="M0,25 C360,55 1080,55 1440,25 L1440,60 L0,60 Z" />
         </svg>
       </div>
 
       {/* ==========================================================
-          BOTTOM HALF: DEEP TAICHAN CHILI CRIMSON-RED (#360c10)
-          The authentic red matching Taichan's spicy rawit & fire!
+          BOTTOM HALF: DEEP CHILI CRIMSON RED (#2d080b)
+          Popular Menu Section on rich dark red
           ========================================================== */}
-      <section className="relative bg-[#360c10] pt-40 sm:pt-48 md:pt-56 pb-20 sm:pb-24 overflow-hidden text-white z-10">
+      <section className="relative bg-[#2d080b] pt-32 sm:pt-40 lg:pt-48 pb-20 sm:pb-24 overflow-hidden text-white z-10">
         
         {/* Subtle Ambient Decorative Wavy Lines */}
-        <div className="absolute inset-0 pointer-events-none overflow-hidden opacity-20">
+        <div className="absolute inset-0 pointer-events-none overflow-hidden opacity-15">
           <svg className="w-full h-full" viewBox="0 0 1440 800" fill="none">
             <path d="M-100,500 C400,300 800,650 1540,400" stroke="#f26922" strokeWidth="1.5" strokeOpacity="0.4" />
             <path d="M-50,650 C500,450 900,750 1500,520" stroke="#ef4444" strokeWidth="1.2" strokeOpacity="0.3" />
@@ -258,7 +247,7 @@ export default function Hero({ onExploreMenu, onOrderDirect, onAddToCart }) {
               return (
                 <div 
                   key={dish.id}
-                  className="group relative bg-[#4a1217] hover:bg-[#58161c] border border-red-500/20 hover:border-[#f26922]/70 rounded-2xl p-3 sm:p-4.5 transition-all duration-300 flex flex-col justify-between hover:-translate-y-1.5 shadow-lg"
+                  className="group relative bg-[#3d0d12] hover:bg-[#4a1016] border border-red-500/20 hover:border-[#f26922]/70 rounded-2xl p-3 sm:p-4.5 transition-all duration-300 flex flex-col justify-between hover:-translate-y-1.5 shadow-lg"
                 >
                   {/* Dish Circular Food Photo */}
                   <div className="relative aspect-square w-full rounded-xl overflow-hidden bg-black/25 mb-3 flex items-center justify-center p-2">
@@ -274,7 +263,7 @@ export default function Hero({ onExploreMenu, onOrderDirect, onAddToCart }) {
                       className="absolute inset-0 bg-black/40 backdrop-blur-[2px] opacity-0 group-hover:opacity-100 transition-opacity flex items-center justify-center rounded-xl"
                       title="Tambah ke Keranjang"
                     >
-                      <div className="w-10 h-10 rounded-full bg-white text-[#360c10] flex items-center justify-center shadow-lg transform scale-90 group-hover:scale-100 transition-transform">
+                      <div className="w-10 h-10 rounded-full bg-white text-[#2d080b] flex items-center justify-center shadow-lg transform scale-90 group-hover:scale-100 transition-transform">
                         {isAdded ? <Check className="w-5 h-5 text-emerald-600" /> : <Plus className="w-5 h-5 text-[#f26922]" />}
                       </div>
                     </button>
