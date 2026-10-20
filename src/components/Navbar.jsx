@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from 'react';
-import { ShoppingBag, Menu, X, ArrowUpRight } from 'lucide-react';
+import { ShoppingBag, Menu, X } from 'lucide-react';
 import Instagram from './InstagramIcon';
 import TaichanLogo from './TaichanLogo';
 import { RESTAURANT_INFO } from '../data/restaurantData';
@@ -32,7 +32,6 @@ export default function Navbar({ cartCount, onOpenCart }) {
   }, []);
 
   const navLinks = [
-    { label: "Home", href: "#" },
     { label: "Menu", href: "#menu" },
     { label: "Keunggulan", href: "#why-us" },
     { label: "Instagram", href: "#instagram" },
@@ -43,16 +42,18 @@ export default function Navbar({ cartCount, onOpenCart }) {
     <header className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 ${
       scrolled 
         ? 'bg-white/95 backdrop-blur-md border-b border-stone-200/80 shadow-[0_4px_24px_rgba(28,25,23,0.06)] py-3' 
-        : 'bg-[#f4efe6]/90 backdrop-blur-md py-4 sm:py-5 border-b border-stone-200/50'
+        : 'bg-transparent py-4 sm:py-5'
     }`}>
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="flex items-center justify-between">
           
-          {/* Left: Clean Brand Logo */}
+          {/* Left: Clean Brand Logo (Strict Single-Line on Mobile & Desktop) */}
           <a href="#" className="flex items-center gap-2 sm:gap-3 group flex-shrink-0">
             <TaichanLogo size="sm" className="w-8 h-8 sm:w-10 sm:h-10 flex-shrink-0" />
-            <span className="font-display font-black text-lg sm:text-xl tracking-tight whitespace-nowrap text-stone-900">
-              <span className="text-[#f26922]">56</span> <span className="text-stone-900">TAICHAN</span>
+            <span className={`font-display font-black text-lg sm:text-xl tracking-tight whitespace-nowrap transition-colors ${
+              scrolled ? 'text-stone-900' : 'text-white drop-shadow-md'
+            }`}>
+              <span className="text-amber-500">56</span> <span className={scrolled ? "text-red-600" : "text-white"}>TAICHAN</span>
             </span>
           </a>
 
@@ -60,59 +61,62 @@ export default function Navbar({ cartCount, onOpenCart }) {
           <nav className="hidden md:flex items-center gap-7">
             {navLinks.map((link) => (
               <a
-                key={link.label}
+                key={link.href}
                 href={link.href}
-                className="text-xs font-bold text-stone-700 hover:text-[#f26922] transition-colors tracking-wide py-1 px-2.5 rounded-lg hover:bg-stone-200/50"
+                className={`text-xs font-semibold transition-colors tracking-wide py-1 px-2.5 rounded-lg ${
+                  scrolled 
+                    ? 'text-stone-600 hover:text-stone-950 hover:bg-stone-100/60' 
+                    : 'text-stone-100 hover:text-white hover:bg-white/10 drop-shadow'
+                }`}
               >
                 {link.label}
               </a>
             ))}
           </nav>
 
-          {/* Right: Actions */}
-          <div className="flex items-center gap-2 sm:gap-3 flex-shrink-0">
+          {/* Right: Actions (Mobile Optimized) */}
+          <div className="flex items-center gap-1.5 sm:gap-3 flex-shrink-0">
             
-            {/* Instagram Icon */}
+            {/* Instagram Icon (Desktop only, available in mobile drawer) */}
             <a
               href={RESTAURANT_INFO.instagramUrl}
               target="_blank"
               rel="noopener noreferrer"
-              className="hidden sm:flex p-2 rounded-xl text-stone-600 hover:text-[#f26922] hover:bg-stone-200/50 transition-colors"
+              className={`hidden sm:flex p-2 rounded-xl transition-colors ${
+                scrolled 
+                  ? 'text-stone-600 hover:text-red-600 hover:bg-stone-100' 
+                  : 'text-stone-200 hover:text-white hover:bg-white/10 drop-shadow'
+              }`}
               title="Instagram @taichan56djoeanda"
             >
               <Instagram className="w-5 h-5" />
             </a>
 
-            {/* Primary Cart CTA with Floating Badge */}
+            {/* Primary Cart CTA with Floating Badge (Icon Only) */}
             <button
               onClick={onOpenCart}
-              className="relative p-2.5 rounded-xl bg-stone-900 hover:bg-stone-800 text-white flex items-center justify-center shadow-md active:scale-95 transition-all flex-shrink-0"
+              className="relative p-2.5 rounded-xl bg-gradient-to-r from-red-600 via-rose-600 to-orange-500 hover:from-red-500 hover:to-orange-400 text-white flex items-center justify-center shadow-md shadow-red-600/30 hover:scale-105 active:scale-95 transition-all flex-shrink-0"
               title="Keranjang Pesanan"
               aria-label="Keranjang Pesanan"
             >
               <div className="relative flex items-center justify-center">
-                <ShoppingBag className="w-4 h-4 sm:w-5 sm:h-5" />
+                <ShoppingBag className="w-5 h-5" />
                 {cartCount > 0 && (
-                  <span className="absolute -top-2.5 -right-2.5 flex h-4 min-w-[16px] px-1 items-center justify-center rounded-full bg-[#f26922] text-white text-[10px] font-black shadow-md border border-white leading-none">
+                  <span className="absolute -top-2.5 -right-2.5 flex h-4 min-w-[16px] px-1 items-center justify-center rounded-full bg-stone-900 text-white text-[10px] font-black shadow-md border border-white leading-none">
                     {cartCount}
                   </span>
                 )}
               </div>
             </button>
 
-            {/* Dribbble Style Primary Action Button (Desktop) */}
-            <button
-              onClick={onOpenCart}
-              className="hidden sm:flex items-center gap-1.5 px-4 py-2.5 rounded-xl bg-[#f26922] hover:bg-[#e05914] text-white font-bold text-xs shadow-md shadow-orange-500/20 active:scale-95 transition-all"
-            >
-              <span>Pesan Sekarang</span>
-              <ArrowUpRight className="w-3.5 h-3.5" />
-            </button>
-
             {/* Mobile Menu Hamburger */}
             <button
               onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
-              className="md:hidden p-2 rounded-xl bg-stone-200/70 border border-stone-300 text-stone-700 hover:text-stone-900"
+              className={`md:hidden p-2 rounded-xl transition-colors ${
+                scrolled 
+                  ? 'bg-stone-100 border border-stone-200 text-stone-700 hover:text-stone-900' 
+                  : 'bg-black/40 border border-white/20 text-white hover:bg-black/60 backdrop-blur-md'
+              }`}
             >
               {mobileMenuOpen ? <X className="w-5 h-5" /> : <Menu className="w-5 h-5" />}
             </button>
